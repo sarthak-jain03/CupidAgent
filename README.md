@@ -2,6 +2,9 @@
 
 A web application where autonomous AI agents represent real people, date each other, and generate personalized compatibility rankings based on their public LinkedIn and Instagram profiles.
 
+- **Live Website**: [cupidagent.vercel.app](https://cupidagent.vercel.app/)
+- **Demo Video**: [YouTube Walkthrough](https://youtu.be/ujVyPGbaKq0?si=WLyfDMAUgILm4F-S)
+
 ---
 
 ## How It Works
