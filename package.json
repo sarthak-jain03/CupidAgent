@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -k -n \"SERVER,CLIENT\" -c \"magenta,cyan\" \"node server/index.js\" \"vite\"",
-    "dev:client": "vite",
-    "dev:server": "node server/index.js",
+    "dev": "concurrently -k -n \"FASTAPI,VITE\" -c \"yellow,cyan\" \"python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000\" \"vite\"",
+    "dev:backend": "python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000 --reload",
+    "dev:frontend": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },

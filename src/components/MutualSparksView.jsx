@@ -1,15 +1,10 @@
 import React from 'react';
 import {
-  Sparkles,
-  Flame,
   Heart,
-  Crown,
-  ExternalLink,
-  Briefcase,
-  Camera,
-  ArrowRightLeft
+  Flame
 } from 'lucide-react';
 import { computeNetworkRankings } from '../data/datingEngineClient';
+import Avatar from './Avatar';
 
 export default function MutualSparksView({
   people,
@@ -19,25 +14,19 @@ export default function MutualSparksView({
 
   return (
     <div style={{ maxWidth: 1400, margin: '0 auto', padding: '32px 24px' }}>
-      {/* Header */}
-      <div style={{ marginBottom: 32 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-          <span className="glow-pill gold">Reciprocal Equilibrium</span>
-          <span className="glow-pill purple">Bilateral Top Pairings</span>
-        </div>
-        <h1 style={{ fontSize: '2.4rem', fontWeight: 800, letterSpacing: '-0.02em' }}>
-          Mutual Sparks: <span className="gradient-text">When Both Agents Choose Each Other</span>
+            <div style={{ marginBottom: 28 }}>
+        <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: 6 }}>
+          Mutual Sparks
         </h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '1rem', maxWidth: 840 }}>
-          In an agentic dating network, unilateral admiration is not enough. These couples represent <strong>bilateral mutual sparks</strong>: cases where Agent A placed Person B in their top ranks, and Agent B independently reciprocated.
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: 840 }}>
+          Pairs where both agents independently ranked each other among their top choices, indicating reciprocal compatibility.
         </p>
       </div>
 
-      {/* Grid of Mutual Sparks */}
-      <div style={{
+            <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(420px, 1fr))',
-        gap: 24
+        gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))',
+        gap: 18
       }}>
         {mutualSparks.map((spark, idx) => {
           const personAFull = people.find(p => p.id === spark.personA.id);
@@ -48,120 +37,78 @@ export default function MutualSparksView({
               key={idx}
               className="glass-panel"
               style={{
-                padding: 28,
-                borderRadius: 24,
-                border: '1px solid rgba(244, 63, 94, 0.35)',
-                background: 'linear-gradient(135deg, rgba(22, 28, 48, 0.85) 0%, rgba(14, 18, 30, 0.95) 100%)',
-                boxShadow: '0 12px 36px rgba(0,0,0,0.4)',
+                padding: 22,
+                borderRadius: 8,
                 display: 'flex',
                 flexDirection: 'column'
               }}
             >
-              {/* Top Score Badge */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <Sparkles size={16} color="#f59e0b" />
-                  <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#fbbf24', textTransform: 'uppercase' }}>
-                    Mutual Affinity Match
-                  </span>
-                </div>
-                <div style={{
-                  padding: '4px 12px',
-                  borderRadius: 9999,
-                  background: 'rgba(244, 63, 94, 0.15)',
-                  border: '1px solid rgba(244, 63, 94, 0.35)',
-                  color: '#fb7185',
-                  fontWeight: 800,
-                  fontSize: '0.9rem'
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+                <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-main)' }}>
+                  Reciprocal Match
+                </span>
+                <span style={{
+                  padding: '2px 8px',
+                  borderRadius: 4,
+                  background: 'var(--primary-subtle)',
+                  color: '#fda4af',
+                  fontWeight: 600,
+                  fontSize: '0.82rem'
                 }}>
-                  {spark.combinedScore}% Combined
-                </div>
+                  {spark.combinedScore}% Compatibility
+                </span>
               </div>
 
-              {/* Couple Avatars Face-off */}
-              <div style={{
+                            <div style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                padding: '16px 20px',
-                background: 'rgba(0, 0, 0, 0.3)',
-                borderRadius: 18,
-                marginBottom: 20
+                padding: '14px 16px',
+                background: 'var(--bg-main)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: 6,
+                marginBottom: 16
               }}>
-                {/* Person A */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <img
-                    src={spark.personA.avatar}
-                    alt={spark.personA.name}
-                    style={{
-                      width: 54,
-                      height: 54,
-                      borderRadius: '50%',
-                      objectFit: 'cover',
-                      border: '2px solid #f43f5e'
-                    }}
-                  />
+                                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <Avatar name={spark.personA.name} size={42} />
                   <div>
-                    <h4 style={{ fontSize: '1rem', fontWeight: 700 }}>{spark.personA.name}</h4>
-                    <span style={{ fontSize: '0.72rem', color: '#fb7185' }}>
+                    <h4 style={{ fontSize: '0.88rem', fontWeight: 600 }}>{spark.personA.name}</h4>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>
                       Ranks partner #{spark.personA.rankForOther}
                     </span>
                   </div>
                 </div>
 
-                <div style={{
-                  width: 36,
-                  height: 36,
-                  borderRadius: '50%',
-                  background: 'rgba(244, 63, 94, 0.2)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <Heart size={18} color="#f43f5e" fill="#f43f5e" />
-                </div>
+                <Heart size={16} color="var(--primary)" fill="var(--primary)" />
 
-                {/* Person B */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexDirection: 'row-reverse' }}>
-                  <img
-                    src={spark.personB.avatar}
-                    alt={spark.personB.name}
-                    style={{
-                      width: 54,
-                      height: 54,
-                      borderRadius: '50%',
-                      objectFit: 'cover',
-                      border: '2px solid #8b5cf6'
-                    }}
-                  />
+                                <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexDirection: 'row-reverse' }}>
+                  <Avatar name={spark.personB.name} size={42} />
                   <div style={{ textAlign: 'right' }}>
-                    <h4 style={{ fontSize: '1rem', fontWeight: 700 }}>{spark.personB.name}</h4>
-                    <span style={{ fontSize: '0.72rem', color: '#c084fc' }}>
+                    <h4 style={{ fontSize: '0.88rem', fontWeight: 600 }}>{spark.personB.name}</h4>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>
                       Ranks partner #{spark.personB.rankForOther}
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Spark Reason */}
-              <p style={{
-                fontSize: '0.85rem',
-                color: '#cbd5e1',
-                lineHeight: 1.5,
-                marginBottom: 24,
+                            <p style={{
+                fontSize: '0.82rem',
+                color: 'var(--text-muted)',
+                lineHeight: 1.4,
+                marginBottom: 18,
                 flexGrow: 1
               }}>
                 {spark.sparkReason}
               </p>
 
-              {/* Action Button */}
-              <button
+                            <button
                 onClick={() => onLaunchDatePair(personAFull, personBFull)}
                 className="btn-primary"
-                style={{ width: '100%', padding: '12px', fontSize: '0.88rem' }}
+                style={{ width: '100%', padding: '8px', fontSize: '0.82rem' }}
               >
-                <Flame size={16} />
-                <span>Simulate Their Date in Arena</span>
+                <Flame size={13} />
+                <span>Simulate Their Date</span>
               </button>
             </div>
           );

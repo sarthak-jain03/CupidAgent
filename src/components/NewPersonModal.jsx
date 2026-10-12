@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import {
   X,
-  PlusCircle,
-  Briefcase,
-  Camera,
-  Sparkles,
+  Plus,
+  Linkedin,
+  Instagram,
   CheckCircle2,
   Loader2,
   AlertCircle
@@ -51,7 +50,7 @@ export default function NewPersonModal({
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!linkedinUrl.trim() || !instagramUrl.trim()) {
-      setErrorMessage('Please provide both an official LinkedIn URL and a public Instagram URL.');
+      setErrorMessage('Please provide both a LinkedIn URL and a public Instagram URL.');
       return;
     }
 
@@ -60,15 +59,9 @@ export default function NewPersonModal({
     setProgressStep(1);
 
     try {
-      // Step 1: Resolving links
-      await new Promise(r => setTimeout(r, 600));
+      await new Promise(r => setTimeout(r, 400));
       setProgressStep(2);
 
-      // Step 2: Scraping Instagram & LinkedIn
-      await new Promise(r => setTimeout(r, 800));
-      setProgressStep(3);
-
-      // Step 3: Server API call
       let createdPerson = null;
       try {
         const response = await axios.post('/api/scrape', {
@@ -80,8 +73,7 @@ export default function NewPersonModal({
           createdPerson = response.data.person;
         }
       } catch (apiError) {
-        // Fallback to client synthesis if server call fails
-        console.warn('API call failed, generating via client synthesis fallback:', apiError);
+        console.warn('API call fallback:', apiError);
         const namePart = (linkedinUrl.match(/linkedin\.com\/in\/([a-zA-Z0-9_-]+)/i)?.[1] || 'Innovator')
           .replace(/[-_]+/g, ' ')
           .replace(/\b\w/g, l => l.toUpperCase());
@@ -92,7 +84,7 @@ export default function NewPersonModal({
           gender: 'non-binary',
           age: 32,
           location: 'Global Hub',
-          avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+          avatar: '',
           linkedinUrl: linkedinUrl.trim(),
           instagramUrl: instagramUrl.trim(),
           instagramHandle: '@' + (instagramUrl.match(/instagram\.com\/([a-zA-Z0-9_.-]+)/i)?.[1] || 'profile'),
@@ -100,65 +92,61 @@ export default function NewPersonModal({
           tagline: 'Tech Founder & Creative Thinker',
           sources: {
             linkedin: {
-              headline: 'Founder & Strategic Innovator',
-              company: 'Venture & Research Labs',
-              industry: 'Technology & Frontier Systems',
-              summary: 'Experienced innovator leading product growth and cross-disciplinary projects.',
-              skills: ['System Design', 'Strategic Vision', 'Team Building', 'Execution']
+              headline: 'Founder & Builder',
+              company: 'Venture Org',
+              industry: 'Technology',
+              skills: ['Product Strategy', 'Systems Architecture', 'Leadership'],
+              summary: 'Experienced executive balancing high-stakes execution with creative pursuits.'
             },
             instagram: {
-              bio: 'Exploring ideas, morning coffee, weekend trail runs and urban design.',
-              postVibes: ['Coffee shops', 'Travel photography', 'Design exhibits', 'Outdoor trails'],
-              aesthetic: 'Warm minimalist, candid photography',
-              interestsKeywords: ['Specialty Coffee', 'Trail Running', 'Design Architecture', 'Art']
+              bio: 'Exploring ideas, nature, and offline rituals.',
+              aesthetic: 'Minimalist & thoughtful',
+              postVibes: ['Coffee', 'Travel', 'Reading', 'Outdoor trails']
             }
           },
           analysis: {
-            agentName: `Agent ${namePart.split(' ')[0]}-Prime`,
-            agentPersona: `Inquisitive and grounded innovator who pairs technical craft with creative hobbies and authentic conversations.`,
+            agentName: `Agent ${namePart}`,
+            agentPersona: `Represents ${namePart}. Prioritizes intellectual authenticity, mutual respect, and calm presence.`,
             needs: [
-              'An emotionally genuine partner who values open vulnerability and deep talks',
-              'Shared enthusiasm for creative side projects and spontaneous weekend escapes',
-              'Clear, honest communication and mutual respect for independent work',
-              'A peaceful sanctuary at home filled with music and laughter'
+              'Reciprocal emotional transparency and intellectual depth',
+              'Respect for dedicated creative flow states',
+              'Genuine mutual curiosity without pretension'
             ],
             hobbies: [
-              'Pour-over coffee brewing and visiting artisan roasteries',
-              'Weekend trail runs in nature and staying physically fit',
-              'Reading philosophy, science, and architectural history',
-              'Exploring local culinary spots with great wine'
+              'Morning coffee rituals & quiet reading',
+              'Nature hikes & endurance fitness',
+              'Documentary cinema & philosophical discussions'
             ],
             interests: [
-              'Frontier technology and autonomous agent ecosystems',
-              'Human-centered design and sustainable living',
-              'Behavioral psychology and decision making',
-              'Acoustic music and creative writing'
+              'Frontier technology & long-term civilizational impact',
+              'Acoustic music and indie literature',
+              'Clean architecture and product design'
             ],
             qualities: {
-              openness: 94,
-              conscientiousness: 93,
-              extraversion: 80,
-              agreeableness: 88,
-              neuroticism: 20,
-              communicationStyle: 'Clear, attentive, witty, and grounded',
-              loveLanguage: 'Quality Time & Mutual Growth',
-              greenFlags: ['High emotional curiosity', 'Independent passions', 'Kindness'],
-              dealbreakers: ['Inauthenticity', 'Chronic complaining', 'Lack of ambition'],
-              idealDate: 'Tasting flights at an intimate wine bar followed by a walk through city streets discussing dreams.'
+              openness: 92,
+              conscientiousness: 90,
+              extraversion: 74,
+              agreeableness: 85,
+              neuroticism: 18,
+              loveLanguage: 'Quality Time & Deep Dialogue',
+              communicationStyle: 'Direct, thoughtful & empathetic',
+              greenFlags: ['High intellectual curiosity', 'Emotional self-awareness'],
+              dealbreakers: ['Superficial vanity', 'Flakiness'],
+              idealDate: 'A quiet bistro corner followed by late-night coffee and honest conversation.'
             }
-          },
-          isCustom: true
+          }
         };
       }
 
-      setProgressStep(4);
-      await new Promise(r => setTimeout(r, 500));
-
+      setProgressStep(3);
+      await new Promise(r => setTimeout(r, 300));
       onPersonCreated(createdPerson);
       onClose();
     } catch (err) {
-      setErrorMessage('Failed to scrape or analyze the provided links: ' + err.message);
+      setErrorMessage(err.message || 'Error creating profile. Please try again.');
+    } finally {
       setIsLoading(false);
+      setProgressStep(0);
     }
   };
 
@@ -168,70 +156,63 @@ export default function NewPersonModal({
         className="glass-panel"
         onClick={e => e.stopPropagation()}
         style={{
-          width: 620,
+          width: 540,
           maxWidth: '95vw',
-          padding: 32,
-          borderRadius: 24,
-          background: 'rgba(11, 15, 26, 0.98)',
-          border: '1px solid rgba(255, 255, 255, 0.12)',
+          padding: 24,
+          borderRadius: 12,
+          background: 'var(--bg-surface)',
+          border: '1px solid var(--border-subtle)',
           position: 'relative'
         }}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           style={{
             position: 'absolute',
-            top: 20,
-            right: 20,
+            top: 16,
+            right: 16,
             width: 32,
             height: 32,
-            borderRadius: '50%',
-            background: 'rgba(255, 255, 255, 0.08)',
-            border: 'none',
-            color: '#fff',
+            borderRadius: 6,
+            background: 'var(--bg-subtle)',
+            border: '1px solid var(--border-subtle)',
+            color: 'var(--text-muted)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer'
           }}
         >
-          <X size={18} />
+          <X size={16} />
         </button>
 
-        {/* Modal Title */}
-        <div style={{ marginBottom: 24 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-            <span className="glow-pill gold">Dual-Source Ingestion</span>
-          </div>
-          <h2 style={{ fontSize: '1.8rem', fontWeight: 800 }}>
-            Deploy a New Dating Agent
+                <div style={{ marginBottom: 20 }}>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: 4 }}>
+            Add New Profile
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', marginTop: 4 }}>
-            Paste the two official public links. The system scrapes both, reads the person's needs and hobbies, and spawns their autonomous dating agent into the live pool.
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem' }}>
+            Provide the person's LinkedIn and public Instagram URLs. The system will extract their needs, hobbies, and interests.
           </p>
         </div>
 
-        {/* Presets */}
-        <div style={{ marginBottom: 20 }}>
-          <span style={{ fontSize: '0.75rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: 8 }}>
-            Quick-Try Public Presets:
-          </span>
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                <div style={{ marginBottom: 16 }}>
+          <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)', textTransform: 'uppercase', fontWeight: 600, marginBottom: 6 }}>
+            Quick Sample Presets:
+          </div>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
             {presets.map((preset, idx) => (
               <button
                 key={idx}
                 type="button"
                 onClick={() => handleApplyPreset(preset)}
                 style={{
-                  padding: '6px 12px',
-                  borderRadius: 8,
-                  fontSize: '0.78rem',
-                  background: 'rgba(255, 255, 255, 0.05)',
+                  padding: '4px 10px',
+                  borderRadius: 6,
+                  fontSize: '0.75rem',
+                  background: 'var(--bg-main)',
                   border: '1px solid var(--border-subtle)',
-                  color: '#e2e8f0',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s'
+                  color: 'var(--text-muted)',
+                  cursor: 'pointer'
                 }}
               >
                 + {preset.name}
@@ -240,22 +221,19 @@ export default function NewPersonModal({
           </div>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit}>
-          {/* LinkedIn Input */}
-          <div style={{ marginBottom: 18 }}>
+                <form onSubmit={handleSubmit}>
+                    <div style={{ marginBottom: 14 }}>
             <label style={{
               display: 'flex',
               alignItems: 'center',
               gap: 6,
-              fontSize: '0.82rem',
-              color: '#93c5fd',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              marginBottom: 8
+              fontSize: '0.78rem',
+              color: 'var(--text-muted)',
+              fontWeight: 600,
+              marginBottom: 6
             }}>
-              <Briefcase size={14} />
-              1. Official LinkedIn Public Profile URL
+              <Linkedin size={13} color="#60a5fa" />
+              <span>Official LinkedIn URL</span>
             </label>
             <input
               type="url"
@@ -266,31 +244,29 @@ export default function NewPersonModal({
               disabled={isLoading}
               style={{
                 width: '100%',
-                padding: '12px 16px',
-                borderRadius: 12,
-                background: 'rgba(255, 255, 255, 0.04)',
+                padding: '9px 12px',
+                borderRadius: 6,
+                background: 'var(--bg-main)',
                 border: '1px solid var(--border-subtle)',
                 color: '#fff',
-                fontSize: '0.9rem',
+                fontSize: '0.85rem',
                 outline: 'none'
               }}
             />
           </div>
 
-          {/* Instagram Input */}
-          <div style={{ marginBottom: 24 }}>
+                    <div style={{ marginBottom: 18 }}>
             <label style={{
               display: 'flex',
               alignItems: 'center',
               gap: 6,
-              fontSize: '0.82rem',
-              color: '#f472b6',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              marginBottom: 8
+              fontSize: '0.78rem',
+              color: 'var(--text-muted)',
+              fontWeight: 600,
+              marginBottom: 6
             }}>
-              <Camera size={14} />
-              2. Official Public Instagram Profile URL
+              <Instagram size={13} color="#f472b6" />
+              <span>Public Instagram URL</span>
             </label>
             <input
               type="url"
@@ -301,101 +277,74 @@ export default function NewPersonModal({
               disabled={isLoading}
               style={{
                 width: '100%',
-                padding: '12px 16px',
-                borderRadius: 12,
-                background: 'rgba(255, 255, 255, 0.04)',
+                padding: '9px 12px',
+                borderRadius: 6,
+                background: 'var(--bg-main)',
                 border: '1px solid var(--border-subtle)',
                 color: '#fff',
-                fontSize: '0.9rem',
+                fontSize: '0.85rem',
                 outline: 'none'
               }}
             />
           </div>
 
-          {/* Error Message */}
           {errorMessage && (
             <div style={{
+              padding: 10,
+              borderRadius: 6,
+              marginBottom: 14,
+              fontSize: '0.78rem',
+              background: 'rgba(239, 68, 68, 0.1)',
+              color: '#f87171',
+              border: '1px solid rgba(239, 68, 68, 0.25)',
               display: 'flex',
               alignItems: 'center',
-              gap: 8,
-              padding: '10px 14px',
-              borderRadius: 10,
-              background: 'rgba(244, 63, 94, 0.1)',
-              border: '1px solid rgba(244, 63, 94, 0.3)',
-              color: '#fb7185',
-              fontSize: '0.85rem',
-              marginBottom: 20
+              gap: 6
             }}>
-              <AlertCircle size={16} />
+              <AlertCircle size={14} />
               <span>{errorMessage}</span>
             </div>
           )}
 
-          {/* Progress Animation */}
-          {isLoading && (
+                    {isLoading && (
             <div style={{
-              padding: 16,
-              borderRadius: 12,
-              background: 'rgba(0, 0, 0, 0.3)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              marginBottom: 20
+              padding: 12,
+              borderRadius: 6,
+              background: 'var(--bg-main)',
+              border: '1px solid var(--border-subtle)',
+              marginBottom: 14,
+              fontSize: '0.8rem',
+              color: 'var(--text-muted)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8
             }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem' }}>
-                  {progressStep >= 1 ? <CheckCircle2 size={16} color="#10b981" /> : <Loader2 size={16} className="pulse-glow" />}
-                  <span style={{ color: progressStep >= 1 ? '#34d399' : 'var(--text-muted)' }}>
-                    Verifying public profile endpoints...
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem' }}>
-                  {progressStep >= 2 ? <CheckCircle2 size={16} color="#10b981" /> : <Loader2 size={16} className="pulse-glow" />}
-                  <span style={{ color: progressStep >= 2 ? '#34d399' : 'var(--text-muted)' }}>
-                    Scraping Instagram hobbies & LinkedIn career highlights...
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem' }}>
-                  {progressStep >= 3 ? <CheckCircle2 size={16} color="#10b981" /> : <Loader2 size={16} className="pulse-glow" />}
-                  <span style={{ color: progressStep >= 3 ? '#34d399' : 'var(--text-muted)' }}>
-                    Synthesizing agent persona: Needs, Hobbies, Interests & Qualities...
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.82rem' }}>
-                  {progressStep >= 4 ? <CheckCircle2 size={16} color="#10b981" /> : <Loader2 size={16} className="pulse-glow" />}
-                  <span style={{ color: progressStep >= 4 ? '#34d399' : 'var(--text-muted)' }}>
-                    Computing compatibility against entire network and deploying agent...
-                  </span>
-                </div>
-              </div>
+              <Loader2 size={16} className="spin" />
+              <span>
+                {progressStep === 1 && 'Extracting public profile metadata...'}
+                {progressStep === 2 && 'Synthesizing Needs, Hobbies & Interests...'}
+                {progressStep === 3 && 'Finalizing candidate profile...'}
+              </span>
             </div>
           )}
 
-          {/* Submit CTA */}
-          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 12 }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
             <button
               type="button"
               onClick={onClose}
               className="btn-secondary"
-              disabled={isLoading}
+              style={{ padding: '7px 12px', fontSize: '0.82rem' }}
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="btn-primary"
               disabled={isLoading}
-              style={{ minWidth: 160 }}
+              className="btn-primary"
+              style={{ padding: '7px 16px', fontSize: '0.82rem' }}
             >
-              {isLoading ? (
-                <>
-                  <Loader2 size={16} className="pulse-glow" />
-                  <span>Synthesizing...</span>
-                </>
-              ) : (
-                <>
-                  <Sparkles size={16} />
-                  <span>Scrape & Deploy Agent</span>
-                </>
-              )}
+              <Plus size={14} />
+              <span>{isLoading ? 'Processing...' : 'Create Profile'}</span>
             </button>
           </div>
         </form>

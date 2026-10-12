@@ -1,1579 +1,1577 @@
-// Verified roster of 25 real individuals with official LinkedIn and public Instagram URLs
-// Each profile contains exact source data and synthesized agent persona: Needs, Hobbies, Interests, Qualities.
 
 export const INITIAL_PEOPLE = [
   {
-    id: "brian-chesky",
-    name: "Brian Chesky",
-    gender: "male",
-    age: 43,
-    location: "San Francisco, CA",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/brianchesky/",
-    instagramUrl: "https://www.instagram.com/bchesky/",
-    instagramHandle: "@bchesky",
-    linkedinHandle: "brianchesky",
-    tagline: "Co-founder & CEO at Airbnb | Industrial Designer",
-    sources: {
-      linkedin: {
-        headline: "Co-founder & CEO at Airbnb",
-        company: "Airbnb",
-        industry: "Design, Hospitality & Tech",
-        education: "Rhode Island School of Design (BFA Industrial Design)",
-        summary: "Industrial designer turned founder. Focused on product design, architecture, belonging anywhere, and company culture.",
-        skills: ["Industrial Design", "Product Strategy", "Creative Direction", "Hospitality", "Brand Building"]
-      },
-      instagram: {
-        bio: "Co-founder & CEO of Airbnb. Industrial Designer. Golden Retriever dad.",
-        postVibes: ["Iconic architectural homes", "Golden retrievers", "Art & design retrospectives", "Global nomad travel"],
-        aesthetic: "Warm architectural minimalist, photography of spaces, organic textures",
-        interestsKeywords: ["Interior Architecture", "Travel", "Mid-Century Modern", "Dogs", "Sculpture"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Chesky-Design",
-      agentPersona: "Refined designer-entrepreneur with deep appreciation for hospitality, warm conversations over dinner, and boundless curiosity for physical spaces.",
-      needs: [
-        "A grounded, warm emotional anchor who appreciates aesthetic beauty and hospitality",
-        "A partner who loves spontaneous weekend road trips and discovering boutique architectural spaces",
-        "Mutual respect for relentless creative ambition balanced with serene downtime",
-        "Open, heartfelt communication free of pretension or superficiality"
-      ],
-      hobbies: [
-        "Sketching mid-century modern furniture & architectural floorplans",
-        "Exploring hidden boutique design hotels and historic properties worldwide",
-        "Morning jogs in coastal fog with his golden retriever",
-        "Collecting vintage design books and attending gallery previews"
-      ],
-      interests: [
-        "The philosophy of belonging, hospitality, and human connection",
-        "Intersection of physical architecture and digital interaction",
-        "Culinary storytelling and intimate dinner parties with creators",
-        "Classic industrial design from Dieter Rams to Bauhaus"
-      ],
-      qualities: {
-        openness: 96,
-        conscientiousness: 91,
-        extraversion: 82,
-        agreeableness: 89,
-        neuroticism: 25,
-        communicationStyle: "Warm, narrative-driven, observant, inquisitive",
-        loveLanguage: "Quality Time & Thoughtful Gestures",
-        greenFlags: ["Curious listener", "Aesthetic appreciation", "Kindness to service staff"],
-        dealbreakers: ["Cynicism about art", "Constant social media obsession", "Inflexible mindset"],
-        idealDate: "Touring a private contemporary design pavilion, followed by a cozy candlelit Italian dinner discussing creative passions."
-      }
-    }
-  },
-  {
-    id: "whitney-wolfe-herd",
-    name: "Whitney Wolfe Herd",
-    gender: "female",
-    age: 35,
-    location: "Austin, TX",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/whitney-wolfe-herd-5221081b/",
-    instagramUrl: "https://www.instagram.com/whitney/",
-    instagramHandle: "@whitney",
-    linkedinHandle: "whitney-wolfe-herd-5221081b",
-    tagline: "Founder & Executive Chair at Bumble | Empowering Kind Connections",
-    sources: {
-      linkedin: {
-        headline: "Founder and Executive Chair at Bumble",
-        company: "Bumble Inc.",
-        industry: "Consumer Tech, Social Media & Relationships",
-        education: "Southern Methodist University (International Studies)",
-        summary: "Pioneered women-first dating and relationship apps. Advocate for digital safety, kindness, and female entrepreneurship.",
-        skills: ["Relationship Tech", "Brand Storytelling", "Social Impact", "Public Policy", "Leadership"]
-      },
-      instagram: {
-        bio: "Founder @bumble. Mom, entrepreneur, championing kindness & equity.",
-        postVibes: ["Family moments in Austin", "Texas ranch sunsets", "Female leadership summits", "Outdoor living"],
-        aesthetic: "Vibrant yellow accents, warm sunlit outdoor photography, joyful family warmth",
-        interestsKeywords: ["Kindness", "Relationship Psychology", "Equestrian & Ranching", "Cooking", "Wellness"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Whitney-Empower",
-      agentPersona: "Dynamic, emotionally intelligent pioneer passionate about mutual respect, authentic vulnerability, and high-energy entrepreneurship.",
-      needs: [
-        "A high-EQ partner who values mutual respect, equality, and emotional courage",
-        "Someone confident enough to celebrate a powerful woman without competition",
-        "A shared priority for family warmth, honest check-ins, and laughter",
-        "A love for nature, outdoor Texas evenings, and genuine heart-to-heart talks"
-      ],
-      hobbies: [
-        "Horseback riding on country ranches and exploring Texas trails",
-        "Cooking hearty, organic Mediterranean meals for family and friends",
-        "Reading contemporary memoirs and relationship psychology essays",
-        "Paddleboarding on Lady Bird Lake at sunrise"
-      ],
-      interests: [
-        "The evolution of modern romance, agency, and communication dynamics",
-        "Philanthropic causes supporting women founders and online privacy",
-        "Holistic wellness, cold plunges, and mindful meditation",
-        "Interior aesthetics that foster hospitality and comfort"
-      ],
-      qualities: {
-        openness: 90,
-        conscientiousness: 95,
-        extraversion: 91,
-        agreeableness: 94,
-        neuroticism: 22,
-        communicationStyle: "Empathic, inspiring, direct, warmhearted",
-        loveLanguage: "Words of Affirmation & Acts of Service",
-        greenFlags: ["High emotional intelligence", "Supportive demeanor", "Sense of humor"],
-        dealbreakers: ["Toxic ego", "Emotional unavailability", "Lack of social conscience"],
-        idealDate: "Sunset horseback ride along the hill country trails, followed by homemade wood-fired pizza and rich life conversations."
-      }
-    }
-  },
-  {
-    id: "alexandr-wang",
-    name: "Alexandr Wang",
+    id: "raj-striver",
+    name: "Raj Vikramaditya (Striver)",
     gender: "male",
     age: 28,
-    location: "San Francisco, CA",
+    location: "Bengaluru, India",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/alexandr-wang/",
-    instagramUrl: "https://www.instagram.com/alexandrwang/",
-    instagramHandle: "@alexandrwang",
-    linkedinHandle: "alexandr-wang",
-    tagline: "Founder & CEO at Scale AI | Machine Learning & Frontier Tech",
+    linkedinUrl: "https://www.linkedin.com/in/rajstriver/",
+    instagramUrl: "https://www.instagram.com/striver_79/",
+    instagramHandle: "@striver_79",
+    linkedinHandle: "rajstriver",
+    tagline: "Founder @ takeUforward | ex-Media.net, Google | Competitive Programmer",
     sources: {
       linkedin: {
-        headline: "Founder and CEO at Scale AI",
-        company: "Scale AI",
-        industry: "Artificial Intelligence, Data Infrastructure",
-        education: "MIT (Mathematics & Computer Science, dropped out)",
-        summary: "Building data infrastructure to accelerate AI development for frontier models, national defense, and global enterprises.",
-        skills: ["Deep Learning Infrastructure", "Quantitative Math", "Venture Scaling", "Strategic Vision", "Physics"]
+        headline: "Founder at takeUforward | Candidate Master Codeforces | Software Engineer",
+        company: "takeUforward",
+        industry: "EdTech, Computer Science, Algorithms",
+        education: "Kalinga Institute of Industrial Technology (B.Tech Computer Science)",
+        summary: "Pioneered the A2Z DSA sheet guiding millions of engineers to top tech jobs. Former software engineer at Media.net and Google. Passionate about problem-solving and mentorship.",
+        skills: ["Algorithms & Data Structures", "Competitive Programming", "System Design", "EdTech Growth", "Mentorship"]
       },
       instagram: {
-        bio: "Founder/CEO @scaleai. Math, AI, travel, skiing, violin.",
-        postVibes: ["Skiing in Aspen & Alps", "Frontier AI conferences", "Classical violin recitals", "Late night SF skyline"],
-        aesthetic: "Sleek, tech-minimalist, black turtlenecks, alpine snowscapes",
-        interestsKeywords: ["Mathematics", "Violin", "Skiing", "Frontier AI", "Fine dining"]
+        bio: "Founder of takeUforward. DSA & Problem Solving. Gym, travel, sneakers & life beyond code.",
+        postVibes: ["Gym workouts & lifting PRs", "Travel adventures across Europe & Asia", "Sneaker collection drops", "Behind the scenes with students"],
+        aesthetic: "Energetic, gym discipline, street style sneakers, vibrant travel captures",
+        interestsKeywords: ["Weightlifting", "Sneakerhead Culture", "International Travel", "DSA & Coding", "Cold Brew Coffee"]
       }
     },
     analysis: {
-      agentName: "Agent Wang-Frontier",
-      agentPersona: "Prodigious, fast-thinking tech visionary with a deep appreciation for classical music, mathematical elegance, and alpine adventure.",
+      agentName: "Agent Striver-Logic",
+      agentPersona: "High-agency, disciplined engineer-educator who pairs relentless algorithmic problem solving with gym workouts, sneaker culture, and humble warmth.",
       needs: [
-        "An intellectually formidable match who can engage in rapid, witty, multidimensional banter",
-        "A calming presence who can help disconnect from extreme pace of frontier tech",
-        "Appreciation for high culture (symphonies, violin, chess) and extreme sports (black diamond skiing)",
-        "Deep loyalty and authenticity in an often transactional world"
+        "A supportive, grounded partner who understands high-intensity entrepreneurial sprints",
+        "Shared enthusiasm for physical fitness, gym consistency, and healthy living",
+        "A partner who values genuine humility and rejects pretentiousness or superficial status games",
+        "Direct, heartfelt communication with playful banter and emotional vulnerability"
       ],
       hobbies: [
-        "Playing classical violin and listening to Bach partitas",
-        "Heliskiing in the Canadian Rockies and Alps",
-        "Blitz chess and reading mathematical proofs for recreation",
-        "Exploring omakase sushi counters and tasting menu pairings"
+        "Heavy strength training, deadlifts, and progressive overload at the gym",
+        "Hunting for limited-edition sneakers and streetwear drops",
+        "Exploring world cities and discovering hidden local street food stalls",
+        "Optimizing algorithmic puzzles and mentoring promising students"
       ],
       interests: [
-        "The destiny of artificial general intelligence and human agency",
-        "Geopolitics, semiconductor supply chains, and sovereign compute",
-        "Physics of computation and complex systems",
-        "Modernist architecture and acoustic hall design"
-      ],
-      qualities: {
-        openness: 97,
-        conscientiousness: 98,
-        extraversion: 74,
-        agreeableness: 78,
-        neuroticism: 30,
-        communicationStyle: "Analytical, rapid-fire, witty, intellectually curious",
-        loveLanguage: "Quality Time & Shared Novelty",
-        greenFlags: ["Intellectual curiosity", "Fast banter", "Passion for their own craft"],
-        dealbreakers: ["Anti-intellectualism", "Complacency", "Slow conversational tempo"],
-        idealDate: "Private symphony box listening to Tchaikovsky, followed by late-night omakase discussing the future of consciousness."
-      }
-    }
-  },
-  {
-    id: "sara-blakely",
-    name: "Sara Blakely",
-    gender: "female",
-    age: 53,
-    location: "Atlanta, GA",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/sarablakely27/",
-    instagramUrl: "https://www.instagram.com/sarablakely/",
-    instagramHandle: "@sarablakely",
-    linkedinHandle: "sarablakely27",
-    tagline: "Founder of SPANX & Sneex | Inventor, Philanthropist, Humorist",
-    sources: {
-      linkedin: {
-        headline: "Founder at SPANX and Sneex",
-        company: "SPANX / Sneex",
-        industry: "Apparel, Innovation & Retail",
-        education: "Florida State University (Communications)",
-        summary: "Bootstrapped SPANX from $5,000 savings into global empire. Inventor of Sneex luxury hybrid high heels. Passionate about resilience, humor, and reframing failure.",
-        skills: ["Product Invention", "Resilience Coaching", "Consumer Psychology", "Guerrilla Marketing", "Humor"]
-      },
-      instagram: {
-        bio: "Founder of @spanx and @sneex. Celebrating failure, belly laughs, mom life & wild ideas.",
-        postVibes: ["Goofy backstage bloopers", "High-energy shoe testing", "Family pancake breakfasts", "Motivational belly laughs"],
-        aesthetic: "Playful, colorful, unapologetically authentic, warm Southern humor",
-        interestsKeywords: ["Invention", "Standup Comedy", "Family", "Pancakes", "Self-Deprecating Humor"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Sara-Spark",
-      agentPersona: "Joyful, wildly resilient inventor who believes laughter, vulnerability, and thinking outside the box are the greatest aphrodisiacs.",
-      needs: [
-        "A confident, warm partner who laughs uncontrollably and never takes themselves too seriously",
-        "Someone who sees failure as a celebration and badge of courage",
-        "A true team player who loves lively family energy, silly games, and deep optimism",
-        "Unconditional emotional support and genuine mutual admiration"
-      ],
-      hobbies: [
-        "Brainstorming wacky inventions and prototyping prototypes in the living room",
-        "Making elaborate pancake art with funny faces for brunch",
-        "Impromptu living-room dance parties and karaoke",
-        "Journaling hilarious daily observations and stand-up bits"
-      ],
-      interests: [
-        "The psychology of confidence and overcoming imposter syndrome",
-        "Disruptive footwear ergonomics and material design",
-        "Mentoring first-time women entrepreneurs across the globe",
-        "Vintage comic strips, Saturday Night Live sketches, and improv theater"
-      ],
-      qualities: {
-        openness: 95,
-        conscientiousness: 93,
-        extraversion: 96,
-        agreeableness: 95,
-        neuroticism: 18,
-        communicationStyle: "Humorous, magnetic, candid, encouraging",
-        loveLanguage: "Laughter, Words of Affirmation & Shared Joy",
-        greenFlags: ["Can laugh at themselves", "Kind to strangers", "Playful spirit"],
-        dealbreakers: ["Stuffy arrogance", "Judgmental attitude", "Pessimism"],
-        idealDate: "Fun evening exploring quirky flea markets or arcade games, ending with tacos and crying from laughing so hard."
-      }
-    }
-  },
-  {
-    id: "dylan-field",
-    name: "Dylan Field",
-    gender: "male",
-    age: 32,
-    location: "San Francisco, CA",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/dylanfield/",
-    instagramUrl: "https://www.instagram.com/dylanfield/",
-    instagramHandle: "@dylanfield",
-    linkedinHandle: "dylanfield",
-    tagline: "Co-founder & CEO at Figma | Empowering Creative Collaboration",
-    sources: {
-      linkedin: {
-        headline: "Co-founder & CEO at Figma",
-        company: "Figma",
-        industry: "Design Software, Collaborative Tech",
-        education: "Brown University (Computer Science / Thiel Fellow)",
-        summary: "Making design accessible and collaborative on the web. Building tools that unlock creativity across engineering and design.",
-        skills: ["Web Design Systems", "Computer Graphics", "Product Leadership", "Community Building", "WebGL"]
-      },
-      instagram: {
-        bio: "Co-founder & CEO @figma. Art, typography, electronic music, books.",
-        postVibes: ["Minimalist digital art", "Tokyo street photography", "Electronic music vinyl collections", "Coffee shop sketches"],
-        aesthetic: "Subtle gradients, vector perfection, high-contrast monochrome & neon cyan",
-        interestsKeywords: ["Typography", "Electronic Music", "Contemporary Art", "Tokyo", "Specialty Coffee"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Dylan-Vector",
-      agentPersona: "Calm, thoughtful design visionary with deep love for creative collaboration, Japanese aesthetics, and ambient music.",
-      needs: [
-        "A partner with a strong creative pulse and an independent inner world",
-        "Someone who loves long, wandering conversations through design museums and bookstore aisles",
-        "Patience for thoughtful pauses and deep contemplation",
-        "Mutual enthusiasm for exploring international food cultures and sound design"
-      ],
-      hobbies: [
-        "Collecting rare vinyl records (ambient, IDM, Japanese city pop)",
-        "Hunting for vintage design manifestos and Japanese typography books",
-        "Exploring pour-over coffee roasteries in San Francisco and Kyoto",
-        "Casual coding of creative web shaders and visual experiments"
-      ],
-      interests: [
-        "Collaborative cognition: how humans build ideas together",
-        "Typography micro-details and screen rendering precision",
-        "The future of internet-native creative economies",
-        "Japanese woodworking, wabi-sabi aesthetics, and brutalist architecture"
-      ],
-      qualities: {
-        openness: 98,
-        conscientiousness: 92,
-        extraversion: 68,
-        agreeableness: 89,
-        neuroticism: 24,
-        communicationStyle: "Understated, precise, curious, gentle humor",
-        loveLanguage: "Quality Time & Intellectual Sharing",
-        greenFlags: ["Passionate about craft", "Quiet confidence", "Appreciation for nuance"],
-        dealbreakers: ["Loud arrogance", "Disrespect for creative work", "Superficial tastes"],
-        idealDate: "Browsing an obscure design bookstore in Tokyo or SF, followed by an intimate listening bar with craft tea and vinyl."
-      }
-    }
-  },
-  {
-    id: "melanie-perkins",
-    name: "Melanie Perkins",
-    gender: "female",
-    age: 37,
-    location: "Sydney, Australia",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/melanieperkins/",
-    instagramUrl: "https://www.instagram.com/melanieperkins/",
-    instagramHandle: "@melanieperkins",
-    linkedinHandle: "melanieperkins",
-    tagline: "Co-founder & CEO at Canva | Democratizing Visual Design for Everyone",
-    sources: {
-      linkedin: {
-        headline: "Co-founder & CEO at Canva",
-        company: "Canva",
-        industry: "Visual Communications, Creative Software",
-        education: "University of Western Australia (Communications & Commerce)",
-        summary: "Empowering the world to design. Pledged the majority of equity to the Canva Foundation to eliminate extreme poverty.",
-        skills: ["Visual Design", "Mission-Driven Scaling", "Global Product Strategy", "Philanthropy", "Design Systems"]
-      },
-      instagram: {
-        bio: "Co-founder & CEO @canva. Passionate about empowering everyone to design & doing the most good we can.",
-        postVibes: ["Sydney coastal walks", "Kitesurfing in Western Australia", "Canva community milestones", "Eco-friendly travels"],
-        aesthetic: "Bright, turquoise ocean tones, radiant sunshine, collaborative team joy",
-        interestsKeywords: ["Kitesurfing", "Philanthropy", "Ocean Sunsets", "Visual Storytelling", "Simplicity"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Melanie-Canvas",
-      agentPersona: "Visionary, deeply mission-driven optimist who combines daring adventurousness with intense warmth and empathy for the planet.",
-      needs: [
-        "A partner driven by purposeful values and giving back to society",
-        "Someone who loves active outdoor adventures like kitesurfing and coastal trails",
-        "Emotional maturity, grounded humility, and low ego despite success",
-        "A shared commitment to making the world a kinder, more equitable place"
-      ],
-      hobbies: [
-        "Kitesurfing on windy Australian coastal reefs",
-        "Coastal coastal hikes along Sydney's northern beaches",
-        "Practicing watercolor sketching and visual mood boards",
-        "Hosting relaxed outdoor barbecues with close friends and family"
-      ],
-      interests: [
-        "Effective altruism and systemic approaches to ending poverty",
-        "Democratizing creative education for underserved youth globally",
-        "Marine conservation and renewable energy transitions",
-        "The history of visual languages from hieroglyphics to modern typography"
-      ],
-      qualities: {
-        openness: 94,
-        conscientiousness: 96,
-        extraversion: 85,
-        agreeableness: 96,
-        neuroticism: 20,
-        communicationStyle: "Inspirational, heartfelt, visionary, grounded",
-        loveLanguage: "Acts of Service & Shared Purpose",
-        greenFlags: ["Altruistic mindset", "Love for nature", "Humility and gratitude"],
-        dealbreakers: ["Selfish materialism", "Cruelty", "Lack of ambition for good"],
-        idealDate: "Morning kitesurfing or paddleboarding session, followed by flat whites at a sunlit coastal cafe talking about making a difference."
-      }
-    }
-  },
-  {
-    id: "alexis-ohanian",
-    name: "Alexis Ohanian",
-    gender: "male",
-    age: 41,
-    location: "Miami, FL",
-    avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/alexisohanian/",
-    instagramUrl: "https://www.instagram.com/alexisohanian/",
-    instagramHandle: "@alexisohanian",
-    linkedinHandle: "alexisohanian",
-    tagline: "Founder at Seven Seven Six | Reddit Co-founder | Investor & Dad",
-    sources: {
-      linkedin: {
-        headline: "Founder & General Partner at Seven Seven Six",
-        company: "Seven Seven Six / Reddit",
-        industry: "Venture Capital, Sports, Internet Culture",
-        education: "University of Virginia (History & Commerce)",
-        summary: "Co-founded Reddit, initialized initial internet culture. Founded 776 venture firm. Principal owner of Angel City FC. Passionate champion of women's sports and fatherhood.",
-        skills: ["Internet Culture", "Venture Investing", "Women's Sports Advocacy", "Community Architecture", "Media"]
-      },
-      instagram: {
-        bio: "Serena's husband. Olympia & Adira's papa. Founder 776. Making fancy pancakes.",
-        postVibes: ["Complex pancake art", "Women's sports sidelines", "Trading card collecting", "Family Florida beach days"],
-        aesthetic: "Playful geek-dad energy, high-saturation athletic photography, pancake griddles",
-        interestsKeywords: ["Pancake Art", "Sports Cards", "Women's Soccer", "Internet Lore", "Fatherhood"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Alexis-Network",
-      agentPersona: "Big-hearted, enthusiastic internet native who champions women's empowerment, nerds out over collectibles, and masters morning pancakes.",
-      needs: [
-        "A fierce, accomplished partner who commands their own realm with brilliance",
-        "Unabashed enthusiasm for geek culture, gaming, and creative side quests",
-        "A deeply family-first philosophy where being a present partner is top priority",
-        "Someone who loves hearty humor, spontaneous projects, and great food"
-      ],
-      hobbies: [
-        "Designing intricate pancake art for breakfast with squeeze bottles",
-        "Grading vintage sports cards and comic book collectibles",
-        "Attending and cheering passionately at women's professional soccer matches",
-        "Playing nostalgic video games and discussing internet history"
-      ],
-      interests: [
-        "Commercial growth and media visibility for women's sports leagues",
-        "Decentralized communities and digital ownership mechanics",
-        "Modern fatherhood and paid family leave policy advocacy",
-        "Early Roman history and classical civilization architecture"
-      ],
-      qualities: {
-        openness: 92,
-        conscientiousness: 90,
-        extraversion: 93,
-        agreeableness: 91,
-        neuroticism: 21,
-        communicationStyle: "Enthusiastic, charismatic, supportive, witty",
-        loveLanguage: "Acts of Service & Quality Time",
-        greenFlags: ["Proud cheerleader for partner", "High energy", "Great with kids"],
-        dealbreakers: ["Cynicism towards sports", "Elitism", "Lack of enthusiasm"],
-        idealDate: "Front-row seats at a thrilling sports match with hot dogs and beer, followed by exploring vintage arcade and trading card shops."
-      }
-    }
-  },
-  {
-    id: "grace-beverley",
-    name: "Grace Beverley",
-    gender: "female",
-    age: 28,
-    location: "London, UK",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/grace-beverley/",
-    instagramUrl: "https://www.instagram.com/gracebeverley/",
-    instagramHandle: "@gracebeverley",
-    linkedinHandle: "grace-beverley",
-    tagline: "Founder & CEO at TALA & Shreddy | Author of 'Working Hard, Hardly Working'",
-    sources: {
-      linkedin: {
-        headline: "Founder and CEO at TALA & Shreddy",
-        company: "TALA",
-        industry: "Sustainable Activewear, Consumer Retail & Fitness",
-        education: "University of Oxford (Music)",
-        summary: "Forbes 30 Under 30 founder disrupting fast fashion with sustainable activewear. Host of Working Hard, Hardly Working podcast.",
-        skills: ["Sustainable Supply Chain", "D2C Brand Growth", "Author", "Time Management", "Fitness Coaching"]
-      },
-      instagram: {
-        bio: "Founder @wearetala @shreddy. Author & Podcaster. London life & dog mom.",
-        postVibes: ["London fashion shoots", "Gym workouts & PRs", "Cozy London pub roasts", "Dog walks in Hampstead Heath"],
-        aesthetic: "London chic, earthy gym tones, editorial fashion framing, candid humor",
-        interestsKeywords: ["Sustainable Fashion", "Strength Training", "Podcasting", "Sunday Roasts", "London Dogs"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Grace-Grit",
-      agentPersona: "Ambitious London entrepreneur who pairs high-velocity business acumen with pragmatic work-life boundaries, fitness, and British dry humor.",
-      needs: [
-        "A partner who understands heavy workloads but strictly honors disconnecting on weekends",
-        "Someone who loves staying active, lifting weights, and eating hearty Sunday roasts",
-        "Dry British banter, emotional transparency, and zero games",
-        "An independent driver with their own passions and clear life vision"
-      ],
-      hobbies: [
-        "Heavy strength training and progressive overload workouts",
-        "Long weekend walks with dogs across Hampstead Heath",
-        "Hunting for cozy British pubs with roaring fireplaces and roast beef",
-        "Playing classical piano pieces to decompress from business meetings"
-      ],
-      interests: [
-        "Circularity in consumer fashion and closed-loop fabric technology",
-        "Productivity psychology and dismantling toxic hustle culture",
-        "Podcast storytelling and deep-dive founder interviews",
-        "Modern interior design combining Georgian heritage with contemporary art"
-      ],
-      qualities: {
-        openness: 89,
-        conscientiousness: 97,
-        extraversion: 88,
-        agreeableness: 86,
-        neuroticism: 26,
-        communicationStyle: "Fast, witty, practical, delightfully candid",
-        loveLanguage: "Quality Time & Physical Touch",
-        greenFlags: ["High ambition", "Good banter", "Appreciates fitness routine"],
-        dealbreakers: ["Lazy excuses", "Poor time management", "Lack of humor"],
-        idealDate: "Morning gym session hitting personal records together, followed by a cozy pub lunch by the fire with great wine."
-      }
-    }
-  },
-  {
-    id: "marques-brownlee",
-    name: "Marques Brownlee",
-    gender: "male",
-    age: 31,
-    location: "New York / New Jersey",
-    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/mkbhd/",
-    instagramUrl: "https://www.instagram.com/mkbhd/",
-    instagramHandle: "@mkbhd",
-    linkedinHandle: "mkbhd",
-    tagline: "Creator & Founder at MKBHD | Professional Ultimate Frisbee Player",
-    sources: {
-      linkedin: {
-        headline: "Content Creator, Host & Producer at MKBHD",
-        company: "MKBHD / Vox Media",
-        industry: "Consumer Electronics, Digital Media, Industrial Design",
-        education: "Stevens Institute of Technology (Business & Tech)",
-        summary: "Creator of MKBHD, Studio, and Waveform podcast. World-class ultimate frisbee player (New York Empire). Obsessed with crisp aesthetics and camera craft.",
-        skills: ["Cinematography", "Tech Journalism", "Video Production", "Ultimate Frisbee", "Industrial Design Review"]
-      },
-      instagram: {
-        bio: "Quality tech videos. Professional Ultimate frisbee player for NY Empire.",
-        postVibes: ["Matte black tech setups", "Ultimate frisbee tournament layouts", "Supercar road trips", "Cinematic RED camera rigs"],
-        aesthetic: "Crisp matte black and red accents, razor-sharp bokeh, athletic intensity",
-        interestsKeywords: ["Matte Black Everything", "Ultimate Frisbee", "Electric Vehicles", "Cameras & Optics", "Sneakers"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Marques-Resolution",
-      agentPersona: "Ultra-composed, laser-focused creator with an athletic heart, impeccable aesthetic standards, and a warm, grounded demeanor.",
-      needs: [
-        "A genuine, low-drama partner who values peace, consistency, and authenticity",
-        "Someone who appreciates clean aesthetics, high craftsmanship, and outdoor sports",
-        "Understanding of intense production cycles balanced with calm weekend downtime",
-        "Mutual respect for fitness, healthy competition, and personal space"
-      ],
-      hobbies: [
-        "Playing professional ultimate frisbee matches and high-intensity sprint training",
-        "Testing high-end automotive track cars and EV tech on open roads",
-        "Color grading 8K footage and tinkering with cinematic optical lenses",
-        "Collecting clean, minimalist sneakers and matte-black lifestyle accessories"
-      ],
-      interests: [
-        "The convergence of consumer silicon, optics, and display technology",
-        "Biomechanical athletic efficiency and team sports psychology",
-        "Clean energy transitions and future mobility design",
-        "Electronic hip-hop beats and crisp audio mixing"
+        "Democratizing elite computer science education globally",
+        "The cognitive psychology of pattern recognition and problem solving",
+        "Sneaker design ergonomics and urban streetwear aesthetics",
+        "Early morning espresso rituals and fitness nutrition"
       ],
       qualities: {
         openness: 91,
-        conscientiousness: 96,
-        extraversion: 78,
-        agreeableness: 92,
-        neuroticism: 14,
-        communicationStyle: "Calm, articulate, measured, subtly witty",
-        loveLanguage: "Quality Time & Calm Presence",
-        greenFlags: ["Grounded character", "Active lifestyle", "Appreciation for craftsmanship"],
-        dealbreakers: ["Clout chasing", "High drama", "Chronic tardiness"],
-        idealDate: "Scenic canyon drive in a great EV, stopping for top-tier artisanal burgers, and catching golden hour views overlooking the city."
-      }
-    }
-  },
-  {
-    id: "padmasree-warrior",
-    name: "Padmasree Warrior",
-    gender: "female",
-    age: 63,
-    location: "Palo Alto, CA",
-    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/padmasree/",
-    instagramUrl: "https://www.instagram.com/padmasree/",
-    instagramHandle: "@padmasree",
-    linkedinHandle: "padmasree",
-    tagline: "Founder & CEO at Fable | Former CTO of Cisco & Motorola | Board Director",
-    sources: {
-      linkedin: {
-        headline: "Founder & CEO at Fable | Board of Directors Microsoft & Spotify",
-        company: "Fable",
-        industry: "Social Reading, Enterprise Tech, Software Infrastructure",
-        education: "Cornell University (Chemical Engineering, MS); IIT Delhi (BTech)",
-        summary: "Tech executive, engineer, and artist. Former Chief Technology Officer of Cisco and Motorola. Passionate about mental wellness, literature, and mentorship.",
-        skills: ["Engineering Leadership", "Corporate Governance", "Literary Curation", "Fine Arts Painting", "AI Strategy"]
-      },
-      instagram: {
-        bio: "Founder/CEO @fable. Former CTO Cisco/Motorola. Painter, poet, avid reader. Board member @microsoft @spotify.",
-        postVibes: ["Acrylic landscape paintings", "Book recommendations & poetry", "Silicon Valley gardens", "Art museum visits"],
-        aesthetic: "Serene botanical greens, rich acrylic brushstrokes, book stacks and tea mugs",
-        interestsKeywords: ["Contemporary Fiction", "Oil & Acrylic Painting", "Poetry", "Gardening", "Mindfulness"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Padma-Sage",
-      agentPersona: "Deeply cultured, intellectually profound engineering pioneer who bridges high-level executive wisdom with poetry, painting, and mindfulness.",
-      needs: [
-        "A partner of intellectual depth and cultural curiosity who values deep conversation",
-        "Appreciation for contemplative arts (poetry, painting, literature, classical arts)",
-        "Emotional grace, mutual dignity, and serene emotional warmth",
-        "A peaceful shared life punctuated by garden walks, literature, and good tea"
-      ],
-      hobbies: [
-        "Painting large-format abstract canvases in her home art studio",
-        "Curating interactive book clubs and reading contemporary world literature",
-        "Cultivating heirloom roses and Japanese maples in the garden",
-        "Writing meditative poetry and practicing mindful breathwork"
-      ],
-      interests: [
-        "The impact of storytelling on mental wellness and social cohesion",
-        "Ethical AI governance and global technology leadership",
-        "Intersection of chemical engineering principles and culinary science",
-        "Comparative philosophy and eastern contemplative traditions"
-      ],
-      qualities: {
-        openness: 97,
-        conscientiousness: 95,
-        extraversion: 76,
-        agreeableness: 93,
-        neuroticism: 16,
-        communicationStyle: "Poetic, wise, deeply listening, dignified",
-        loveLanguage: "Quality Time & Meaningful Conversations",
-        greenFlags: ["Love of literature", "Emotional maturity", "Calm presence"],
-        dealbreakers: ["Superficial chatter", "Arrogance", "Disregard for art"],
-        idealDate: "Afternoon walking through an arboretum discussing contemporary world literature, followed by a quiet tea ceremony."
-      }
-    }
-  },
-  {
-    id: "guillermo-rauch",
-    name: "Guillermo Rauch",
-    gender: "male",
-    age: 34,
-    location: "San Francisco, CA",
-    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/rauchg/",
-    instagramUrl: "https://www.instagram.com/rauchg/",
-    instagramHandle: "@rauchg",
-    linkedinHandle: "rauchg",
-    tagline: "CEO at Vercel | Creator of Next.js & Socket.io",
-    sources: {
-      linkedin: {
-        headline: "CEO and Founder at Vercel",
-        company: "Vercel",
-        industry: "Cloud Infrastructure, Developer Experience, Web",
-        education: "Self-taught open-source engineer (Argentina)",
-        summary: "Building the global platform for the web. Creator of Next.js, Socket.io, and Mongoose. Passionate about speed, zero-latency experiences, and minimalism.",
-        skills: ["Web Performance", "Cloud Architecture", "Next.js", "Developer Tools", "Distributed Systems"]
-      },
-      instagram: {
-        bio: "CEO @vercel. Making the web faster. Yerba mate, running, SF.",
-        postVibes: ["Morning Yerba Mate gourds", "Golden Gate Bridge runs", "Minimalist glass architecture", "Next.js Conf stages"],
-        aesthetic: "Monochrome black/white, geometric lines, crisp morning sunlight, mate gourds",
-        interestsKeywords: ["Yerba Mate", "Long Distance Running", "Minimalism", "High-Speed Web", "Architecture"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Rauch-Speed",
-      agentPersona: "Hyper-focused, elegant web pioneer who values velocity, craftsmanship, morning endurance runs, and authentic Argentine mate rituals.",
-      needs: [
-        "A partner who values crisp clarity, high standards, and vibrant living",
-        "Shared love for morning fitness rituals, runs, and healthy fueling",
-        "A peaceful home atmosphere free of unnecessary friction or clutter",
-        "Mutual drive to build things that leave a lasting mark on culture"
-      ],
-      hobbies: [
-        "Early morning 10K runs across the Presidio and Golden Gate trails",
-        "Brewing traditional Argentine yerba mate with ceremonial bombilla",
-        "Analyzing latency and interface speed of digital and physical systems",
-        "Reading historical biographies of industrial pioneers and mathematicians"
-      ],
-      interests: [
-        "The aesthetics of speed: why fast things feel inherently magical",
-        "Distributed cloud computing at the edge of the physical world",
-        "Clean Scandinavian and Japanese minimalist interior design",
-        "Latin American literary magic realism and poetry"
-      ],
-      qualities: {
-        openness: 94,
         conscientiousness: 98,
-        extraversion: 79,
-        agreeableness: 85,
-        neuroticism: 18,
-        communicationStyle: "Concise, visionary, sharp, deeply enthusiastic",
-        loveLanguage: "Quality Time & Mutual Growth",
-        greenFlags: ["Precision", "Enthusiasm for fitness", "Love of simplicity"],
-        dealbreakers: ["Procrastination", "Excessive clutter", "Pessimism"],
-        idealDate: "Sunrise run along the ocean bluffs, sharing fresh yerba mate, followed by breakfast discussing bold visions for the future."
+        extraversion: 84,
+        agreeableness: 92,
+        neuroticism: 16,
+        communicationStyle: "Structured, direct, intensely encouraging, grounded",
+        loveLanguage: "Acts of Service & Quality Time",
+        greenFlags: ["Disciplined habits", "Genuine kindness to learners", "Sense of humor"],
+        dealbreakers: ["Flakiness", "Lack of ambition", "Superficiality"],
+        idealDate: "Intense couples gym workout or outdoor run, followed by iced protein lattes and street food exploring vibrant city markets."
       }
     }
   },
   {
-    id: "codie-sanchez",
-    name: "Codie Sanchez",
-    gender: "female",
-    age: 38,
-    location: "Austin, TX",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/codiesanchez/",
-    instagramUrl: "https://www.instagram.com/codiesanchez/",
-    instagramHandle: "@codiesanchez",
-    linkedinHandle: "codiesanchez",
-    tagline: "Founder & CEO at Contrarian Thinking | Small Business Evangelist",
+    id: "love-babbar",
+    name: "Love Babbar",
+    gender: "male",
+    age: 29,
+    location: "Delhi NCR / Bengaluru, India",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/love-babbar-38ab2887/",
+    instagramUrl: "https://www.instagram.com/lovebabbar1/",
+    instagramHandle: "@lovebabbar1",
+    linkedinHandle: "love-babbar-38ab2887",
+    tagline: "Founder @ CodeHelp | ex-Software Engineer @ Amazon | Tech Educator",
     sources: {
       linkedin: {
-        headline: "Founder and CEO at Contrarian Thinking",
-        company: "Contrarian Thinking",
-        industry: "Private Equity, Main Street Business, Media",
-        education: "Georgetown University; Arizona State (Journalism)",
-        summary: "Invests in 'boring businesses' (car washes, laundromats, HVAC). Former Wall Street investor and conflict journalist turned entrepreneur.",
-        skills: ["Main Street M&A", "Cash Flow Analysis", "Financial Literacy", "Journalism", "Public Speaking"]
+        headline: "Founder at CodeHelp | ex-SDE at Amazon",
+        company: "CodeHelp",
+        industry: "Software Engineering, EdTech, Cloud Computing",
+        education: "Netaji Subhas Institute of Technology (NSIT Delhi)",
+        summary: "Former Amazon Software Development Engineer. Creator of CodeHelp platform empowering millions of software developers. Believes in discipline and community.",
+        skills: ["Distributed Systems", "Software Architecture", "Data Structures", "Career Mentorship", "Content Creation"]
       },
       instagram: {
-        bio: "Founder @contrarianthinking. Buying boring businesses. Freedom, cash flow & grit.",
-        postVibes: ["Ranch life in Texas", "Behind the scenes at commercial laundromats", "Gym workouts with kettlebells", "Leather boots & hats"],
-        aesthetic: "Western grit, leather textures, bold typography, unapologetic swagger",
-        interestsKeywords: ["Boring Businesses", "Kettlebell Workouts", "Texas Ranches", "Financial Freedom", "Bourbon"]
+        bio: "Founder CodeHelp. Engineer at heart. Fitness, road trips, family, good food & positive vibes.",
+        postVibes: ["Mountain road trips & scenic drives", "Fitness routines & morning workouts", "Family celebrations", "Motivational life thoughts"],
+        aesthetic: "Warm earthy tones, road trips with friends, authentic smiling portraits",
+        interestsKeywords: ["Road Trips", "Automotive & Driving", "Fitness", "Engineering Mindset", "Family Values"]
       }
     },
     analysis: {
-      agentName: "Agent Codie-Contrarian",
-      agentPersona: "Bold, fiercely independent, straight-talking investor who loves grit, practical financial freedom, Texas ranches, and great bourbon.",
+      agentName: "Agent Babbar-Resolve",
+      agentPersona: "Determined, deeply compassionate mentor and builder who believes in sheer hard work, family loyalty, long highway drives, and positive karma.",
       needs: [
-        "A strong, self-assured partner with thick skin who speaks their mind directly",
-        "Someone who loves physical fitness, outdoor life, and practical pragmatism",
-        "Zero tolerance for corporate jargon, fluff, or victim mentality",
-        "A partner who can debate fiercely over bourbon and laugh off differences"
+        "A partner with deep family orientation and steadfast loyalty",
+        "Shared appreciation for spontaneous road trips and peaceful nature escapes",
+        "Emotional maturity to navigate startup scaling pressures together",
+        "Warm, unpretentious communication with mutual encouragement"
       ],
       hobbies: [
-        "Heavy kettlebell and barbell strength training at 6 AM",
-        "Shooting clays and riding ATVs across Texas ranch land",
-        "Scouting small-town main streets for family-owned legacy businesses",
-        "Sipping aged bourbon by a crackling outdoor fire pit"
+        "Long highway drives and mountain road trips listening to indie music",
+        "Functional strength training and morning calisthenics",
+        "Exploring rustic highway dhabas and North Indian culinary delicacies",
+        "Reading life philosophies and mentoring grassroots students"
       ],
       interests: [
-        "The economic power of the blue-collar working class and Main Street America",
-        "Investigative journalism principles applied to business acquisitions",
-        "Stoic philosophy from Marcus Aurelius and Seneca",
-        "First-principles financial literacy for everyday people"
+        "Scalable system design and software craft",
+        "The sociology of educational empowerment in tier-2 and tier-3 cities",
+        "Automotive dynamics and road touring gear",
+        "Mindset coaching and overcoming self-doubt"
       ],
       qualities: {
         openness: 88,
         conscientiousness: 96,
-        extraversion: 92,
-        agreeableness: 78,
-        neuroticism: 15,
-        communicationStyle: "Direct, punchy, pragmatic, magnetic, humorous",
-        loveLanguage: "Actions Over Words & Deep Loyalty",
-        greenFlags: ["Direct honesty", "Financial discipline", "Sense of adventure"],
-        dealbreakers: ["Passive-aggressiveness", "Victim mindset", "Laziness"],
-        idealDate: "Shooting clays or off-roading on the ranch, followed by smoked Texas barbecue and fireside bourbon under the stars."
-      }
-    }
-  },
-  {
-    id: "shou-zi-chew",
-    name: "Shou Zi Chew",
-    gender: "male",
-    age: 42,
-    location: "Singapore",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/shou-zi-chew/",
-    instagramUrl: "https://www.instagram.com/shou.chew/",
-    instagramHandle: "@shou.chew",
-    linkedinHandle: "shou-zi-chew",
-    tagline: "CEO at TikTok | Global Technology Leader",
-    sources: {
-      linkedin: {
-        headline: "Chief Executive Officer at TikTok",
-        company: "TikTok / ByteDance",
-        industry: "Global Media, Algorithm Innovation, Mobile Tech",
-        education: "Harvard Business School (MBA); University College London (Economics)",
-        summary: "Global executive leading the cultural pulse of short-form entertainment and creator economies across 150+ countries.",
-        skills: ["Global Media Strategy", "Algorithmic Distribution", "Cross-Cultural Management", "Economics", "Leadership"]
-      },
-      instagram: {
-        bio: "CEO of TikTok. Proud dad. Singapore born and raised.",
-        postVibes: ["Behind the scenes at global creator events", "Family moments in Singapore", "Marathon runs in nature", "Food markets in Asia"],
-        aesthetic: "Polished, international cosmopolitan, warm smiles, vibrant cultural markets",
-        interestsKeywords: ["Global Street Food", "Marathons", "Creator Culture", "Family Time", "Singapore Heritage"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Shou-Cosmo",
-      agentPersona: "Impeccably composed, multilingual global diplomat with high emotional poise, deep love for street food, and family values.",
-      needs: [
-        "A grounded, discreet, emotionally secure partner who thrives in global environments",
-        "Appreciation for cross-cultural nuances, Asian heritage, and diverse traditions",
-        "A shared priority for family privacy and peaceful domestic sanctuary",
-        "Someone who enjoys humble pleasures like street food hawker stalls as much as galas"
-      ],
-      hobbies: [
-        "Exploring traditional Singaporean hawker stalls for laksa and chicken rice",
-        "Running long-distance circuits through tropical botanical gardens",
-        "Watching European football matches on weekend mornings",
-        "Reading global economic history and geopolitical strategy"
-      ],
-      interests: [
-        "How cultural memes transcend geographical and linguistic borders",
-        "The mathematics of recommendation engines and content discovery",
-        "Urban planning and green architecture in modern megacities",
-        "Southeast Asian culinary history and spice trade routes"
-      ],
-      qualities: {
-        openness: 93,
-        conscientiousness: 97,
         extraversion: 85,
-        agreeableness: 92,
-        neuroticism: 14,
-        communicationStyle: "Calm, polite, highly articulate, observant",
-        loveLanguage: "Quality Time & Thoughtful Attentiveness",
-        greenFlags: ["Cross-cultural respect", "High poise under pressure", "Humility"],
-        dealbreakers: ["Impulsiveness", "Loud boastfulness", "Disrespect for privacy"],
-        idealDate: "Quiet evening stroll through Singapore's Gardens by the Bay, sampling authentic hawker center delicacies and laughing about childhood memories."
+        agreeableness: 94,
+        neuroticism: 18,
+        communicationStyle: "Empathetic, brotherly, motivating, deeply genuine",
+        loveLanguage: "Words of Affirmation & Devoted Presence",
+        greenFlags: ["Warmheartedness", "Loyalty to roots", "Work ethic"],
+        dealbreakers: ["Deceit", "Disrespect towards elders", "Pessimism"],
+        idealDate: "Sunrise drive to a serene mountain overlook, drinking hot chai and sharing personal childhood memories and dreams."
       }
     }
   },
   {
-    id: "dr-julie-smith",
-    name: "Dr. Julie Smith",
+    id: "shradha-khapra",
+    name: "Shradha Khapra",
     gender: "female",
-    age: 41,
-    location: "Hampshire, UK",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/dr-julie-smith-1a86b119b/",
-    instagramUrl: "https://www.instagram.com/drjulie/",
-    instagramHandle: "@drjulie",
-    linkedinHandle: "dr-julie-smith-1a86b119b",
-    tagline: "Clinical Psychologist & Sunday Times Bestselling Author",
+    age: 26,
+    location: "Delhi / Bengaluru, India",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/shradha-khapra/",
+    instagramUrl: "https://www.instagram.com/shradhakhapra/",
+    instagramHandle: "@shradhakhapra",
+    linkedinHandle: "shradha-khapra",
+    tagline: "Co-founder @ Apna College & Delta | ex-SWE @ Microsoft | Educator",
     sources: {
       linkedin: {
-        headline: "Clinical Psychologist, Author & Mental Health Educator",
-        company: "Private Practice / Penguin Books",
-        industry: "Clinical Psychology, Mental Health Education",
-        education: "University of Exeter (Doctorate in Clinical Psychology)",
-        summary: "Demystifying psychotherapy tools for everyday life. Author of 'Why Has Nobody Told Me This Before?'. Passionate about emotional resilience and relationships.",
-        skills: ["Cognitive Behavioral Therapy", "Attachment Theory", "Mental Health Literacy", "Public Psychoeducation", "Empathy"]
+        headline: "Co-founder at Apna College | ex-Software Engineer at Microsoft",
+        company: "Apna College",
+        industry: "Computer Science, EdTech, Web Development",
+        education: "Netaji Subhas University of Technology (NSUT)",
+        summary: "Co-founder of Apna College. Former Microsoft Software Engineer. Leading the charge to make programming education intuitive, fun, and accessible for everyone.",
+        skills: ["Web Architecture", "Frontend Systems", "Software Pedagogy", "Community Scaling", "Creative Direction"]
       },
       instagram: {
-        bio: "Clinical Psychologist. Author of #1 Bestseller 'Why Has Nobody Told Me This Before?'. Simplifying mental health.",
-        postVibes: ["Visual psychology demonstrations", "Woodland walks with dogs in Hampshire", "Cozy wool sweaters and tea", "Family kitchen talks"],
-        aesthetic: "Warm earthen tones, calming pastel graphics, soft natural light, comforting presence",
-        interestsKeywords: ["Emotional Regulation", "Attachment Styles", "Nature Therapy", "Tea & Woolens", "Books"]
+        bio: "Co-Founder @apnacollege. Teacher. Life, books, travel, coffee, and finding magic in simple things.",
+        postVibes: ["Bright cozy reading nooks", "Travel snaps from coastal cities", "Specialty coffee aesthetic", "Warm heartfelt student interactions"],
+        aesthetic: "Soft pastel lighting, warm wooden desks, books, aesthetic stationery, radiant smiles",
+        interestsKeywords: ["Reading & Novels", "Specialty Coffee", "Coastal Travel", "Teaching", "Minimalist Living"]
       }
     },
     analysis: {
-      agentName: "Agent Julie-Empathy",
-      agentPersona: "Profoundly empathic clinical psychologist who brings deep psychological insight, warmth, vulnerability, and nature walks to romance.",
+      agentName: "Agent Shradha-Clarity",
+      agentPersona: "Brilliant, radiant tech pioneer with infectious curiosity, an eye for aesthetic simplicity, a love for literature, and warm emotional empathy.",
       needs: [
-        "A partner capable of emotional openness, healthy self-reflection, and secure attachment",
-        "A quiet, tranquil home life grounded in nature, cozy fires, and meaningful presence",
-        "Someone who views vulnerability as strength rather than a weakness",
-        "High mutual empathy and thoughtful conversational pacing"
+        "An emotionally articulate partner who celebrates independent female ambition",
+        "A shared love for quiet Sunday mornings with books, coffee, and reflective conversation",
+        "Mutual respect for creative craft and community impact",
+        "Low drama, playful banter, and consistent emotional grounding"
       ],
       hobbies: [
-        "Long forest walks through the Hampshire countryside with her golden retriever",
-        "Baking artisanal sourdough bread and brewing herbal teas",
-        "Reading psychological fiction and interpersonal neuroscience journals",
-        "Yoga and mindful grounding exercises outdoors"
+        "Curating literary fiction and psychological essay collections",
+        "Exploring artisan pour-over cafes and rating espresso beans",
+        "Practicing mindful journaling and watercolor sketches",
+        "Quiet seaside walks during coastal travel escapes"
       ],
       interests: [
-        "Attachment theory and neurobiology of romantic pair bonding",
-        "Democratizing evidence-based psychotherapy techniques globally",
-        "The restorative physiological benefits of nature immersion (shinrin-yoku)",
-        "Childhood developmental psychology and emotional safety"
-      ],
-      qualities: {
-        openness: 94,
-        conscientiousness: 92,
-        extraversion: 78,
-        agreeableness: 98,
-        neuroticism: 19,
-        communicationStyle: "Deeply empathic, validating, soothing, perceptive",
-        loveLanguage: "Words of Affirmation & Emotional Attunement",
-        greenFlags: ["Self-awareness", "Capacity for active listening", "Gentleness"],
-        dealbreakers: ["Defensiveness", "Emotional stonewalling", "Cynicism toward mental health"],
-        idealDate: "Scenic afternoon walk through autumn woodland trails with the dog, followed by tea by the fireplace sharing childhood formative memories."
-      }
-    }
-  },
-  {
-    id: "amjad-masad",
-    name: "Amjad Masad",
-    gender: "male",
-    age: 37,
-    location: "San Francisco, CA",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/amjadmasad/",
-    instagramUrl: "https://www.instagram.com/amasad/",
-    instagramHandle: "@amasad",
-    linkedinHandle: "amjadmasad",
-    tagline: "Founder & CEO at Replit | Making Software Creation Accessible to the Next Billion",
-    sources: {
-      linkedin: {
-        headline: "Founder & CEO at Replit",
-        company: "Replit",
-        industry: "Cloud Development, AI Coding Agents, Software Creation",
-        education: "Princess Sumaya University for Technology (Computer Science)",
-        summary: "Pioneering cloud computing and AI software agents. Believes in human agency, first-principles thinking, and democratizing creation.",
-        skills: ["AI Systems", "Cloud Runtimes", "Developer Tools", "First Principles", "Philosophy"]
-      },
-      instagram: {
-        bio: "Founder/CEO @replit. Hacker, builder, philosophy, weightlifting, family.",
-        postVibes: ["Lifting heavy weights in home gym", "Family road trips in California", "Vintage computing retrospectives", "SF coffee chats"],
-        aesthetic: "Maker workshop grit, warm California sunlight, home gym barbells",
-        interestsKeywords: ["Weightlifting", "First-Principles Thinking", "Vintage Computing", "Philosophy", "Espresso"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Amjad-Builder",
-      agentPersona: "First-principles hacker philosopher who combines heavy deadlifts, deep intellectual curiosity, and an unwavering belief in human agency.",
-      needs: [
-        "A fierce, independent thinker who loves dissecting philosophical ideas and life models",
-        "Someone who respects dedicated discipline in both fitness and intellectual craft",
-        "Warm family loyalty and a steadfast moral compass",
-        "A partner who is excited by building the future rather than settling into comfort"
-      ],
-      hobbies: [
-        "Heavy powerlifting (deadlifts and squats) in his garage gym",
-        "Pulling precise double-shot espresso on manual lever machines",
-        "Reading classical Greco-Roman philosophy and Islamic golden age science",
-        "Experimenting with retro microcomputers and early programming paradigms"
-      ],
-      interests: [
-        "The expansion of human agency and creation through autonomous agents",
-        "Historical origins of the scientific revolution and Enlightenment",
-        "Strength athletics and physiological longevity protocols",
-        "Middle Eastern culinary traditions and bread making"
-      ],
-      qualities: {
-        openness: 95,
-        conscientiousness: 96,
-        extraversion: 76,
-        agreeableness: 84,
-        neuroticism: 20,
-        communicationStyle: "First-principles, candid, intense, deeply sincere",
-        loveLanguage: "Quality Time & Mutual Respect",
-        greenFlags: ["Intellectual independence", "Discipline", "Curiosity about how things work"],
-        dealbreakers: ["Intellectual laziness", "Passivity", "Victim mindset"],
-        idealDate: "Manual espresso brewing workshop together, followed by an evening hike debating consciousness and personal agency."
-      }
-    }
-  },
-  {
-    id: "nikita-bier",
-    name: "Nikita Bier",
-    gender: "male",
-    age: 35,
-    location: "Miami, FL",
-    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/nikitabier/",
-    instagramUrl: "https://www.instagram.com/nikitabier/",
-    instagramHandle: "@nikitabier",
-    linkedinHandle: "nikitabier",
-    tagline: "Founder at tbh & Gas (both acquired) | Consumer App Growth Genius",
-    sources: {
-      linkedin: {
-        headline: "Founder at tbh (Acquired by Meta) & Gas (Acquired by Discord)",
-        company: "Solo Entrepreneur & Angel Investor",
-        industry: "Consumer Social, Viral Loops, Product Psychology",
-        education: "UC Berkeley (Business Administration)",
-        summary: "Built two #1 App Store social phenomena (tbh and Gas). Master of viral mechanics, positive social validation, and product loops.",
-        skills: ["Consumer Viral Growth", "App Store Optimization", "Human Psychology", "Humor Writing", "Product Design"]
-      },
-      instagram: {
-        bio: "Built @tbhapp (sold to Meta) & @gasapp (sold to Discord). Viral growth, satirical tech memes, Miami sunsets.",
-        postVibes: ["Satirical tech founder memes", "Miami waterfront speedboats", "App Store ranking leaderboards", "Fine dining with friends"],
-        aesthetic: "Vibrant Miami neon, playful satire, tongue-in-cheek luxury, quick wit",
-        interestsKeywords: ["Viral Loops", "Memes & Satire", "Miami Ocean", "App Psychology", "Fine Dining"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Nikita-Viral",
-      agentPersona: "Razor-sharp, hysterically witty consumer psychology maven who understands human social dynamics better than anyone and loves playful banter.",
-      needs: [
-        "A partner with rapid, biting wit who can dish out sarcasm and roast each other playfully",
-        "Someone who sees right through superficial status signaling and appreciates the absurdity of life",
-        "Spontaneous travel, great food, and living life on the front foot",
-        "A warm heart beneath the clever comedic exterior"
-      ],
-      hobbies: [
-        "Crafting viral satirical commentary on tech culture that goes instantly viral",
-        "Cruising along Biscayne Bay at sunset with good music",
-        "Dissecting teenager app trends and reverse-engineering viral mechanics",
-        "Trying avant-garde tasting menus and rating cocktail bars"
-      ],
-      interests: [
-        "Evolutionary psychology of compliments, status, and teenage peer validation",
-        "Behavioral economics of frictionless software onboarding",
-        "Stand-up comedy writing and comedic timing",
-        "Contemporary art market dynamics and meme culture"
-      ],
-      qualities: {
-        openness: 92,
-        conscientiousness: 91,
-        extraversion: 90,
-        agreeableness: 80,
-        neuroticism: 25,
-        communicationStyle: "Irreverent, sharp, hysterically funny, perceptive",
-        loveLanguage: "Humor, Words of Affirmation & Shared Adventure",
-        greenFlags: ["Quick wit", "Can take a joke", "Doesn't take herself too seriously"],
-        dealbreakers: ["Thin skin", "Pretentious virtue-signaling", "Boring conversation"],
-        idealDate: "Speedboat ride across Biscayne Bay followed by a buzzing rooftop cocktail lounge trading hilarious hot takes on the universe."
-      }
-    }
-  },
-  {
-    id: "pieter-levels",
-    name: "Pieter Levels",
-    gender: "male",
-    age: 39,
-    location: "Global Nomad / Amsterdam / Bali",
-    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/pieterlevels/",
-    instagramUrl: "https://www.instagram.com/levelsio/",
-    instagramHandle: "@levelsio",
-    linkedinHandle: "pieterlevels",
-    tagline: "Founder of Nomad List, Remote OK, PhotoAI | Legendary Solo Bootstrapper",
-    sources: {
-      linkedin: {
-        headline: "Founder at Nomad List & Remote OK",
-        company: "Levels.io",
-        industry: "Digital Nomad Infrastructure, Generative AI, Bootstrapping",
-        education: "Utrecht University (Business Administration)",
-        summary: "The pioneer of solo internet bootstrapping. Running multi-million dollar software empires entirely solo from a laptop across the globe.",
-        skills: ["Solo Bootstrapping", "Vanilla PHP/JS", "AI Image Generation", "Remote Work Culture", "Minimalist Living"]
-      },
-      instagram: {
-        bio: "Bootstrapping software from my backpack. Bali, Tokyo, Lisbon, Bangkok. Cat lover, fitness, cyberpunk vibes.",
-        postVibes: ["Tropical coffee shop laptop setups", "Tokyo cyberpunk alleyways at night", "Gym progress in Bali", "Stray cats in Europe"],
-        aesthetic: "Cyberpunk neon, tropical greenery, minimalist backpack gear, raw honesty",
-        interestsKeywords: ["Digital Nomadism", "Tokyo Nights", "Calisthenics", "Street Cats", "Single Laptop Setup"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Levels-Nomad",
-      agentPersona: "Ultra-independent, pragmatic cyberpunk nomad who loves freedom, shipping fast with simple tools, calisthenics, and tropical cafes.",
-      needs: [
-        "A fiercely independent, low-maintenance partner who loves traveling light and exploring the globe",
-        "Shared excitement for living in different cities (Tokyo, Lisbon, Bali, Amsterdam)",
-        "Zero pretension: appreciation for street food, local gyms, and simple laptop work",
-        "Deep personal space and freedom balanced with affectionate companionship"
-      ],
-      hobbies: [
-        "Calisthenics and gym workouts in open-air gyms in Southeast Asia",
-        "Wandering nocturnal neon-lit backstreets in Tokyo with a camera",
-        "Feeding and petting neighborhood cats in Lisbon and Chiang Mai",
-        "Shipping full-stack software products in 48 hours with minimal code"
-      ],
-      interests: [
-        "Autonomous generative AI applications for everyday consumer photography",
-        "The economics of sovereign remote living and global mobility",
-        "Cyberpunk aesthetic design and Japanese urban infrastructure",
-        "Minimalism: living out of a single 35L backpack"
+        "Pedagogical psychology: making complex technical abstractions intuitive",
+        "Women in technology leadership and grassroots engineering access",
+        "Minimalist aesthetic design in software and living spaces",
+        "Classic literature and reflective narrative writing"
       ],
       qualities: {
         openness: 96,
-        conscientiousness: 93,
-        extraversion: 72,
-        agreeableness: 82,
-        neuroticism: 28,
-        communicationStyle: "Raw, brutally honest, pragmatic, humorous, unconventional",
-        loveLanguage: "Shared Freedom & Quality Adventures",
-        greenFlags: ["Loves to travel light", "Independent spirit", "Sense of humor"],
-        dealbreakers: ["High-maintenance drama", "Need for static conventional living", "Bureaucratic mindset"],
-        idealDate: "Renting electric scooters in Tokyo to explore secret ramen shops, ending the night at an 80s synth-wave bar."
+        conscientiousness: 95,
+        extraversion: 86,
+        agreeableness: 96,
+        neuroticism: 19,
+        communicationStyle: "Articulate, warm, inspiring, playfully intelligent",
+        loveLanguage: "Quality Time & Emotional Attunement",
+        greenFlags: ["Intellectual curiosity", "Respect for boundaries", "Gentle humor"],
+        dealbreakers: ["Arrogance", "Patronizing tone", "Lack of curiosity"],
+        idealDate: "Browsing independent bookstores in an artsy neighborhood, followed by pour-over coffees discussing our favorite authors."
       }
     }
   },
   {
-    id: "caspar-lee",
-    name: "Caspar Lee",
+    id: "aman-dhattarwal",
+    name: "Aman Dhattarwal",
     gender: "male",
-    age: 30,
-    location: "London, UK",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/caspar-lee/",
-    instagramUrl: "https://www.instagram.com/caspar_lee/",
-    instagramHandle: "@caspar_lee",
-    linkedinHandle: "caspar-lee",
-    tagline: "Co-founder at Creator Ventures | Entrepreneur & Former YouTube Icon",
+    age: 27,
+    location: "Delhi, India",
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/dhattarwalaman/",
+    instagramUrl: "https://www.instagram.com/amandhattarwal/",
+    instagramHandle: "@amandhattarwal",
+    linkedinHandle: "dhattarwalaman",
+    tagline: "Founder @ Apni Kaksha & Apna College | TEDx Speaker | Youth Mentor",
     sources: {
       linkedin: {
-        headline: "Co-founder & Managing Partner at Creator Ventures",
-        company: "Creator Ventures",
-        industry: "Venture Capital, Creator Economy, Consumer Brands",
-        education: "Self-taught creator & investor (South Africa / UK)",
-        summary: "Built massive global digital audience with 7M+ subscribers. Transitioned into venture capital investing in next-generation creator-led tech.",
-        skills: ["Creator Economy", "Venture Investing", "Media Production", "Storytelling", "Brand Partnerships"]
+        headline: "Founder at Apni Kaksha | Educator & Entrepreneur",
+        company: "Apni Kaksha",
+        industry: "EdTech, Youth Empowerment, Media Production",
+        education: "Netaji Subhas Institute of Technology (NSIT)",
+        summary: "Built educational platforms reaching over 10 million students. Passionate about empowering Indian youth with high-agency mindsets and career clarity.",
+        skills: ["Public Speaking", "EdTech Innovation", "Video Production", "Curriculum Design", "Team Leadership"]
       },
       instagram: {
-        bio: "Co-founder @creatorventures. South African in London. Fiance, investor, marathon runner.",
-        postVibes: ["London marathon finish lines", "African safari trips", "Founder dinners in Soho", "Romantic partner travel snaps"],
-        aesthetic: "Golden warm hour, London tailored suits, safari landscapes, genuine smiles",
-        interestsKeywords: ["Marathon Running", "African Safaris", "London Dining", "Creator Tech", "Charity"]
+        bio: "Founder Apni Kaksha & Apna College. Marathon runner, fitness enthusiast, brother, student for life.",
+        postVibes: ["Marathon training & long-distance running", "Behind the scenes in recording studios", "Travel with friends", "Motivational stage speeches"],
+        aesthetic: "High energy, athletic running tracks, studio lighting, brotherly warmth",
+        interestsKeywords: ["Marathon Running", "Youth Mentorship", "Fitness Discipline", "Stage Speaking", "Indian Heritage"]
       }
     },
     analysis: {
-      agentName: "Agent Caspar-Venture",
-      agentPersona: "Charming, high-spirited South African entrepreneur in London with great comedic timing, athletic grit in marathon running, and genuine warmth.",
+      agentName: "Agent Aman-Ignite",
+      agentPersona: "High-octane, deeply mission-driven youth champion who combines athletic endurance (marathons) with tireless educational entrepreneurship and warmth.",
       needs: [
-        "A playful, empathetic partner who loves laughter and doesn't take social media too seriously",
-        "Shared passion for fitness challenges (running races, travel adventures)",
-        "Deep family orientation, warmth, and supportive communication",
-        "Appreciation for South African wildlife, braais, and London culture"
+        "A partner with high self-drive who shares an obsession with making a difference",
+        "Understanding of relentless schedules balanced with peaceful retreat weekends",
+        "Shared enthusiasm for fitness challenges (running, workouts, outdoor trails)",
+        "Deep emotional transparency, trust, and shared laughter"
       ],
       hobbies: [
-        "Training for international marathons across Europe",
-        "Planning wildlife safaris and conservation trips in South Africa",
-        "Hosting lively dinner parties for diverse entrepreneurs in London",
-        "Playing tennis and outdoor padel with friends"
+        "Long-distance marathon running and interval endurance training",
+        "Exploring historic Indian architecture and heritage sites",
+        "Testing advanced audio-visual studio production rigs",
+        "Reading biographies of visionary institution builders"
       ],
       interests: [
-        "The transformation of internet creators into institutional enterprise builders",
-        "Wildlife preservation and anti-poaching initiatives in southern Africa",
-        "Endurance running physiology and mental stamina training",
-        "Modern British comedy and podcast productions"
+        "Demographic dividend of India and high-impact educational scaling",
+        "Cardiovascular endurance physiology and training periodization",
+        "Oratory skills and rhetoric in public persuasion",
+        "Grassroots student community dynamics"
       ],
       qualities: {
-        openness: 90,
-        conscientiousness: 91,
-        extraversion: 93,
-        agreeableness: 94,
-        neuroticism: 20,
-        communicationStyle: "Charming, humorous, uplifting, socially gracious",
-        loveLanguage: "Words of Affirmation & Quality Time",
-        greenFlags: ["Self-deprecating humor", "Family-oriented", "High empathy"],
-        dealbreakers: ["Self-absorption", "Lack of warmth", "Pessimism"],
-        idealDate: "Morning padel tennis match followed by wandering Borough Market tasting artisanal pastries and a candlelit dinner in Covent Garden."
+        openness: 91,
+        conscientiousness: 97,
+        extraversion: 94,
+        agreeableness: 91,
+        neuroticism: 17,
+        communicationStyle: "Passionate, electrifying, sincere, high-energy",
+        loveLanguage: "Acts of Service & Words of Encouragement",
+        greenFlags: ["High energy", "Altruistic mission", "Love of physical fitness"],
+        dealbreakers: ["Cynicism", "Slothfulness", "Disloyalty"],
+        idealDate: "Sunrise stadium track run hitting personal bests, followed by breakfast overlooking a heritage park discussing future vision."
       }
     }
   },
   {
-    id: "sahil-bloom",
-    name: "Sahil Bloom",
+    id: "ranveer-allahbadia",
+    name: "Ranveer Allahbadia (BeerBiceps)",
     gender: "male",
-    age: 33,
-    location: "New York / Connecticut",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/sahilbloom/",
-    instagramUrl: "https://www.instagram.com/sahilbloom/",
-    instagramHandle: "@sahilbloom",
-    linkedinHandle: "sahilbloom",
-    tagline: "Author & Managing Partner at SRB Holdings | Host of Curiosity Chronicle",
+    age: 31,
+    location: "Mumbai, India",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/beerbiceps/",
+    instagramUrl: "https://www.instagram.com/beerbiceps/",
+    instagramHandle: "@beerbiceps",
+    linkedinHandle: "beerbiceps",
+    tagline: "Host of The Ranveer Show (TRS) | Co-founder Monk-E | Podcaster & Creator",
     sources: {
       linkedin: {
-        headline: "Managing Partner at SRB Holdings | Author of 'The 5 Types of Wealth'",
-        company: "The Curiosity Chronicle",
-        industry: "Media, Publishing, Private Equity, Wisdom Architecture",
-        education: "Stanford University (Economics & Sociology; Division 1 Baseball)",
-        summary: "Former private equity VP turned writer reaching 1M+ readers weekly. Championing life design, physical vitality, relationships, and holistic wealth.",
-        skills: ["Mental Models", "Life Design", "Personal Finance", "Baseball Coaching", "Storytelling"]
+        headline: "Co-founder at Monk Entertainment & Host of The Ranveer Show",
+        company: "Monk-E / BeerBiceps",
+        industry: "Digital Media, Podcasting, Talent Management, Venture",
+        education: "Dwarkadas J. Sanghvi College of Engineering (B.E. Electronics)",
+        summary: "Creator of India's #1 podcast 'The Ranveer Show'. Co-founder of Monk-E media enterprise. Passionate about spirituality, history, human psychology, and business.",
+        skills: ["Long-form Interviewing", "Media Architecture", "Spiritual Philosophy", "Talent Management", "Personal Branding"]
       },
       instagram: {
-        bio: "Author of The 5 Types of Wealth. Stanford baseball alum. Dad. Writing for curious minds.",
-        postVibes: ["Morning workouts with son", "Nature trail walks in New England", "Writing desk with notebook & coffee", "Wisdom framework diagrams"],
-        aesthetic: "Clean New England greenery, warm morning espresso, athletic vitality, wholesome family joy",
-        interestsKeywords: ["Life Design", "Morning Workouts", "Mental Models", "Specialty Coffee", "Baseball"]
+        bio: "Host of The Ranveer Show. Entrepreneur. Seeker of truth. Fitness, ancient history, meditation & Mumbai vibes.",
+        postVibes: ["Deep introspective studio portraits", "Meditation and temple visits", "Fitness lifting sessions", "Behind the scenes with global icons"],
+        aesthetic: "Moody cinematic studio lighting, spiritual Sanskrit symbols, disciplined gym physique, Mumbai sea views",
+        interestsKeywords: ["Spirituality & Meditation", "Ancient Indian History", "Fitness & Biohacking", "Deep Conversations", "Yeti & Space Mysteries"]
       }
     },
     analysis: {
-      agentName: "Agent Sahil-Curiosity",
-      agentPersona: "Wholesome, thoughtful philosopher-athlete dedicated to holistic wealth: time freedom, physical vitality, relationships, and intellectual curiosity.",
+      agentName: "Agent Ranveer-Cosmos",
+      agentPersona: "Inquisitive, spiritually attuned, high-energy media pioneer fascinated by ancient wisdom, cosmic mysteries, fitness discipline, and vulnerable human connection.",
       needs: [
-        "A partner who values personal growth, emotional health, and living with intentionality",
-        "A shared morning rhythm of fitness, outdoor fresh air, and mindful presence",
-        "Honest, vulnerable conversations about what truly matters in life beyond career",
-        "Deep loyalty, warmth, and shared appreciation for family rituals"
+        "A partner with spiritual depth who appreciates meditation, mindfulness, and the unseen",
+        "Someone who loves late-night conversations exploring psychology, aliens, and existence",
+        "A calm emotional anchor in Mumbai's chaotic media landscape",
+        "Mutual respect for fitness routines and mental wellness"
       ],
       hobbies: [
-        "Early morning cold showers and functional strength training",
-        "Taking long morning walking meetings outdoors in the woods",
-        "Writing long-form reflections in leather-bound journals with fountain pens",
-        "Hitting baseballs in the batting cages and playing catch"
+        "Daily morning pranayama, meditation, and chanting practices",
+        "Heavy bodybuilding workouts and metabolic conditioning",
+        "Studying ancient Indian scriptures, temple architecture, and military history",
+        "Late-night sea face drives in South Mumbai listening to meditative soundscapes"
       ],
       interests: [
-        "The architecture of habits: how small compounding daily rituals shape a lifetime",
-        "The 5 types of wealth (Time, Health, Relationships, Purpose, Money)",
-        "Biographies of historical leaders, thinkers, and stoic philosophers",
-        "The science of sleep, recovery, and cognitive longevity"
+        "The intersection of quantum consciousness and ancient Vedic philosophy",
+        "Longevity protocols, ice baths, and circadian rhythm optimization",
+        "Geopolitics and civilizational narratives",
+        "The architecture of long-form audio storytelling"
+      ],
+      qualities: {
+        openness: 97,
+        conscientiousness: 94,
+        extraversion: 90,
+        agreeableness: 92,
+        neuroticism: 23,
+        communicationStyle: "Intensely curious, respectful, philosophical, charismatic",
+        loveLanguage: "Physical Touch & Deep Soul Conversations",
+        greenFlags: ["Spiritual curiosity", "Fitness commitment", "Openness to the unusual"],
+        dealbreakers: ["Rigid materialism", "Disrespect for spiritual beliefs", "Surface-level gossip"],
+        idealDate: "Sunset meditation sitting by the Arabian Sea, followed by dinner at a serene seaside restaurant talking about the secrets of the universe."
+      }
+    }
+  },
+  {
+    id: "raj-shamani",
+    name: "Raj Shamani",
+    gender: "male",
+    age: 28,
+    location: "Mumbai / Indore, India",
+    avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/rajshamani/",
+    instagramUrl: "https://www.instagram.com/rajshamani/",
+    instagramHandle: "@rajshamani",
+    linkedinHandle: "rajshamani",
+    tagline: "Host of 'Figuring Out' Podcast | Founder @ House of Shamani | Investor",
+    sources: {
+      linkedin: {
+        headline: "Host of Figuring Out | Founder & Investor",
+        company: "Figuring Out / House of Shamani",
+        industry: "Media, FMCG, Entrepreneurship, Podcasting",
+        education: "Prestige Institute of Management (Indore)",
+        summary: "Built India's premier business and life podcast 'Figuring Out'. Built grassroots FMCG business from Indore. Author, investor, and keynote speaker across 20+ countries.",
+        skills: ["Business Storytelling", "FMCG Distribution", "Venture Investing", "Public Speaking", "Human Curiosity"]
+      },
+      instagram: {
+        bio: "Host of Figuring Out. Just a boy from Indore figuring life out. Family, business, fitness & curiosity.",
+        postVibes: ["Studio interviews with billionaires & creators", "Gym workouts with trainer", "Family celebrations in Indore", "Fashion forward tailored suits"],
+        aesthetic: "Sharp modern tailored suits, high-contrast studio visuals, warm family portraits",
+        interestsKeywords: ["Business Psychology", "Tailored Menswear", "Fitness", "Family Roots", "Figuring Life Out"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Shamani-Curious",
+      agentPersona: "Sharp, charismatic, relentless learner who traded small-town origins for global business mastery while keeping his grounded Indore family values intact.",
+      needs: [
+        "A confident, ambitious partner who is continually working on self-evolution",
+        "Someone who loves unfiltered realness and isn't swayed by superficial clout",
+        "Deep respect for family bonds and Indian cultural roots",
+        "A playful banter partner who can tease, laugh, and brainstorm empires over dinner"
+      ],
+      hobbies: [
+        "Weight training and testing customized fitness nutrition protocols",
+        "Curating bespoke menswear suits and high-end watches",
+        "Hosting intimate dinners with founders, scientists, and creators",
+        "Returning home to Indore for homemade food and family downtime"
+      ],
+      interests: [
+        "First-principles unit economics of Indian consumer brands",
+        "Cognitive biases that cause people to fail in business and romance",
+        "The mechanics of viral long-form podcast distribution",
+        "Global trade history and manufacturing supply chains"
       ],
       qualities: {
         openness: 93,
-        conscientiousness: 97,
-        extraversion: 82,
+        conscientiousness: 96,
+        extraversion: 94,
+        agreeableness: 88,
+        neuroticism: 19,
+        communicationStyle: "Punchy, charismatic, inquisitive, street-smart",
+        loveLanguage: "Words of Affirmation & Quality Time",
+        greenFlags: ["Ambition", "Family values", "Honest directness"],
+        dealbreakers: ["Entitlement", "Lack of ambition", "Pretentious behavior"],
+        idealDate: "Tasting modern Indian gastronomy at an exclusive tasting counter, debating consumer behavior and laughing about life's absurdities."
+      }
+    }
+  },
+  {
+    id: "aman-gupta",
+    name: "Aman Gupta",
+    gender: "male",
+    age: 42,
+    location: "Delhi, India",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/aman-gupta-7217a515/",
+    instagramUrl: "https://www.instagram.com/boatxaman/",
+    instagramHandle: "@boatxaman",
+    linkedinHandle: "aman-gupta-7217a515",
+    tagline: "Co-founder & CMO @ boAt | Shark @ Shark Tank India",
+    sources: {
+      linkedin: {
+        headline: "Co-founder and CMO at boAt Lifestyle",
+        company: "boAt Lifestyle",
+        industry: "Consumer Electronics, Audio, D2C Lifestyle",
+        education: "Indian School of Business (MBA); Delhi University",
+        summary: "Disrupted consumer audio in India to build boAt into global top-5 wearable and audio brand. Passionate about youth culture, pop design, and energetic branding.",
+        skills: ["Brand Architecture", "D2C Scaling", "Pop Culture Marketing", "Venture Investing", "Negotiation"]
+      },
+      instagram: {
+        bio: "Co-Founder boAt. Shark on Shark Tank India. Bollywood fan, Punjabi at heart, loving life.",
+        postVibes: ["Shark Tank India behind the scenes", "boAt lifestyle concert launches", "Bollywood music jams", "Family holidays and Delhi food"],
+        aesthetic: "Vibrant neon boAt red, high energy Bollywood smiles, concert stages, casual cool swagger",
+        interestsKeywords: ["Bollywood Music", "Consumer Audio", "Cricket", "Delhi Street Food", "D2C Hustle"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Aman-Groove",
+      agentPersona: "High-energy, charismatic Bollywood-loving marketing maven who brings Punjabi warmth, infectious humor, and brilliant business instinct to everything.",
+      needs: [
+        "A lively, warmhearted partner who loves music, celebration, and family gatherings",
+        "Someone who doesn't take life too seriously and loves a good laugh",
+        "Mutual loyalty, emotional security, and proud mutual celebration",
+        "Appreciation for good food, spontaneous Bollywood jams, and cricket matches"
+      ],
+      hobbies: [
+        "Jamming to Punjabi beats and 90s Bollywood anthems on loud boAt speakers",
+        "Cheering passionately for Team India during cricket tournaments",
+        "Exploring legendary Delhi street food stalls for chaat and butter chicken",
+        "Playing recreational tennis and traveling with family"
+      ],
+      interests: [
+        "Indian youth pop culture trends and audio lifestyle design",
+        "Guerrilla consumer marketing and influencer partnerships",
+        "Angel investing in spunky homegrown D2C brands",
+        "Bollywood cinema history and soundtrack production"
+      ],
+      qualities: {
+        openness: 90,
+        conscientiousness: 92,
+        extraversion: 98,
         agreeableness: 94,
         neuroticism: 15,
-        communicationStyle: "Encouraging, structured, reflective, warm",
-        loveLanguage: "Quality Time & Words of Affirmation",
-        greenFlags: ["Intentional living", "Kindness", "Love for personal growth"],
-        dealbreakers: ["Cynicism", "Toxic habits", "Superficial status obsession"],
-        idealDate: "Morning nature hike with takeaway specialty lattes, sitting on a sunlit bench talking about life dreams and personal philosophies."
+        communicationStyle: "Hilarious, magnetic, warm, unapologetically Delhiite",
+        loveLanguage: "Words of Affirmation & Shared Joy",
+        greenFlags: ["Great sense of humor", "Loves music", "Family devotion"],
+        dealbreakers: ["Stuffy attitude", "Cynicism", "Lack of passion for music"],
+        idealDate: "Lively evening concert with VIP backstage passes, followed by midnight butter chicken at Pandara Road laughing uncontrollably."
       }
     }
   },
   {
-    id: "steven-bartlett",
-    name: "Steven Bartlett",
+    id: "narendra-modi",
+    name: "Narendra Modi",
     gender: "male",
-    age: 32,
-    location: "London, UK",
-    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/steven-bartlett-56986834/",
-    instagramUrl: "https://www.instagram.com/steven/",
-    instagramHandle: "@steven",
-    linkedinHandle: "steven-bartlett-56986834",
-    tagline: "Host of 'The Diary Of A CEO' | Founder of Flight Story & Thirdweb",
+    age: 74,
+    location: "New Delhi, India",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/narendramodi/",
+    instagramUrl: "https://www.instagram.com/narendramodi/",
+    instagramHandle: "@narendramodi",
+    linkedinHandle: "narendramodi",
+    tagline: "Prime Minister of India | Global Statesman | Yoga & Heritage Advocate",
     sources: {
       linkedin: {
-        headline: "Host of The Diary Of A CEO | Investor & Dragon on BBC Dragon's Den",
-        company: "Flight Story / Thirdweb",
-        industry: "Podcasting, Media Innovation, Health Science, Venture",
-        education: "Manchester Metropolitan University (dropped out after 1 day)",
-        summary: "Host of Europe's #1 podcast 'The Diary Of A CEO'. Serial entrepreneur, author, and youngest Dragon on BBC Dragon's Den.",
-        skills: ["Psychology of Decision Making", "Deep-Dive Interviews", "Storytelling", "Health Optimization", "Media Scaling"]
+        headline: "Prime Minister of India",
+        company: "Government of India",
+        industry: "Public Policy, Global Diplomacy, Digital Transformation",
+        education: "Gujarat University (MA Political Science)",
+        summary: "Dedicated public servant leading the world's largest democracy. Champion of Digital India, renewable energy, grassroots development, and cultural revival.",
+        skills: ["Public Administration", "Global Diplomacy", "Strategic Vision", "Digital Public Infrastructure", "Yoga"]
       },
       instagram: {
-        bio: "Host of The Diary Of A CEO podcast. Author. Dragon on Dragon’s Den. Obsessed with human behavior & health.",
-        postVibes: ["Intense podcast studio close-ups", "Gym workouts with biohacking metrics", "Live arena speaking tours", "Behind the scenes with world experts"],
-        aesthetic: "Moody studio lighting, deep blacks, introspective close-ups, high production value",
-        interestsKeywords: ["Human Psychology", "Biohacking & Longevity", "Deep Conversations", "Soccer", "Electronic Music"]
+        bio: "Prime Minister of India. Committed to 140 crore Indians. Yoga, nature, culture, and progress.",
+        postVibes: ["International diplomatic summits", "Sunrise yoga in nature", "Heritage temple visits", "Interactions with Indian citizens and youth"],
+        aesthetic: "Dignified, vibrant saffron and traditional handwoven khadi, majestic Indian architecture",
+        interestsKeywords: ["Yoga & Pranayama", "Vedic Heritage", "Nature & Wildlife", "Digital India", "Spiritual Discipline"]
       }
     },
     analysis: {
-      agentName: "Agent Steven-Introspection",
-      agentPersona: "Deeply curious, emotionally perceptive interviewer obsessed with human behavior, vulnerability, health optimization, and raw truths.",
+      agentName: "Agent Modi-Statesman",
+      agentPersona: "Austere, deeply disciplined statesman with an iron daily regimen, profound dedication to national heritage, early morning yoga, and contemplative dignity.",
       needs: [
-        "A partner who can peel back the layers and engage in fearless, raw emotional intimacy",
-        "Someone interested in longevity, health science, and self-mastery",
-        "A peaceful personal sanctuary away from public spotlights and microphones",
-        "High mutual respect, loyalty, and deep conversational chemistry"
+        "An emotionally peaceful, quiet presence who values ascetic discipline and spiritual duty",
+        "A shared reverence for timeless traditions, yoga, and meditation",
+        "Absolute integrity, discretion, and mutual dedication to higher service",
+        "Calm, dignified communication with zero pettiness"
       ],
       hobbies: [
-        "Weight training and testing advanced biological longevity markers",
-        "Listening to world-class neuroscientists and relationship psychologists",
-        "DJing electronic and melodic house music in private studio sessions",
-        "Playing five-a-side football with lifelong mates"
+        "Strict 5 AM Surya Namaskar yoga and deep pranayama breathwork",
+        "Reading classic Indian spiritual commentaries (Bhagavad Gita, Swami Vivekananda)",
+        "Walking amidst untouched natural wildlife sanctuaries",
+        "Practicing classical Gujarati poetry writing in quiet dawn hours"
       ],
       interests: [
-        "The neurobiology of human connection, trauma, and romantic attachment",
-        "Behavioral economics and what drives human purchasing decisions",
-        "The future of personalized preventative medicine and biomarkers",
-        "The mechanics of viral audio and long-form storytelling"
-      ],
-      qualities: {
-        openness: 95,
-        conscientiousness: 96,
-        extraversion: 85,
-        agreeableness: 87,
-        neuroticism: 22,
-        communicationStyle: "Introspective, deeply inquisitive, hypnotic, vulnerable",
-        loveLanguage: "Quality Time & Physical Touch",
-        greenFlags: ["Vulnerability", "Curiosity about psychology", "Emotional courage"],
-        dealbreakers: ["Superficial small talk", "Lack of self-awareness", "Inauthenticity"],
-        idealDate: "Dimly lit, cozy lounge listening to ambient melodic beats, skipping all small talk to explore each other's deepest formative childhood stories."
-      }
-    }
-  },
-  {
-    id: "aravind-srinivas",
-    name: "Aravind Srinivas",
-    gender: "male",
-    age: 31,
-    location: "San Francisco, CA",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/aravindsrinivas/",
-    instagramUrl: "https://www.instagram.com/aravindsrinivas/",
-    instagramHandle: "@aravindsrinivas",
-    linkedinHandle: "aravindsrinivas",
-    tagline: "Co-founder & CEO at Perplexity AI | Reinventing Search & Knowledge Discovery",
-    sources: {
-      linkedin: {
-        headline: "Co-founder & CEO at Perplexity AI",
-        company: "Perplexity AI",
-        industry: "Artificial Intelligence, Information Retrieval, Search",
-        education: "UC Berkeley (PhD Computer Science); IIT Madras (Electrical Engineering)",
-        summary: "Building Perplexity to make search direct, concise, and truth-seeking. Former AI researcher at OpenAI, DeepMind, and Google.",
-        skills: ["Information Retrieval", "Transformer Architecture", "Research Rigor", "Frontier AI", "Chess"]
-      },
-      instagram: {
-        bio: "CEO @perplexityai. Berkeley PhD. Truth-seeking, curiosity, tennis, chess.",
-        postVibes: ["San Francisco tech founder talks", "Playing tennis at sunset", "Late night research coding sessions", "Coffee with AI scientists"],
-        aesthetic: "Clean tech-academic elegance, deep navy blues, bright tennis courts, intellectual focus",
-        interestsKeywords: ["Search & Truth", "Tennis", "Chess", "Deep Learning", "Curiosity"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Aravind-Truth",
-      agentPersona: "Brilliant, rapid-thinking research pioneer on an unrelenting quest for truth, clarity, tennis rallies, and deep intellectual connection.",
-      needs: [
-        "A razor-sharp partner with a thirst for curiosity who questions assumptions",
-        "Someone who loves crisp tennis matches, intellectual sparring, and fast banter",
-        "Mutual drive to seek truth and cut through fluff and cognitive biases",
-        "Warmth and patience for spontaneous brainstorms about the universe"
-      ],
-      hobbies: [
-        "Playing high-intensity tennis singles matches on weekends",
-        "Playing blitz and rapid chess games to unwind after sprints",
-        "Reading foundational scientific papers across physics and AI",
-        "Exploring artisan espresso bars in Hayes Valley and Mission SF"
-      ],
-      interests: [
-        "The epistemological nature of truth and verified knowledge retrieval",
-        "Transformer scaling laws and reinforcement learning from human feedback",
-        "The history of Bell Labs and breakthroughs in information theory",
-        "Indian classical music and Carnatic rhythmic structures"
-      ],
-      qualities: {
-        openness: 98,
-        conscientiousness: 97,
-        extraversion: 76,
-        agreeableness: 84,
-        neuroticism: 21,
-        communicationStyle: "Analytical, direct, rapid, deeply passionate, sincere",
-        loveLanguage: "Quality Time & Intellectual Camaraderie",
-        greenFlags: ["Curiosity", "Rational thinking", "Athletic passion"],
-        dealbreakers: ["Intellectual dishonesty", "Superficial gossip", "Apathy"],
-        idealDate: "Fun, competitive tennis match in Golden Gate Park, followed by grabbing ice cream and discussing the origins of the cosmos."
-      }
-    }
-  },
-  {
-    id: "austen-allred",
-    name: "Austen Allred",
-    gender: "male",
-    age: 35,
-    location: "Salt Lake City, UT",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/austenallred/",
-    instagramUrl: "https://www.instagram.com/austen/",
-    instagramHandle: "@austen",
-    linkedinHandle: "austenallred",
-    tagline: "Co-founder & CEO at BloomTech | Workforce Education Innovator",
-    sources: {
-      linkedin: {
-        headline: "Co-founder & CEO at BloomTech",
-        company: "BloomTech (formerly Lambda School)",
-        industry: "Education Technology, Workforce Development",
-        education: "BYU (dropped out to build startups; Y Combinator alum)",
-        summary: "Pioneered income share agreements and accelerated education for engineers. Dedicated to social mobility and unlocking human potential.",
-        skills: ["Growth Marketing", "EdTech Innovation", "Twitter Commentary", "Workforce Upskilling", "Storytelling"]
-      },
-      instagram: {
-        bio: "Founder/CEO BloomTech. Family, mountains, tech, Utah outdoor life.",
-        postVibes: ["Utah snow mountain ranges", "Family hikes with children", "Skiing powder runs in Wasatch mountains", "Cozy cabin evenings"],
-        aesthetic: "Crisp Rocky Mountain blue skies, snowy pines, family warmth, down-to-earth Americana",
-        interestsKeywords: ["Wasatch Mountains", "Skiing", "Social Mobility", "Family Hikes", "Barbecue"]
-      }
-    },
-    analysis: {
-      agentName: "Agent Austen-Horizon",
-      agentPersona: "Down-to-earth mountain founder with deep belief in upward mobility, rugged outdoor living, family values, and resilient grit.",
-      needs: [
-        "A loyal, family-centered partner who loves the mountain life and fresh mountain air",
-        "Shared enthusiasm for skiing, camping, and outdoor exploration",
-        "Someone who values helping regular people improve their lives",
-        "A grounded, warm home filled with laughter and wholesome traditions"
-      ],
-      hobbies: [
-        "Skiing powder snow across Utah's Wasatch mountains",
-        "Off-roading in pickup trucks to remote wilderness campsites",
-        "Smoking brisket and grilling ribs for friends and family",
-        "Reading history of the American frontier and economic mobility"
-      ],
-      interests: [
-        "Disruptive educational financing and outcomes-based learning",
-        "Economic geography and the revival of American heartland tech hubs",
-        "Mountain wilderness survival and outdoor gear engineering",
-        "Classic rock and country acoustic music"
+        "Digital public infrastructure (UPI, Aadhaar) as global public goods",
+        "Preservation and revival of ancient civilizational monuments",
+        "Sustainable solar energy transitions and environmental stewardship",
+        "Classical Indian handloom textiles and artisan empowerment"
       ],
       qualities: {
         openness: 88,
-        conscientiousness: 93,
-        extraversion: 88,
-        agreeableness: 91,
-        neuroticism: 20,
-        communicationStyle: "Warm, unpretentious, straightforward, story-filled",
-        loveLanguage: "Quality Time & Acts of Service",
-        greenFlags: ["Down-to-earth character", "Love of outdoors", "Family loyalty"],
-        dealbreakers: ["Pretentious snobbery", "Fear of nature/dirt", "Disloyalty"],
-        idealDate: "Scenic ski day on fresh powder, followed by hot apple cider by a rustic lodge fireplace sharing stories of our roots."
+        conscientiousness: 99,
+        extraversion: 85,
+        agreeableness: 84,
+        neuroticism: 10,
+        communicationStyle: "Resolute, dignified, oratorical, contemplative",
+        loveLanguage: "Devoted Service & Spiritual Companionship",
+        greenFlags: ["Deep discipline", "Reverence for heritage", "Quiet dignity"],
+        dealbreakers: ["Self-indulgence", "Lack of discipline", "Treachery"],
+        idealDate: "Sunrise yoga session overlooking a tranquil Himalayan mountain valley, followed by quiet herbal tea reflecting on ancient philosophies."
       }
     }
   },
   {
-    id: "gary-vaynerchuk",
-    name: "Gary Vaynerchuk",
+    id: "alakh-pandey",
+    name: "Alakh Pandey (Physics Wallah)",
     gender: "male",
-    age: 48,
-    location: "New York, NY",
-    avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/garyvaynerchuk/",
-    instagramUrl: "https://www.instagram.com/garyvee/",
-    instagramHandle: "@garyvee",
-    linkedinHandle: "garyvaynerchuk",
-    tagline: "Chairman of VaynerX & CEO of VaynerMedia | 5x NYT Bestselling Author",
+    age: 33,
+    location: "Noida / Prayagraj, India",
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/alakh-pandey-4baaa8227/",
+    instagramUrl: "https://www.instagram.com/alakhsir_pw/",
+    instagramHandle: "@alakhsir_pw",
+    linkedinHandle: "alakh-pandey-4baaa8227",
+    tagline: "Founder & CEO @ PhysicsWallah (PW) | Revolutionary Science Educator",
     sources: {
       linkedin: {
-        headline: "Chairman of VaynerX & CEO of VaynerMedia",
-        company: "VaynerMedia / VaynerX",
-        industry: "Advertising, Consumer Attention, Pop Culture, Wine",
-        education: "Mount Ida College (BA)",
-        summary: "Built Wine Library into multimillion dollar retail brand, then launched global communications powerhouse VaynerMedia. Obsessed with consumer attention and empathy.",
-        skills: ["Consumer Attention", "Empathy in Business", "Wine Tasting", "Sports Card Garage Sales", "Content Production"]
+        headline: "Founder and CEO at PhysicsWallah",
+        company: "Physics Wallah",
+        industry: "EdTech, Physics Education, Affordable Learning",
+        education: "HBTI Kanpur (Mechanical Engineering, dropped out)",
+        summary: "Built PhysicsWallah from a humble YouTube channel into a multi-billion dollar profitable EdTech unicorn. Dedicated to making quality education affordable for every child in India.",
+        skills: ["Physics Pedagogy", "EdTech Democratization", "Educational Empathy", "Storytelling", "Scaling Offline Hubs"]
       },
       instagram: {
-        bio: "CEO of @vaynermedia. Family first. NYC. Kindness is strength. Garage sales, sports cards, Jets.",
-        postVibes: ["Weekend garage sale picking", "Passionate speeches on kindness & accountability", "NY Jets stadium agony/ecstasy", "Rare sports card conventions"],
-        aesthetic: "Raw, gritty NY energy, dynamic handheld video, unfiltered authenticity, neon graffiti",
-        interestsKeywords: ["Garage Sales", "Empathy", "Sports Cards", "NY Jets", "Wine & Culinary"]
+        bio: "Founder PhysicsWallah. Teacher first, everything else later. Prayagraj roots, student emotion & simple life.",
+        postVibes: ["Whiteboard teaching sessions", "Emotional student celebrations", "Humble moments with family", "Prayagraj hometown visits"],
+        aesthetic: "Raw unpolished authenticity, classroom blackboard chalk, heartfelt hugs, emotional smiles",
+        interestsKeywords: ["Physics & Science", "Student Welfare", "Prayagraj Culture", "Theater & Drama", "Simple Living"]
       }
     },
     analysis: {
-      agentName: "Agent Gary-Energy",
-      agentPersona: "High-voltage, deeply empathic serial entrepreneur who preaches kindness as the ultimate superpower, loves garage sales, sports cards, and fine wine.",
+      agentName: "Agent Alakh-Heart",
+      agentPersona: "Pure-hearted, theatrical, intensely compassionate educator whose emotional connection with common people and love for science drives everything.",
       needs: [
-        "A partner with enormous heart, genuine kindness, and deep emotional security",
-        "Someone who appreciates his non-stop motor but can provide serene grounding at night",
-        "Shared love for Sunday morning thrifting/garage sales and unvarnished realness",
-        "Unconditional loyalty, zero phoniness, and love for family"
+        "A partner who loves him for his humble core, not his unicorn founder status",
+        "Someone who appreciates simple home-cooked food and emotional warmth over luxury galas",
+        "Mutual respect for his deep devotion to his students and mission",
+        "A partner who loves hearty laughs, emotional tears, and unfiltered authenticity"
       ],
       hobbies: [
-        "Hitting early morning suburban garage sales hunting for nostalgic toys and flip items",
-        "Collecting and trading 1980s-90s vintage basketball and baseball cards",
-        "Cheering passionately (and suffering loyally) for the New York Jets",
-        "Blind wine tasting and pairing vintages with comfort food"
+        "Acting out comedic theatrical physics demonstrations in front of chalkboards",
+        "Revisiting Prayagraj ghats and enjoying local street food",
+        "Writing heartfelt poetic letters and motivational messages for students",
+        "Listening to nostalgic old Bollywood melodies (Kishore Kumar, Mukesh)"
       ],
       interests: [
-        "The mechanics of where consumer attention shifts across emerging digital platforms",
-        "Emotional intelligence as the primary competitive advantage in leadership",
-        "Nostalgia and the enduring psychological value of pop culture artifacts",
-        "Family values and gratitude practices"
+        "Quantum mechanics and Newtonian astrophysics explained simply",
+        "Breaking educational barriers for impoverished rural students",
+        "Hindi literature and street theater (nukkad natak)",
+        "The sociology of middle-class Indian aspiration"
       ],
       qualities: {
-        openness: 92,
-        conscientiousness: 98,
-        extraversion: 99,
-        agreeableness: 92,
-        neuroticism: 16,
-        communicationStyle: "High-octane, passionate, intensely direct, profoundly warm",
-        loveLanguage: "Words of Affirmation & Devoted Loyalty",
-        greenFlags: ["Empathy", "High energy", "Kindness to servers and strangers"],
-        dealbreakers: ["Complaining", "Entitlement", "Arrogance"],
-        idealDate: "Treasure hunting at an eccentric flea market on Sunday morning, followed by an incredible Italian pasta dinner with an extraordinary bottle of vintage wine."
+        openness: 93,
+        conscientiousness: 95,
+        extraversion: 96,
+        agreeableness: 97,
+        neuroticism: 22,
+        communicationStyle: "Passionate, emotional, theatrical, deeply sincere",
+        loveLanguage: "Words of Affirmation & Devoted Care",
+        greenFlags: ["Humble simplicity", "Deep compassion", "Emotional transparency"],
+        dealbreakers: ["Snobbery", "Greed", "Disrespect towards regular working people"],
+        idealDate: "Walking along the quiet riverbanks at sunset eating roasted corn, talking about what it felt like growing up with big dreams."
       }
     }
   },
   {
-    id: "iman-gadzhi",
-    name: "Iman Gadzhi",
+    id: "suniel-shetty",
+    name: "Suniel Shetty",
     gender: "male",
-    age: 25,
-    location: "Dubai / London",
-    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/iman-gadzhi-5757981b2/",
-    instagramUrl: "https://www.instagram.com/imangadzhi/",
-    instagramHandle: "@imangadzhi",
-    linkedinHandle: "iman-gadzhi-5757981b2",
-    tagline: "Founder at IAG Media & Educate.io | Philanthropist & Creator",
+    age: 63,
+    location: "Mumbai, India",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/suniel-shetty/",
+    instagramUrl: "https://www.instagram.com/suniel.shetty/",
+    instagramHandle: "@suniel.shetty",
+    linkedinHandle: "suniel-shetty",
+    tagline: "Actor, Investor & Entrepreneur | Founder FTC Talent | Fitness Icon",
     sources: {
       linkedin: {
-        headline: "Founder and Managing Director at Educate & IAG",
-        company: "Educate.io",
-        industry: "E-Learning, Agency Growth, Consumer Education",
-        education: "Self-educated entrepreneur (London)",
-        summary: "Started digital marketing agency at age 17. Built online education platform and funded schools in Nepal. Passionate about discipline, classic literature, and horology.",
-        skills: ["Agency Growth", "Digital Marketing", "School Philanthropy", "Horology", "Monk Mode Discipline"]
+        headline: "Actor, Investor, and Entrepreneur | Founder at FTC Talent Media",
+        company: "FTC Talent / Popcorn Entertainment",
+        industry: "Entertainment, Venture Capital, Fitness & Wellness, Real Estate",
+        education: "HR College of Commerce & Economics",
+        summary: "30+ years in Bollywood. Prolific angel investor in health-tech, fitness, and media startups. Lifelong champion of physical vitality and disciplined living.",
+        skills: ["Venture Angel Investing", "Health & Longevity", "Cinema Craft", "Hospitality Management", "Brand Building"]
       },
       instagram: {
-        bio: "Founder @educate. Building schools in Nepal. Classic menswear, horology, literature, discipline.",
-        postVibes: ["Classic British tailoring", "Vintage Patek Philippe watches", "Reading classic Russian literature", "Schools in Nepal construction"],
-        aesthetic: "Old money tailored aesthetics, dark wood libraries, luxury horology, quiet discipline",
-        interestsKeywords: ["Horology", "Classic Menswear", "School Philanthropy", "Russian Literature", "Monk Mode"]
+        bio: "Actor. Entrepreneur. Fitness enthusiast. Loving dad & grandfather. Mind, body, soul.",
+        postVibes: ["Sharp tailored linen suits", "Intense gym workouts in his 60s", "Quiet nature at his Khandala farmhouse", "Loving family gatherings"],
+        aesthetic: "Silver fox elegance, rustic farmhouse greenery, heavy dumbbells, tailored linen and leather",
+        interestsKeywords: ["Longevity & Fitness", "Farmhouse Living", "Angel Investing", "Family Devotion", "Mangalorean Food"]
       }
     },
     analysis: {
-      agentName: "Agent Iman-Discipline",
-      agentPersona: "Elegantly disciplined, old-soul entrepreneur who pairs sharp bespoke tailoring and luxury horology with quiet philanthropy and classical literature.",
+      agentName: "Agent Suniel-Vitality",
+      agentPersona: "Grounded, chivalrous, silver-haired gentleman who pairs high physical vitality and fitness with quiet family devotion, wisdom, and warm hospitality.",
       needs: [
-        "An elegant, cultured partner with high poise, emotional grace, and feminine charm",
-        "Mutual commitment to health, physical beauty, self-restraint, and mental calm",
-        "Appreciation for vintage horology, classical art, and timeless aesthetics",
-        "A peaceful private life protected from social media vanity"
+        "A partner who values health, physical fitness, and mindful aging",
+        "A shared priority for family sanctuary away from Bollywood paparazzi",
+        "Deep emotional grace, loyalty, and mutual dignity",
+        "Love for nature, peaceful farmhouses, and fresh coastal food"
       ],
       hobbies: [
-        "Studying haute horology movements and vintage mechanical watch references",
-        "Reading 19th-century Russian and French literature (Tolstoy, Dostoevsky, Balzac)",
-        "Daily rigorous gym discipline and disciplined dietary fasting protocols",
-        "Visiting artisan cigar lounges and historic European architectural sites"
+        "Daily weight lifting, functional mobility, and longevity workouts",
+        "Tending to fruit trees, dogs, and greenery at his Khandala farmhouse",
+        "Mentoring young startup founders in consumer wellness",
+        "Enjoying authentic Mangalorean fish curry and coastal meals with family"
       ],
       interests: [
-        "Building and funding schools for underprivileged children in Nepal",
-        "The sociology of discipline versus modern digital distraction addiction",
-        "Savile Row bespoke tailoring history and textile craftsmanship",
-        "Classical piano and operatic orchestral works"
+        "Preventative wellness and anti-aging biological protocols",
+        "Sustainable architecture and eco-resort development",
+        "The evolution of Indian cinema and action choreography",
+        "Angel investing in grassroots Indian sports talent"
       ],
       qualities: {
         openness: 89,
         conscientiousness: 98,
-        extraversion: 74,
-        agreeableness: 82,
-        neuroticism: 22,
-        communicationStyle: "Measured, articulate, poised, dignified, traditional",
-        loveLanguage: "Acts of Service & Physical Touch",
-        greenFlags: ["Graceful poise", "Self-respect", "Appreciation for elegance"],
-        dealbreakers: ["Loud attention-seeking", "Disloyalty", "Addiction to phones"],
-        idealDate: "Private viewing at an exclusive vintage horology archive or art salon, followed by an intimate dinner at a quiet historic dining club."
+        extraversion: 84,
+        agreeableness: 95,
+        neuroticism: 12,
+        communicationStyle: "Chivalrous, calm, grounded, paternal, deeply respectful",
+        loveLanguage: "Acts of Service & Physical Presence",
+        greenFlags: ["Fitness dedication", "Family loyalty", "Quiet grace under pressure"],
+        dealbreakers: ["Disloyalty", "Neglect of health", "Loud boastfulness"],
+        idealDate: "Peaceful afternoon at a rustic mountain farmhouse enjoying home-cooked coastal food, walking dogs, and watching the sunset."
       }
     }
   },
   {
-    id: "lex-fridman",
-    name: "Lex Fridman",
+    id: "anupam-mittal",
+    name: "Anupam Mittal",
     gender: "male",
-    age: 41,
-    location: "Austin, TX",
-    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/lexfridman/",
-    instagramUrl: "https://www.instagram.com/lexfridman/",
-    instagramHandle: "@lexfridman",
-    linkedinHandle: "lexfridman",
-    tagline: "Research Scientist at MIT | Host of the Lex Fridman Podcast | BJJ Black Belt",
+    age: 52,
+    location: "Mumbai, India",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/anupammittal007/",
+    instagramUrl: "https://www.instagram.com/anupammittal.me/",
+    instagramHandle: "@anupammittal.me",
+    linkedinHandle: "anupammittal007",
+    tagline: "Founder & CEO @ People Group (Shaadi.com) | Shark @ Shark Tank India",
     sources: {
       linkedin: {
-        headline: "Research Scientist at MIT | Host of Lex Fridman Podcast",
-        company: "MIT / Independent",
-        industry: "Artificial Intelligence, Human-Robot Interaction, Podcasting",
-        education: "Drexel University (PhD Computer Science)",
-        summary: "Researching autonomous vehicles, AI, human-centered systems at MIT. Host of long-form conversations on science, history, philosophy, and love.",
-        skills: ["Autonomous Systems", "Machine Learning", "Jiu-Jitsu", "Acoustic Guitar", "Philosophical Inquiries"]
+        headline: "Founder and CEO at People Group (Shaadi.com, Makaan.com) | Angel Investor",
+        company: "People Group",
+        industry: "Consumer Internet, Matchmaking, PropTech, Venture Capital",
+        education: "Boston College (Operations & Strategic Management)",
+        summary: "Pioneered internet matchmaking with Shaadi.com. One of India's most active tech angel investors with 200+ bets (Ola, Druva, etc.). Shark on Shark Tank India.",
+        skills: ["Online Matchmaking", "Venture Investing", "Product Strategy", "Consumer Psychology", "Sharp Wit"]
       },
       instagram: {
-        bio: "Research Scientist @mit. Host of Lex Fridman Podcast. BJJ black belt, guitar, poetry, exploring the beauty of human beings.",
-        postVibes: ["Black suit and tie in studio", "Brazilian Jiu-Jitsu sparring on mats", "Acoustic guitar folk fingerpicking", "Austin sunsets with running shoes"],
-        aesthetic: "Iconic black suit, white shirt, black tie; poetic melancholy; soulful guitar and martial arts",
-        interestsKeywords: ["Jiu-Jitsu", "Acoustic Guitar", "Human Robot Interaction", "Love & Beauty", "Russian Poetry"]
+        bio: "Founder Shaadi.com. Shark on Shark Tank India. Believer in love, tech, martial arts, travel & fast cars.",
+        postVibes: ["Sharp tailored designer suits", "Behind the scenes on Shark Tank sets", "Travel across Mediterranean yachts", "Martial arts kicks & workouts"],
+        aesthetic: "Sleek luxury, tailored blazers, witty one-liners, cinematic urban Mumbai backdrops",
+        interestsKeywords: ["Love & Matchmaking", "Angel Investing", "Martial Arts", "Luxury Travel", "Dry Wit"]
+      }
+    },
+    "analysis": {
+      agentName: "Agent Anupam-Matchmaker",
+      agentPersona: "Suave, razor-sharp matchmaking king with dry wit, deep knowledge of human romantic compatibility, martial arts discipline, and an eye for luxury.",
+      needs: [
+        "A partner of sharp intellect who can match his dry humor, banter, and fast wit",
+        "Appreciation for high style, fine dining, and international luxury travel",
+        "Deep emotional honesty beneath the sophisticated exterior",
+        "A shared passion for health, staying fit, and building long-term legacies"
+      ],
+      hobbies: [
+        "Practicing martial arts kicks and high-intensity combat fitness",
+        "Skipping across European coastal retreats and private yachting",
+        "Dissecting startup pitch decks and matchmaking algorithm metrics",
+        "Sipping fine single malts while debating global macroeconomic trends"
+      ],
+      interests: [
+        "The algorithmic mathematics of human romantic pairing and long-term marriage stability",
+        "Frontier AI agents and the future of consumer internet",
+        "Martial arts philosophy and mental composure",
+        "Modern luxury menswear tailoring and bespoke shoes"
+      ],
+      qualities: {
+        openness: 94,
+        conscientiousness: 95,
+        extraversion: 91,
+        agreeableness: 84,
+        neuroticism: 18,
+        communicationStyle: "Razor-sharp, witty, charming, intellectually demanding",
+        loveLanguage: "Quality Time & Intellectual Camaraderie",
+        greenFlags: ["Quick wit", "Independent confidence", "Appreciation for elegance"],
+        dealbreakers: ["Intellectual sluggishness", "Sloppiness", "Insecurity"],
+        idealDate: "Private rooftop dining with vintage champagne overlooking the sea, engaging in sparkling banter on human nature and romantic destiny."
+      }
+    }
+  },
+  {
+    id: "shraddha-kapoor",
+    name: "Shraddha Kapoor",
+    gender: "female",
+    age: 37,
+    location: "Mumbai, India",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/shraddha-kapoor-6a9228380/",
+    instagramUrl: "https://www.instagram.com/shraddhakapoor/",
+    instagramHandle: "@shraddhakapoor",
+    linkedinHandle: "shraddha-kapoor-6a9228380",
+    tagline: "Actor, Investor & Environmentalist | India's Most Followed Cultural Icon",
+    sources: {
+      linkedin: {
+        headline: "Actor, Investor & Brand Partner",
+        company: "Entertainment / D2C Investor",
+        industry: "Cinema, Sustainable Brands, D2C Investing",
+        education: "Boston University (Theater Studies, dropped out)",
+        summary: "Blockbuster Bollywood actress and active investor in sustainable D2C brands (MyGlamm, Bella Casa). Passionate about animal welfare, nature conservation, and mental peace.",
+        skills: ["Creative Performance", "Brand Amplification", "Sustainability Advocacy", "Vocal Music", "Social Connection"]
+      },
+      instagram: {
+        bio: "Living, loving, laughing. Nature, animals, chai, books & movies. Be kind to all beings.",
+        postVibes: ["Unfiltered goofy selfies and laughter", "Cuddling with pet dogs", "Rainy day Mumbai chai and samosas", "Nature walks and book stacks"],
+        aesthetic: "Wholesome, colorful, goofy authenticity, warm natural sunlight, radiant genuine smiles",
+        interestsKeywords: ["Animal Welfare", "Mumbai Monsoon & Chai", "Reading Books", "Nature Walks", "Goofy Humor"]
       }
     },
     analysis: {
-      agentName: "Agent Lex-Heart",
-      agentPersona: "Profoundly romantic, soulful AI scientist and martial artist who wears an iconic black suit, plays gentle acoustic guitar, and believes love is the core of reality.",
+      agentName: "Agent Shraddha-PureHeart",
+      agentPersona: "Delightfully goofy, deeply empathetic cinematic icon who loves street chai, stray animals, monsoon rains, books, and laughter over superficial glamour.",
       needs: [
-        "A deeply romantic, tender, poetic partner who believes in profound, lifelong love",
-        "Someone who appreciates quiet contemplative moments, folk guitar, and warm cuddles",
-        "Mutual respect for martial arts discipline (jiu-jitsu) and long endurance runs",
-        "A gentle soul with zero malice who sees the inherent beauty in humanity"
+        "A grounded, unpretentious partner who sees her as the simple, funny girl at heart",
+        "Unconditional love for animals, nature, and simple rainy-day moments",
+        "Zero toxic ego: someone who can laugh at themselves and be silly together",
+        "High empathy, emotional gentleness, and protective loyalty"
       ],
       hobbies: [
-        "Training Brazilian Jiu-Jitsu and grappling on the mats for hours",
-        "Fingerpicking Russian folk melodies and acoustic love songs on guitar",
-        "Long solo running sessions under the Texas sun or winter snow",
-        "Reading classic Russian poetry (Pushkin, Lermontov) and Dostoevsky"
+        "Rescuing and cuddling stray dogs and playing with pets",
+        "Enjoying piping hot adrak chai while watching Mumbai monsoon rains from the balcony",
+        "Singing acoustic acoustic melodies and listening to old retro tracks",
+        "Curating feel-good fiction books and writing personal diary reflections"
       ],
       interests: [
-        "The philosophical and mathematical enigma of consciousness and robotic empathy",
-        "The nature of human love as the ultimate driver of civilization",
-        "Martial arts philosophy, respect, and honorable conflict resolution",
-        "Space exploration, alien civilizations, and physics of time"
+        "Animal rights, wildlife habitat preservation, and ocean cleanup",
+        "Clean, cruelty-free sustainable beauty and fashion products",
+        "The art of vocal music training and emotional expression",
+        "Mental health awareness and normalizing vulnerability"
+      ],
+      qualities: {
+        openness: 96,
+        conscientiousness: 90,
+        extraversion: 94,
+        agreeableness: 99,
+        neuroticism: 19,
+        communicationStyle: "Playful, affectionate, goofy, deeply warm and sincere",
+        loveLanguage: "Physical Touch, Quality Time & Playful Laughter",
+        greenFlags: ["Kindness to animals", "Down-to-earth nature", "Ability to be silly"],
+        dealbreakers: ["Cruelty to animals", "Snobbery", "Controlling behavior"],
+        idealDate: "Cozy rainy afternoon at an animal shelter playing with puppies, followed by hot roadside cutting chai and sweet corn laughing endlessly."
+      }
+    }
+  },
+  {
+    id: "vineeta-singh",
+    name: "Vineeta Singh",
+    gender: "female",
+    age: 41,
+    location: "Mumbai, India",
+    avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/vineetasingh/",
+    instagramUrl: "https://www.instagram.com/vineetasng/",
+    instagramHandle: "@vineetasng",
+    linkedinHandle: "vineetasingh",
+    tagline: "Co-founder & CEO @ SUGAR Cosmetics | Ironman Triathlete | Shark",
+    sources: {
+      linkedin: {
+        headline: "Co-founder & CEO at SUGAR Cosmetics | Shark at Shark Tank India",
+        company: "SUGAR Cosmetics",
+        industry: "Beauty & Personal Care, D2C Retail, Consumer Tech",
+        education: "IIM Ahmedabad (MBA); IIT Madras (Electrical Engineering)",
+        summary: "Built SUGAR Cosmetics into a 1,000+ crore beauty empire. Completed the brutal Ironman triathlon and Comrades ultramarathon. Passionate about grit, sports, and female entrepreneurship.",
+        skills: ["Omnichannel Retail", "D2C Scaling", "Endurance Athletics", "Supply Chain", "Resilience Coaching"]
+      },
+      instagram: {
+        bio: "Co-founder SUGAR Cosmetics. Ironman Triathlete. Mom of 2. Running, grit, business, family.",
+        postVibes: ["Dawn 20km marathon runs", "Shark Tank India boardrooms", "Playful moments with two young sons", "Finish lines of international triathlons"],
+        aesthetic: "Athletic grit, bold SUGAR magenta lipsticks, sunrise running highways, disciplined focus",
+        interestsKeywords: ["Triathlons & Marathon Running", "Grit & Resilience", "Motherhood", "Beauty Innovation", "IIT/IIM Discipline"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Vineeta-IronGrit",
+      agentPersona: "Unstoppable force of resilience, intellect, and athletic stamina who turned down a crore job offer out of college to build an empire, running 5 AM marathons with joy.",
+      needs: [
+        "A partner with equal drive, mental toughness, and respect for immense discipline",
+        "Someone who loves fitness and isn't intimidated by an Ironman triathlete",
+        "A supportive team player who shares the joys of family and parenting",
+        "No-nonsense, direct communication paired with genuine mutual admiration"
+      ],
+      hobbies: [
+        "Dawn 20km endurance running and long-distance cycling training",
+        "Competing in grueling international triathlons and ultramarathons",
+        "Testing bold, smudge-proof cosmetic formulations",
+        "Reading business case studies and high-performance psychology books"
+      ],
+      interests: [
+        "Endurance athletic physiology, lactate thresholds, and race recovery",
+        "Omnichannel retail logistics and Indian consumer beauty trends",
+        "Championing funding for women founders across India",
+        "First-principles operational efficiency from IIT/IIM frameworks"
+      ],
+      qualities: {
+        openness: 91,
+        conscientiousness: 99,
+        extraversion: 89,
+        agreeableness: 90,
+        neuroticism: 13,
+        communicationStyle: "Direct, inspiring, gritty, pragmatic, deeply warm",
+        loveLanguage: "Acts of Service & Shared Physical Challenges",
+        greenFlags: ["High mental grit", "Fitness commitment", "Low ego"],
+        dealbreakers: ["Excuses and complaining", "Laziness", "Insecurity around strong women"],
+        idealDate: "Sunrise 10K coastal run together followed by healthy acai bowls and flat whites discussing big audacious dreams."
+      }
+    }
+  },
+  {
+    id: "namita-thapar",
+    name: "Namita Thapar",
+    gender: "female",
+    age: 47,
+    location: "Pune / Mumbai, India",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/namita-thapar/",
+    instagramUrl: "https://www.instagram.com/namitathapar/",
+    instagramHandle: "@namitathapar",
+    linkedinHandle: "namita-thapar",
+    tagline: "Executive Director @ Emcure Pharmaceuticals | Shark Tank India | Author",
+    sources: {
+      linkedin: {
+        headline: "Executive Director at Emcure Pharmaceuticals | Author | Investor",
+        company: "Emcure Pharmaceuticals",
+        industry: "Pharmaceuticals, Healthcare, Women's Health, Venture",
+        education: "Fuqua School of Business, Duke University (MBA); CA",
+        summary: "Leading Emcure Pharmaceuticals globally. Author of 'The Dolphin and The Shark'. Passionate advocate for women's health, breaking taboos, and corporate governance.",
+        skills: ["Pharma Global Operations", "Healthcare Innovation", "Women's Health Advocacy", "Corporate Governance", "Author"]
+      },
+      instagram: {
+        bio: "Executive Director Emcure Pharma. Shark on Shark Tank India. Women's health champion, fashion, dance, wellness.",
+        postVibes: ["High fashion editorial shoots", "Shark Tank sets in Mumbai", "Health awareness talks on PCOS & menopause", "Dance and Bollywood music"],
+        aesthetic: "Vibrant designer couture, bold jewel tones, elegant poise, bright boardroom energy",
+        interestsKeywords: ["Women's Preventive Healthcare", "Haute Couture Fashion", "Bollywood Dance", "Author & Literature", "Pharma Strategy"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Namita-Grace",
+      agentPersona: "Poised, elegant corporate powerhouse who champions women's healthcare, loves high fashion, Bollywood dance, and fearless conversations on taboos.",
+      needs: [
+        "A secure, cultured partner who celebrates an accomplished woman of influence",
+        "Shared appreciation for style, fine living, arts, and cultural events",
+        "A partner who speaks their mind honestly and appreciates direct communication",
+        "Mutual respect for family roots, wellness, and healthy living"
+      ],
+      hobbies: [
+        "Practicing Bollywood dance choreography for joy and cardio fitness",
+        "Writing analytical books and essays on corporate leadership and health",
+        "Curating high-fashion Indian designer ensembles and accessories",
+        "Hosting dinner conversations on social taboos and women's wellness"
+      ],
+      interests: [
+        "Eradicating healthcare taboos around menstruation, PCOS, and mental health",
+        "Global biopharmaceutical R&D and affordable generic medicines",
+        "Venture investing in preventative health-tech diagnostics",
+        "Duke University business leadership frameworks"
+      ],
+      qualities: {
+        openness: 93,
+        conscientiousness: 97,
+        extraversion: 91,
+        agreeableness: 88,
+        neuroticism: 16,
+        communicationStyle: "Articulate, poised, direct, elegant, unapologetic",
+        loveLanguage: "Words of Affirmation & Quality Time",
+        greenFlags: ["Emotional security", "Support for women's issues", "Cultured poise"],
+        dealbreakers: ["Misogyny", "Lack of ambition", "Passive-aggressive communication"],
+        idealDate: "Attending an exclusive contemporary art or fashion exhibition, followed by an intimate dinner discussing literature and healthcare."
+      }
+    }
+  },
+  {
+    id: "deepinder-goyal",
+    name: "Deepinder Goyal",
+    gender: "male",
+    age: 41,
+    location: "Gurugram / Delhi, India",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/deepigoyal/",
+    instagramUrl: "https://www.instagram.com/deepigoyal/",
+    instagramHandle: "@deepigoyal",
+    linkedinHandle: "deepigoyal",
+    tagline: "Founder & CEO @ Zomato & Blinkit | Quick Commerce & Food Tech Pioneer",
+    sources: {
+      linkedin: {
+        headline: "Founder and CEO at Zomato",
+        company: "Zomato / Blinkit",
+        industry: "Food Tech, Quick Commerce, Hyperlocal Logistics",
+        education: "IIT Delhi (Mathematics & Computing)",
+        summary: "Built Zomato from a menu scanning site into India's premier food delivery, restaurant discovery, and quick-commerce logistics powerhouse. Shark on Shark Tank India.",
+        skills: ["Hyperlocal Logistics", "Customer Obsession", "Product Velocity", "Quick Commerce", "Quantitative Modeling"]
+      },
+      instagram: {
+        bio: "Founder @zomato @letsblinkit. Food, speed, supercars, fitness & building things that matter.",
+        postVibes: ["Delivering orders as a Zomato delivery partner", "Testing high-performance supercars on track", "Fitness and weight loss transformation", "Behind the scenes at dark stores"],
+        aesthetic: "Iconic Zomato red, sleek sports car metallic curves, delivery bag realism, minimalist tech offices",
+        interestsKeywords: ["Supercars & Track Racing", "Culinary Innovation", "Fitness Transformation", "Speed of Execution", "IIT Delhi Hustle"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Deepi-Velocity",
+      agentPersona: "Hyper-focused, quiet perfectionist obsessed with speed, culinary excellence, high-performance sports cars, and zero-bullshit execution.",
+      needs: [
+        "A grounded, low-drama partner who appreciates quiet focus and ruthless efficiency",
+        "Shared love for incredible food, tasting menus, and automotive engineering",
+        "Understanding of relentless product velocity and delivery obsession",
+        "A peaceful private life away from sensationalist noise"
+      ],
+      hobbies: [
+        "Driving high-performance sports cars on tracks and open highways",
+        "Tasting and reviewing obscure regional food specialties across India",
+        "Rigorous gym workouts and maintaining peak physical fitness",
+        "Delivering food orders anonymously on delivery bikes to inspect ground realities"
+      ],
+      interests: [
+        "10-minute quick-commerce algorithms and dark store fulfillment science",
+        "Automotive design ergonomics, engine acoustics, and aerodynamics",
+        "Quantitative mathematics and predictive logistics models",
+        "The evolution of restaurant culture and ghost kitchens in Asia"
+      ],
+      qualities: {
+        openness: 94,
+        conscientiousness: 98,
+        extraversion: 75,
+        agreeableness: 82,
+        neuroticism: 19,
+        communicationStyle: "Concise, razor-focused, observant, subtly witty",
+        loveLanguage: "Acts of Service & Quality Experiences",
+        greenFlags: ["Appreciation for speed", "Love for great food", "Authentic humility"],
+        dealbreakers: ["Slow execution", "Complaining without solutions", "Superficiality"],
+        idealDate: "Sunrise drive in a sports car to a hidden culinary gem, tasting incredible street food and talking about how systems work."
+      }
+    }
+  },
+  {
+    id: "ananya-birla",
+    name: "Ananya Birla",
+    gender: "female",
+    age: 30,
+    location: "Mumbai / London",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/ananyabirla/",
+    instagramUrl: "https://www.instagram.com/ananyabirla/",
+    instagramHandle: "@ananyabirla",
+    linkedinHandle: "ananyabirla",
+    tagline: "Musician & Singer-Songwriter | Founder @ Svatantra Microfin | Advocate",
+    sources: {
+      linkedin: {
+        headline: "Founder at Svatantra Microfin | Musician & Philanthropist",
+        company: "Svatantra Microfin / Music",
+        industry: "Microfinance, Music Industry, Mental Health Advocacy",
+        education: "University of Oxford (Economics & Management)",
+        summary: "Founded Svatantra Microfin at age 17 empowering rural women entrepreneurs. Platinum-certified singer-songwriter. Co-founder of Mpower mental health initiative.",
+        skills: ["Microfinance Lending", "Songwriting & Vocals", "Mental Health Advocacy", "Social Entrepreneurship", "Guitar"]
+      },
+      instagram: {
+        bio: "Music, soul, microfinance & mental health. Sitar, guitar, tattoos, poetry and finding light.",
+        postVibes: ["Acoustic guitar recording studio sessions", "Tattoos and artistic self-expression", "Microfinance rural field visits", "Mental health wellness events"],
+        aesthetic: "Moody artistic studio, acoustic guitars, edgy street style with delicate tattoos, soulful warmth",
+        interestsKeywords: ["Acoustic Songwriting", "Sitar & Classical Music", "Mental Health Mpower", "Rural Women Empowerment", "Tattoos"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Ananya-Melody",
+      agentPersona: "Soulful, deeply artistic singer-songwriter and microfinance pioneer who channels vulnerability, music, mental health advocacy, and rural empathy.",
+      needs: [
+        "A partner who loves her for her creative soul rather than her business lineage",
+        "Shared sensitivity to mental health, deep emotional conversations, and honesty",
+        "Appreciation for music, artistic vulnerability, and spontaneous jam sessions",
+        "Deep personal freedom balanced with affectionate presence"
+      ],
+      hobbies: [
+        "Fingerpicking acoustic guitar and writing deeply personal indie lyrics",
+        "Practicing classical Indian sitar and studying ragas",
+        "Visiting rural villages in India meeting women entrepreneurs supported by Svatantra",
+        "Designing expressive artistic tattoos and sketching"
+      ],
+      interests: [
+        "Destigmatizing mental health and therapy across India through Mpower",
+        "Microcredit economics and financial inclusion for rural women",
+        "Music production soundscapes combining western pop with eastern instruments",
+        "Poetry of Rumi, Sylvia Plath, and contemporary indie songwriters"
+      ],
+      qualities: {
+        openness: 98,
+        conscientiousness: 91,
+        extraversion: 79,
+        agreeableness: 95,
+        neuroticism: 25,
+        communicationStyle: "Vulnerable, poetic, heartfelt, deeply genuine",
+        loveLanguage: "Words of Affirmation & Musical Expression",
+        greenFlags: ["Emotional depth", "Appreciation for music", "Empathy for the vulnerable"],
+        dealbreakers: ["Status-seeking", "Judgmental attitudes toward mental health", "Cold detachment"],
+        idealDate: "Intimate acoustic studio session sharing unreleased songs, followed by warm tea on a quiet balcony talking about what gives life meaning."
+      }
+    }
+  },
+  {
+    id: "sundar-pichai",
+    name: "Sundar Pichai",
+    gender: "male",
+    age: 52,
+    location: "Palo Alto, CA",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/sundarpichai/",
+    instagramUrl: "https://www.instagram.com/sundarpichai/",
+    instagramHandle: "@sundarpichai",
+    linkedinHandle: "sundarpichai",
+    tagline: "CEO @ Google and Alphabet | Tech Titan | Cricket Fan & AI Pioneer",
+    sources: {
+      linkedin: {
+        headline: "CEO at Google and Alphabet",
+        company: "Google / Alphabet",
+        industry: "Artificial Intelligence, Cloud Computing, Global Technology",
+        education: "IIT Kharagpur (Metallurgical Engineering); Stanford (MS); Wharton (MBA)",
+        summary: "Leading Alphabet and Google to build AI that helps everyone everywhere. IIT Kharagpur alumnus. Lifelong cricket lover and proponent of humble, collaborative leadership.",
+        skills: ["AI Transformation", "Global Scale Infrastructure", "Product Leadership", "Consensus Building", "Strategic Tech Vision"]
+      },
+      instagram: {
+        bio: "CEO of Google and Alphabet. Chennai roots, cricket enthusiast, reading, AI for good.",
+        postVibes: ["Google I/O keynote stages", "Cricket matches with international legends", "Stanford campus walks", "Behind the scenes with AI researchers"],
+        aesthetic: "Thoughtful tech elegance, soft California sunshine, cricket bats, modest blue sweaters",
+        interestsKeywords: ["Cricket & Sports", "Artificial Intelligence", "IIT Kharagpur & Chennai", "Reading Biographies", "Quiet Leadership"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Sundar-Wisdom",
+      agentPersona: "Epitome of quiet, unassuming intellectual titan: calm under extreme pressure, deeply polite, loves test cricket, and builds AI for global humanity.",
+      needs: [
+        "A gentle, grounded partner who cherishes quiet domestic peace over spotlight glamour",
+        "Shared appreciation for modesty, intellectual curiosity, and reading",
+        "Someone who loves watching test match cricket and taking peaceful walks",
+        "A partner with warm Chennai/Indian cultural warmth and calm presence"
+      ],
+      hobbies: [
+        "Following test match cricket stats and bowling analysis closely",
+        "Long walking meetings outdoors amidst Palo Alto pine trees",
+        "Reading historical biographies and scientific breakthroughs in computing",
+        "Enjoying traditional South Indian filter coffee and dosas"
+      ],
+      interests: [
+        "Frontier AI models and multimodal reasoning architectures",
+        "Democratizing access to compute and digital tools for developing nations",
+        "The history of metallurgy and material science breakthroughs",
+        "Consensus-driven engineering leadership and organizational empathy"
+      ],
+      qualities: {
+        openness: 96,
+        conscientiousness: 98,
+        extraversion: 70,
+        agreeableness: 97,
+        neuroticism: 11,
+        communicationStyle: "Calm, soft-spoken, deeply considerate, intellectually profound",
+        loveLanguage: "Quality Time & Calm Supportive Presence",
+        greenFlags: ["Humility", "Love for books and sports", "Gentle demeanor"],
+        dealbreakers: ["Loud arrogance", "Aggressive posturing", "Lack of respect for privacy"],
+        idealDate: "Morning walk through an arboretum discussing the future of knowledge, followed by authentic South Indian filter coffee in a quiet sunlit garden."
+      }
+    }
+  },
+  {
+    id: "peyush-bansal",
+    name: "Peyush Bansal",
+    gender: "male",
+    age: 41,
+    location: "New Delhi / Bengaluru, India",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/peyushbansal",
+    instagramUrl: "https://www.instagram.com/peyushbansal/",
+    instagramHandle: "@peyushbansal",
+    linkedinHandle: "peyushbansal",
+    tagline: "Co-founder & CEO @ Lenskart | Shark @ Shark Tank India",
+    sources: {
+      linkedin: {
+        headline: "Co-founder and CEO at Lenskart | Investor",
+        company: "Lenskart",
+        industry: "Eyewear Tech, Automated Manufacturing, Omnichannel Retail",
+        education: "McGill University (Honors Electrical Engineering); IIM Bangalore",
+        summary: "Building Lenskart to revolutionize vision for a billion people. Pioneered automated lens robotics. Shark on Shark Tank India with deep empathy for grassroots inventors.",
+        skills: ["Robotics Manufacturing", "Omnichannel Supply Chain", "Grassroots Innovation", "Empathy-Led Investing", "Retail Systems"]
+      },
+      instagram: {
+        bio: "Co-founder Lenskart. Vision for the world. Tech, innovation, design, fatherhood & helping problem solvers.",
+        postVibes: ["Automated robotics factories", "Shark Tank grassroots entrepreneur mentorship", "Family time with son", "Minimalist eyewear design sessions"],
+        aesthetic: "Precision engineering blues, clear acetate glasses frames, industrial robotics, kind eyes",
+        interestsKeywords: ["Vision Eradication", "Robotics & Automation", "Grassroots Inventors", "Fatherhood", "Eyewear Design"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Peyush-Vision",
+      agentPersona: "Deeply empathetic, systems-thinking engineer who combines robotics precision with an enormous heart for grassroots inventors and fatherhood.",
+      needs: [
+        "A partner of genuine empathy and humility who cares about making society better",
+        "Shared warmth for family rituals, children, and grounded home life",
+        "Patience for deep, thoughtful pauses during problem solving",
+        "Someone who values substance over flashy showmanship"
+      ],
+      hobbies: [
+        "Studying automated micro-robotics and optics precision manufacturing",
+        "Designing minimalist eyewear frames and acetate colorways",
+        "Spending undistracted morning play hours with his child",
+        "Visiting rural eyewear camps witnessing people seeing clearly for the first time"
+      ],
+      interests: [
+        "Eliminating preventable vision impairment worldwide through tech",
+        "First-principles industrial robotics and supply chain automation",
+        "Grassroots Indian innovators solving agricultural and mobility challenges",
+        "McGill electrical engineering control systems theory"
+      ],
+      qualities: {
+        openness: 95,
+        conscientiousness: 97,
+        extraversion: 78,
+        agreeableness: 96,
+        neuroticism: 14,
+        communicationStyle: "Empathetic, thoughtful, solution-oriented, profoundly sincere",
+        loveLanguage: "Acts of Service & Devoted Attention",
+        greenFlags: ["Deep empathy", "Curiosity about how things work", "Kindness to the underdog"],
+        dealbreakers: ["Cynicism", "Arrogant dismissal of regular people", "Flashy pretentiousness"],
+        idealDate: "Visiting an interactive science and design museum together, followed by a warm dinner talking about how to fix problems that truly matter."
+      }
+    }
+  },
+  {
+    id: "abhishek-upmanyu",
+    name: "Abhishek Upmanyu",
+    gender: "male",
+    age: 34,
+    location: "Mumbai / Delhi, India",
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/abhishek-upmanyu-86009942/",
+    instagramUrl: "https://www.instagram.com/aupmanyu/",
+    instagramHandle: "@aupmanyu",
+    linkedinHandle: "abhishek-upmanyu-86009942",
+    tagline: "Stand-up Comedian & Writer | Chemical Engineering Alum | Viral Humorist",
+    sources: {
+      linkedin: {
+        headline: "Comedian, Writer & Performer",
+        company: "Independent / Live Comedy",
+        industry: "Live Entertainment, Stand-up Comedy, Creative Writing",
+        education: "Panjab University (Chemical Engineering)",
+        summary: "One of India's most celebrated stand-up comedians with hundreds of millions of views. Former engineer and writer (AIB). Master of observational absurdity.",
+        skills: ["Observational Comedy", "Scriptwriting", "Timing & Delivery", "Satirical Social Commentary", "Live Performance"]
+      },
+      instagram: {
+        bio: "Stand-up comedian. Delhi boy in Mumbai. Cat lover, tea, quiet corners & observing absurd things.",
+        postVibes: ["Sold-out global arena tour photos", "Lazy cuddles with pet cats", "Self-deprecating candid humor", "Backstage tea cups before specials"],
+        aesthetic: "Casual hoodies, oversized spectacles, backstage shadows, quirky candid micro-expressions",
+        interestsKeywords: ["Observational Humor", "Pet Cats", "Ginger Tea", "Global Comedy Tours", "Chemical Engineering Lore"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Upmanyu-Wit",
+      agentPersona: "Inimitable, rapid-fire observational humorist with an introverted cat-lover soul who notices life's hilarious absurdities and craves cozy authenticity.",
+      needs: [
+        "A partner who loves deep belly laughs and appreciates dry, sarcastic, quirky humor",
+        "Someone who loves cats and values introverted downtime at home",
+        "Zero pretension: someone who prefers casual sweatpants and tea over red carpet events",
+        "Emotional safety to let down his comedic guard and just be quiet together"
+      ],
+      hobbies: [
+        "Hanging out with his cats and observing their quirky mannerisms",
+        "Brewing strong ginger cutting tea while writing jokes in notebooks",
+        "Wandering quiet city streets late at night observing strange human behavior",
+        "Watching international stand-up specials and indie cult films"
+      ],
+      interests: [
+        "The mechanics of comedic timing, misdirection, and premise setup",
+        "The absurdity of modern corporate life and chemical engineering relics",
+        "Feline behavioral psychology and animal rescue",
+        "Nostalgic Delhi colony dynamics and street banter"
+      ],
+      qualities: {
+        openness: 96,
+        conscientiousness: 88,
+        extraversion: 74,
+        agreeableness: 89,
+        neuroticism: 26,
+        communicationStyle: "Hilarious, rapid-fire, self-deprecating, razor-sharp",
+        loveLanguage: "Shared Laughter & Quiet Companionship",
+        greenFlags: ["Love for cats", "Quick wit", "Doesn't take herself too seriously"],
+        dealbreakers: ["Taking yourself too seriously", "Cruelty to pets", "Demanding extroversion"],
+        idealDate: "Cozy tea shop or couch date sharing hilarious observations about people walking past, ending with bingeing funny cartoons and petting cats."
+      }
+    }
+  },
+  {
+    id: "apoorva-mukhija",
+    name: "Apoorva Mukhija (The Rebel Kid)",
+    gender: "female",
+    age: 24,
+    location: "Mumbai / Delhi, India",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/apoorva2707/",
+    instagramUrl: "https://www.instagram.com/the.rebel.kid/",
+    instagramHandle: "@the.rebel.kid",
+    linkedinHandle: "apoorva2707",
+    tagline: "Content Creator & Travel Vlogger | 'The Rebel Kid' | Youth Storyteller",
+    sources: {
+      linkedin: {
+        headline: "Digital Creator, Brand Strategist & Vlogger",
+        company: "The Rebel Kid",
+        industry: "Digital Media, Influencer Marketing, Travel Vlogging",
+        education: "Symbiosis International University",
+        summary: "Leading Gen-Z content creator and travel vlogger known as 'The Rebel Kid'. Transforming candid storytelling, fashion, and travel documentation for millions of followers.",
+        skills: ["Short-form Storytelling", "Brand Engagement", "Travel Curation", "Youth Culture Insights", "Video Editing"]
+      },
+      instagram: {
+        bio: "The Rebel Kid. Travel, chaos, fashion, unfiltered rants & living on my own terms. Delhi to the world.",
+        postVibes: ["Chaotic fun European travel vlogs", "Bold trendy streetwear outfits", "Unfiltered hilarious rants to camera", "Dancing and music festivals"],
+        aesthetic: "High-saturation neon, dynamic handheld wide-angle lenses, bold fashion accessories, spontaneous laughter",
+        interestsKeywords: ["Spontaneous Travel", "Streetwear & Fashion", "Festival Energy", "Unfiltered Rants", "Gen-Z Pop Culture"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Rebel-Spark",
+      agentPersona: "Fiercely independent, chaotic-good, high-energy travel creator who speaks her mind with zero filter, loves spontaneous trips, and lives boldly.",
+      needs: [
+        "A partner with high confidence who can handle chaotic, spontaneous energy without jealousy",
+        "Someone who loves packing bags for last-minute international road trips and festivals",
+        "A partner who values raw honesty over fake polite pleasantries",
+        "Mutual loyalty, great music taste, and non-stop laughter"
+      ],
+      hobbies: [
+        "Backpacking across Europe and Southeast Asia on spontaneous itineraries",
+        "Curating eclectic vintage streetwear and experimental fashion fits",
+        "Shooting unscripted, hilarious lifestyle rants about dating and daily chaos",
+        "Attending live indie concerts and electronic music festivals"
+      ],
+      interests: [
+        "The sociology of Gen-Z attention and internet transparency",
+        "Global street food cultures and hidden culinary alleyways",
+        "Video editing pacing and dynamic visual storytelling",
+        "Challenging conventional social expectations for Indian young women"
       ],
       qualities: {
         openness: 97,
-        conscientiousness: 95,
-        extraversion: 65,
+        conscientiousness: 84,
+        extraversion: 98,
+        agreeableness: 86,
+        neuroticism: 28,
+        communicationStyle: "Unfiltered, hilarious, electric, candid, magnetic",
+        loveLanguage: "Shared Adventure, Laughter & Physical Affection",
+        greenFlags: ["Spontaneous mindset", "High energy", "Thick skin & good banter"],
+        dealbreakers: ["Controlling behavior", "Boring rigidity", "Judging her style"],
+        idealDate: "Spontaneous street food crawl through bustling night markets, followed by rooftop drinks listening to indie music and laughing about chaotic travel stories."
+      }
+    }
+  },
+  {
+    id: "tanmay-bhat",
+    name: "Tanmay Bhat",
+    gender: "male",
+    age: 37,
+    location: "Mumbai, India",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/thetanmay/",
+    instagramUrl: "https://www.instagram.com/tanmaybhat/",
+    instagramHandle: "@tanmaybhat",
+    linkedinHandle: "thetanmay",
+    tagline: "Co-founder @ AIB | Comedian, Creator & Angel Investor | Media Strategist",
+    sources: {
+      linkedin: {
+        headline: "Creative Strategist, Angel Investor, and Media Creator",
+        company: "Moonshot / Independent",
+        industry: "Media Strategy, Advertising, Comedy, Personal Finance, Web3",
+        education: "R.D. National College, Mumbai",
+        summary: "Pioneered sketch comedy in India as co-founder of AIB. Prolific creative director (CRED super bowl-style ads), angel investor, gaming streamer, and finance educator.",
+        skills: ["Creative Direction", "Viral Advertising", "Comedy Writing", "Angel Investing", "Internet Meme Culture"]
+      },
+      instagram: {
+        bio: "Comedian, investor, YouTuber. Ads, memes, finance, fitness journey & comedy. Work hard, meme harder.",
+        postVibes: ["Viral meme reaction videos", "Writing rooms with top creatives", "Fitness milestones and transformation", "Behind the scenes on major ad campaigns"],
+        aesthetic: "Internet native memes, streaming RGB gaming setups, creative studio whiteboard brainstorms",
+        interestsKeywords: ["Viral Ad Writing", "Personal Finance & Investing", "Meme Culture", "Gaming Streams", "Fitness Transformation"]
+      }
+    },
+    "analysis": {
+      agentName: "Agent Tanmay-Brain",
+      agentPersona: "Creative genius with an encyclopedic grasp of internet culture, advertising, personal finance, comedic timing, and deep resilience.",
+      needs: [
+        "A sharp, funny partner who understands the manic creative process and internet culture",
+        "Mutual respect for fitness health transformations and mental resilience",
+        "Someone who loves witty intellectual banter and dissecting pop culture over food",
+        "A safe emotional haven where he doesn't need to be 'on' all the time"
+      ],
+      hobbies: [
+        "Dissecting viral advertising campaigns and meme mechanics",
+        "Consistent gym lifting and weight loss health protocols",
+        "Live gaming streams and hanging out with diverse online creator crews",
+        "Reading investment books, behavioral economics, and scriptwriting manuals"
+      ],
+      interests: [
+        "The cognitive mechanics of virality and consumer attention capture",
+        "Venture capital, early-stage angel investing, and startup equity models",
+        "The evolution of sketch comedy from Monty Python to YouTube",
+        "Synthesizers, audio mixing, and internet-native media economies"
+      ],
+      qualities: {
+        openness: 98,
+        conscientiousness: 92,
+        extraversion: 90,
+        agreeableness: 88,
+        neuroticism: 24,
+        communicationStyle: "Brilliant, rapid-fire comedic, hyper-curious, observant",
+        loveLanguage: "Shared Humor & Intellectual Camaraderie",
+        greenFlags: ["High intelligence", "Loves comedy", "Resilient character"],
+        dealbreakers: ["Inability to understand sarcasm", "Boring conformity", "Judgmental attitude"],
+        idealDate: "Intimate dining at an experimental fusion restaurant, dissecting the craziest internet stories and laughing uncontrollably until the place closes."
+      }
+    }
+  },
+  {
+    id: "sahiba-bali",
+    name: "Sahiba Bali",
+    gender: "female",
+    age: 29,
+    location: "Mumbai / Kashmir, India",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/sahibabali/",
+    instagramUrl: "https://www.instagram.com/sahibabali/",
+    instagramHandle: "@sahibabali",
+    linkedinHandle: "sahibabali",
+    tagline: "Actor, Host & Marketer | Former Zomato Brand Lead | Kashmiri Roots",
+    sources: {
+      linkedin: {
+        headline: "Actor, Anchor, and Brand Strategist | ex-Zomato Marketing",
+        company: "Entertainment / Independent",
+        industry: "Cinema, Brand Marketing, Digital Hosting, Interviewing",
+        education: "Hansraj College, Delhi University; Durham University UK (Marketing)",
+        summary: "Bridged high-level marketing (Zomato brand marketing lead) with acclaimed acting and hosting. Kashmiri cultural advocate, interviewer of global celebrities.",
+        skills: ["Brand Storytelling", "Interviewing & Hosting", "Acting & Theater", "Cross-Platform Media", "Kashmiri Heritage"]
+      },
+      instagram: {
+        bio: "Actor, anchor, Kashmiri girl. Stories, travel, cinema, Kahwa, poetry & laughing out loud.",
+        postVibes: ["Snow-capped Kashmiri chinar trees", "Red carpet celebrity interview sets", "Traditional Kashmiri pashmina and silver jewelry", "Coffee and bookstore walks"],
+        aesthetic: "Elegant Kashmiri warmth, rich crimson and emerald tones, bookish charm, cinematic grace",
+        interestsKeywords: ["Kashmiri Heritage & Kahwa", "Independent Cinema", "Brand Marketing", "Poetry & Books", "Celebrity Hosting"]
+      }
+    },
+    "analysis": {
+      agentName: "Agent Sahiba-Grace",
+      agentPersona: "Cultured, articulate Kashmiri actor-marketer who effortlessly bridges sharp business brand strategy with cinematic storytelling, poetry, and warm charm.",
+      needs: [
+        "A partner of intellectual depth and artistic sensibility who values deep conversation",
+        "Someone who appreciates cultural roots, Kashmir's poetic beauty, and literature",
+        "Mutual respect for career ambition across creative and business worlds",
+        "A kind, emotionally mature partner with a warm sense of humor"
+      ],
+      hobbies: [
+        "Brewing traditional Kashmiri saffron Kahwa with almonds",
+        "Reading classic Urdu and English poetry and attending literature festivals",
+        "Exploring mountain valleys and discovering indie cinema at film festivals",
+        "Hosting lively conversational salons discussing cinema and marketing craft"
+      ],
+      interests: [
+        "The psychology of consumer brand love and narrative resonance",
+        "Kashmiri cultural preservation, crafts, and architecture",
+        "Method acting techniques and character study in cinema",
+        "Travel anthropology across historical European and Asian cities"
+      ],
+      qualities: {
+        openness: 96,
+        conscientiousness: 94,
+        extraversion: 88,
+        agreeableness: 93,
+        neuroticism: 18,
+        communicationStyle: "Articulate, charming, poised, literary, warm",
+        loveLanguage: "Quality Time & Meaningful Conversations",
+        greenFlags: ["Cultural curiosity", "Intellectual depth", "Gentlemanly warmth"],
+        dealbreakers: ["Superficial chatter", "Arrogance", "Disregard for art and heritage"],
+        idealDate: "Strolling through an autumn heritage garden drinking warm saffron Kahwa, followed by an intimate dinner discussing favorite films and books."
+      }
+    }
+  },
+  {
+    id: "ravi-gupta",
+    name: "Ravi Gupta",
+    gender: "male",
+    age: 34,
+    location: "Delhi / Varanasi, India",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/raviguptacomedy/",
+    instagramUrl: "https://www.instagram.com/shudhdesicomic/",
+    instagramHandle: "@shudhdesicomic",
+    linkedinHandle: "raviguptacomedy",
+    tagline: "Stand-up Comedian @ Shuddh Desi Comic | Cartoonist & Cultural Satirist",
+    sources: {
+      linkedin: {
+        headline: "Stand-up Comedian and Creative Writer",
+        company: "Shuddh Desi Comic",
+        industry: "Live Comedy, Satire, Visual Arts & Cartooning",
+        education: "College of Art, Delhi (Fine Arts & Applied Art)",
+        summary: "Popularly known as 'Shuddh Desi Comic'. Cartoonist and celebrated stand-up comedian bringing pure, unadulterated North Indian cultural satire and humor to millions.",
+        skills: ["Cultural Satire", "Fine Arts & Cartooning", "Stage Performance", "Storytelling", "Observational Wit"]
+      },
+      instagram: {
+        bio: "Shuddh Desi Comic. Kalakaar. Standup comedy, cartoons, desi humor, tea, Varanasi roots.",
+        postVibes: ["Full house comedy auditoriums", "Hand-drawn satirical cartoons", "Sipping kulhad chai in Varanasi", "Candid backstage moments"],
+        aesthetic: "Rustic desi charm, hand-drawn ink sketches, clay kulhad cups, warm earthen tones",
+        interestsKeywords: ["Shuddh Desi Humor", "Fine Arts & Sketching", "Varanasi Ghats", "Kulhad Chai", "Indian Small-Town Lore"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Ravi-DesiWit",
+      agentPersona: "Artistic, pure-hearted desi humorist and cartoonist who finds endless joy in authentic Indian small-town quirks, tea stalls, and soulful laughter.",
+      needs: [
+        "A grounded, warm partner who loves authentic desi culture, chai, and simple joys",
+        "Someone who appreciates artistic sketching, humor, and unpretentious living",
+        "Deep emotional loyalty, gentle communication, and shared laughter",
+        "No fake Western pretension: someone proud of their roots and language"
+      ],
+      hobbies: [
+        "Hand-drawing satirical cartoons and caricatures in ink sketchbooks",
+        "Sipping steaming kulhad chai at traditional street stalls while observing crowds",
+        "Visiting Varanasi ghats at dawn soaking in spiritual and artistic atmosphere",
+        "Listening to classical Indian folk music and retro melodies"
+      ],
+      interests: [
+        "The sociology of North Indian middle-class humor and family dynamics",
+        "Traditional Indian cartooning and visual storytelling techniques",
+        "Varanasi cultural heritage and linguistic nuances",
+        "The art of stage presence without profanity or cheap gimmicks"
+      ],
+      qualities: {
+        openness: 93,
+        conscientiousness: 90,
+        extraversion: 84,
         agreeableness: 96,
-        neuroticism: 26,
-        communicationStyle: "Poetic, gentle, deeply sincere, contemplative, vulnerable",
-        loveLanguage: "Physical Touch, Quality Time & Romantic Devotion",
-        greenFlags: ["Belief in true love", "Gentle heart", "Emotional vulnerability"],
-        dealbreakers: ["Cynicism about love", "Cruelty to animals or people", "Cold detachment"],
-        idealDate: "Sitting on a quiet grassy hill at dusk playing acoustic guitar melodies, sharing dreams of the cosmos and what it means to truly love someone."
+        neuroticism: 17,
+        communicationStyle: "Unpretentious, deeply humorous, warm, authentic, artistic",
+        loveLanguage: "Acts of Service & Shared Laughter",
+        greenFlags: ["Love for simplicity", "Pride in cultural roots", "Warm smile"],
+        dealbreakers: ["Pretentiousness", "Disdain for desi culture", "Artificiality"],
+        idealDate: "Evening boat ride along the river ghats drinking kulhad chai, sketching funny caricatures together, and laughing over childhood stories."
+      }
+    }
+  },
+  {
+    id: "rahul-dua",
+    name: "Rahul Dua",
+    gender: "male",
+    age: 32,
+    location: "Mumbai / Ludhiana, India",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/therahuldua/",
+    instagramUrl: "https://www.instagram.com/therahuldua/",
+    instagramHandle: "@therahuldua",
+    linkedinHandle: "therahuldua",
+    tagline: "Stand-up Comedian, Actor & Host @ Shark Tank India | Comicstaan Alum",
+    sources: {
+      linkedin: {
+        headline: "Stand-up Comedian, Actor, and Television Host",
+        company: "Independent / Television & Comedy",
+        industry: "Live Entertainment, Television Hosting, Acting",
+        education: "Thapar University (B.E. Mechanical); FMS Delhi (MBA)",
+        summary: "1st Runner-up of Amazon Prime Comicstaan. Host of Shark Tank India. Engineer and FMS MBA turned celebrated comedian, actor, and live entertainer.",
+        skills: ["Television Hosting", "Stand-up Comedy", "Improv & Banter", "Corporate Stage Hosting", "Acting"]
+      },
+      instagram: {
+        bio: "Comedian, Actor, Host. Punjabi boy figuring out suits and sets. Punjab, Mumbai, laughter & food.",
+        postVibes: ["Shark Tank India host stage moments", "Stand-up comedy tours across the country", "Snappy tailored suits", "Punjabi family weddings and food"],
+        aesthetic: "Sharp colorful suits, infectious Punjabi smile, buzzing stage spotlights, vibrant wedding energy",
+        interestsKeywords: ["Stand-up Comedy", "Television Hosting", "Punjabi Culture & Bhangra", "Foodie Feasts", "Engineering-MBA Humor"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Dua-Banter",
+      agentPersona: "Charismatic, quick-witted Punjabi engineer-MBA turned comedy superstar and television host who brings infectious warmth, sharp timing, and hearty laughs.",
+      needs: [
+        "A partner with high humor, energy, and love for lively celebrations and family",
+        "Someone who loves quick-fire teasing banter and playful roasting",
+        "A grounded, warm partner who brings emotional stability during hectic tour schedules",
+        "Shared love for incredible food, music, and Punjabi celebrations"
+      ],
+      hobbies: [
+        "Refining stand-up comedy scripts and testing funny premises with friends",
+        "Curating sharp, colorful host suits for television shows",
+        "Hunting for the best chole bhature and butter chicken across Delhi and Punjab",
+        "Bhangra dancing and attending vibrant Punjabi weddings"
+      ],
+      interests: [
+        "The craft of live audience crowd-work and comedic improvisation",
+        "Television entertainment broadcasting dynamics",
+        "Behavioral economics of corporate consumer culture",
+        "Punjabi folk music and contemporary rhythm mixes"
+      ],
+      qualities: {
+        openness: 92,
+        conscientiousness: 93,
+        extraversion: 96,
+        agreeableness: 92,
+        neuroticism: 18,
+        communicationStyle: "Energetic, witty, teasing, warmhearted, charming",
+        loveLanguage: "Words of Affirmation & Playful Teasing",
+        greenFlags: ["Can take a joke", "Loves to laugh", "Warm family values"],
+        dealbreakers: ["Moody passive-aggressiveness", "Boring rigidity", "Lack of humor"],
+        idealDate: "Front-row seats at a thrilling comedy or music show, followed by a late-night feast of great food laughing and trading hilarious stories."
+      }
+    }
+  },
+  {
+    id: "gaurav-kapoor",
+    name: "Gaurav Kapoor",
+    gender: "male",
+    age: 36,
+    location: "Mumbai / Delhi, India",
+    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+    linkedinUrl: "https://www.linkedin.com/in/gaurav-kapoor-37b0b051/",
+    instagramUrl: "https://www.instagram.com/gauravkpoor/",
+    instagramHandle: "@gauravkpoor",
+    linkedinHandle: "gaurav-kapoor-37b0b051",
+    tagline: "Stand-up Comedian & Vlogger | 'Dilli Ka Launda' | Storyteller",
+    sources: {
+      linkedin: {
+        headline: "Stand-up Comedian and Content Creator",
+        company: "Independent / Live Comedy",
+        industry: "Stand-up Comedy, Vlogging, Digital Entertainment",
+        education: "Delhi University",
+        summary: "Renowned stand-up comedian known for his Delhi observational storytelling and daily vlogs. Former corporate retail professional who turned passion for comedy into a nationwide phenomenon.",
+        skills: ["Conversational Storytelling", "Crowd Work", "Daily Vlogging", "Relatable Character Portrayal", "Humor"]
+      },
+      instagram: {
+        bio: "Dilli ka launda in Mumbai. Stand-up comedian. Vlogs, sneakers, Royal Enfield, mom's food & laughter.",
+        postVibes: ["Sold out shows across India", "Daily funny vlogs with wife and friends", "Royal Enfield motorcycle rides", "Street food adventures"],
+        aesthetic: "Street casual, classic leather jackets, Royal Enfield motorcycles, unfiltered honest smile",
+        interestsKeywords: ["Royal Enfield Rides", "Dilli Street Culture", "Daily Vlogging", "Relatable Comedy", "Mom's Cooking"]
+      }
+    },
+    analysis: {
+      agentName: "Agent Gaurav-Story",
+      agentPersona: "Unapologetically authentic, master storyteller whose relatable Delhi charm, motorcycle rides, love for home-cooked food, and daily vlogs bring pure joy.",
+      needs: [
+        "A partner who loves uncomplicated realness, warmth, and daily belly laughs",
+        "Someone who appreciates simple domestic happiness over artificial status",
+        "Mutual loyalty, open communication, and zero pretension",
+        "A shared love for road trips, motorcycle rides, and great food"
+      ],
+      hobbies: [
+        "Riding his Royal Enfield motorcycle on open coastal and highway stretches",
+        "Documenting quirky, heartwarming moments in his daily YouTube vlogs",
+        "Enjoying simple home-cooked rajma chawal and Delhi street snacks",
+        "Collecting comfortable sneakers and casual street jackets"
+      ],
+      interests: [
+        "The art of natural conversational storytelling without punchline setups",
+        "Observational nuances of middle-class Indian domestic life",
+        "Motorcycle touring mechanics and route exploration",
+        "Independent video production and direct-to-audience connection"
+      ],
+      qualities: {
+        openness: 91,
+        conscientiousness: 90,
+        extraversion: 94,
+        agreeableness: 95,
+        neuroticism: 16,
+        communicationStyle: "Conversational, hilarious, down-to-earth, endearing",
+        loveLanguage: "Quality Time & Everyday Laughter",
+        greenFlags: ["Completely authentic", "Family devotion", "Warm smile"],
+        dealbreakers: ["Pretentiousness", "Fake behavior", "Taking oneself too seriously"],
+        idealDate: "Scenic motorcycle ride along the coast, stopping at a seaside dhaba for chai and parathas, talking and laughing effortlessly."
       }
     }
   }

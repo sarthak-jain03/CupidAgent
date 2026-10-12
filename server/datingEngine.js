@@ -1,58 +1,53 @@
-// Dating Simulation Engine: generates multi-turn agent dating dialogue,
-// inner monologues, dynamic compatibility scoring, and mutual rankings.
 
 export const VENUES = [
   {
-    id: "rooftop-skylounge",
-    name: "The Velvet Skylounge",
-    location: "Manhattan, NYC",
-    vibe: "Soft jazz, panoramic skyline lights, bespoke elderflower cocktails",
+    id: "mumbai-rooftop",
+    name: "Aer Rooftop Lounge",
+    location: "Worli, Mumbai",
+    vibe: "Sunset skyline over the Arabian Sea, soft jazz, signature coastal cocktails",
     backdrop: "linear-gradient(135deg, rgba(20,20,35,0.95), rgba(40,25,60,0.95))"
   },
   {
-    id: "vinyl-cafe",
-    name: "Acoustic Vinyl & Pour-Over Bar",
-    location: "Shibuya, Tokyo",
-    vibe: "Warm vintage McIntosh tube amps, Japanese city pop, single-origin Ethiopian coffee",
+    id: "delhi-courtyard",
+    name: "Olive Bar & Kitchen",
+    location: "Mehrauli, New Delhi",
+    vibe: "Candlelit white pebbles under a giant banyan tree, acoustic guitar, artisanal pasta",
     backdrop: "linear-gradient(135deg, rgba(30,25,20,0.95), rgba(50,35,25,0.95))"
   },
   {
-    id: "botanical-conservatory",
-    name: "The Glass Palm House",
-    location: "San Francisco, CA",
-    vibe: "Candlelit orchid pavilions, humid tropical greenery, natural pet-nat wines",
+    id: "bangalore-brewery",
+    name: "Toit Brewpub Garden",
+    location: "Indiranagar, Bengaluru",
+    vibe: "Lush greenery, artisanal craft beers, wood-fired sourdough pizzas, upbeat tech conversations",
     backdrop: "linear-gradient(135deg, rgba(15,30,25,0.95), rgba(25,50,40,0.95))"
   },
   {
-    id: "sunset-ocean-deck",
-    name: "Pacific Cliffside Deck",
-    location: "Malibu, CA",
-    vibe: "Pacific breeze, roaring beach fire pit, fresh oysters and smoky mezcal",
+    id: "udaipur-lake",
+    name: "Taj Lake Palace Pavilion",
+    location: "Pichola Lake, Udaipur",
+    vibe: "Mewari marble arches, flickering lake reflections, live sitar music under the stars",
     backdrop: "linear-gradient(135deg, rgba(35,20,25,0.95), rgba(65,30,45,0.95))"
   },
   {
-    id: "underground-jazz",
-    name: "Le Caveau Secret",
-    location: "Saint-Germain, Paris",
-    vibe: "Intimate stone arches, double bass improvisations, vintage Bordeaux wine",
+    id: "bandra-coffee",
+    name: "Subko Specialty Roastery",
+    location: "Bandra West, Mumbai",
+    vibe: "Single-origin pour-overs, indie books, rustic teakwood tables, cozy intellectual chemistry",
     backdrop: "linear-gradient(135deg, rgba(25,18,22,0.95), rgba(45,28,38,0.95))"
   }
 ];
 
-// Helper to calculate affinity score between two agents
 export function calculateCompatibility(personA, personB) {
   if (personA.id === personB.id) return { overallCompatibility: 0 };
 
   const qA = personA.analysis.qualities;
   const qB = personB.analysis.qualities;
 
-  // 1. Psychological & personality complementary resonance
   const opennessResonance = 100 - Math.abs(qA.openness - qB.openness) * 0.4;
   const conscientiousnessFit = 100 - Math.abs(qA.conscientiousness - qB.conscientiousness) * 0.35;
   const extraversionBalance = 85 + (Math.abs(qA.extraversion - qB.extraversion) < 25 ? 10 : 0);
   const agreeablenessResonance = (qA.agreeableness + qB.agreeableness) / 2;
 
-  // 2. Lifestyle & Instagram hobbies overlap
   const hobbiesA = (personA.analysis.hobbies || []).map(h => h.toLowerCase());
   const hobbiesB = (personB.analysis.hobbies || []).map(h => h.toLowerCase());
 
@@ -69,15 +64,12 @@ export function calculateCompatibility(personA, personB) {
 
   const lifestyleFit = Math.min(98, Math.max(62, Math.round(72 + sharedHobbyCount * 7.5 + (Math.sin(personA.name.length + personB.name.length) * 5))));
 
-  // 3. Ambition & LinkedIn career synergy
   const indA = (personA.sources?.linkedin?.industry || '').toLowerCase();
   const indB = (personB.sources?.linkedin?.industry || '').toLowerCase();
   const industrySynergyBonus = indA.split(' ').some(w => w.length > 4 && indB.includes(w)) ? 8 : 3;
 
   const ambitionSynergy = Math.min(99, Math.max(65, Math.round(76 + industrySynergyBonus + (qA.conscientiousness + qB.conscientiousness) * 0.08)));
 
-  // 4. Conversational chemistry
-  // Hash-based deterministic variance to keep pairs unique yet consistent
   const pairHash = Math.abs(
     (personA.id.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0) * 31) ^
     (personB.id.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0) * 17)
@@ -86,10 +78,8 @@ export function calculateCompatibility(personA, personB) {
   const chemistryNoise = (pairHash % 19) - 8;
   const chemistryScore = Math.min(99, Math.max(58, Math.round(74 + chemistryNoise + (qA.openness + qB.openness) * 0.08)));
 
-  // 5. Value alignment
   const valueAlignment = Math.min(98, Math.max(64, Math.round((opennessResonance + conscientiousnessFit + agreeablenessResonance) / 3)));
 
-  // Weighted overall compatibility
   const overallCompatibility = Math.round(
     lifestyleFit * 0.28 +
     ambitionSynergy * 0.24 +
@@ -97,14 +87,13 @@ export function calculateCompatibility(personA, personB) {
     valueAlignment * 0.20
   );
 
-  let verdict = "Polite Divergence 🍂";
+  let verdict = "Polite Divergence";
   if (overallCompatibility >= 87) {
-    verdict = "Spark! Second Date Confirmed 🥂";
+    verdict = "Spark! Second Date Confirmed";
   } else if (overallCompatibility >= 76) {
-    verdict = "Strong Intellectual Connection ☕";
+    verdict = "Strong Intellectual Connection";
   }
 
-  // Derive shared topics
   const sharedTopics = [];
   if (sharedHobbyCount > 0) {
     sharedTopics.push("Shared outdoor & aesthetic lifestyle rituals");
@@ -131,7 +120,6 @@ export function calculateCompatibility(personA, personB) {
   };
 }
 
-// Generate realistic multi-round date dialogue between two agents
 export function simulateDateConversation(personA, personB, venueId = null) {
   const venue = VENUES.find(v => v.id === venueId) || VENUES[0];
   const compat = calculateCompatibility(personA, personB);
@@ -322,7 +310,6 @@ export function simulateDateConversation(personA, personB, venueId = null) {
   };
 }
 
-// Compute full ranking list for a specific person against all other candidates
 export function computeRankingsForPerson(targetPerson, allPeople) {
   const candidates = allPeople.filter(p => p.id !== targetPerson.id);
 
@@ -346,17 +333,14 @@ export function computeRankingsForPerson(targetPerson, allPeople) {
     };
   });
 
-  // Sort descending by overallCompatibility
   rankedList.sort((a, b) => b.overallCompatibility - a.overallCompatibility);
 
-  // Assign ranks 1 to N
   return rankedList.map((item, index) => ({
     rank: index + 1,
     ...item
   }));
 }
 
-// Generate concise explanation for why candidate fits targetPerson
 function generateMatchReason(personA, personB, score) {
   const nameA = personA.name.split(' ')[0];
   const nameB = personB.name.split(' ')[0];
@@ -375,7 +359,6 @@ function generateMatchReason(personA, personB, score) {
   return `Respectful peer match with divergent lifestyle priorities. Excellent for collaborative friendship, with different romantic love languages.`;
 }
 
-// Compute pairwise matrix and find mutual top sparks across the entire network
 export function computeNetworkRankings(allPeople) {
   const rankingsByPerson = {};
   const mutualSparks = [];
@@ -384,7 +367,6 @@ export function computeNetworkRankings(allPeople) {
     rankingsByPerson[person.id] = computeRankingsForPerson(person, allPeople);
   }
 
-  // Find pairs where both are in each other's top 3
   const checkedPairs = new Set();
   for (const person of allPeople) {
     const myTopMatches = rankingsByPerson[person.id].slice(0, 3);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import confetti from 'canvas-confetti';
+import axios from 'axios';
+import Avatar from './Avatar';
 import {
   Flame,
   Play,
@@ -7,16 +8,13 @@ import {
   RotateCcw,
   FastForward,
   Heart,
-  Sparkles,
   MapPin,
   CheckCircle2,
-  Brain,
+  FileText,
   MessageCircle,
-  Award,
-  Volume2
+  Award
 } from 'lucide-react';
 import { VENUES, simulateDateConversation } from '../data/datingEngineClient';
-import { playPop, playChime, playSparkFanfare } from '../utils/soundEffects';
 
 export default function DatingArena({
   people,
@@ -28,16 +26,14 @@ export default function DatingArena({
   const [personBId, setPersonBId] = useState(preselectedB?.id || people[1]?.id);
   const [venueId, setVenueId] = useState(VENUES[0].id);
 
-  // Date Simulation State
   const [currentDateData, setCurrentDateData] = useState(null);
   const [currentTurnIndex, setCurrentTurnIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [playbackSpeed, setPlaybackSpeed] = useState(1); // 1 = 2000ms, 2 = 1000ms
+  const [playbackSpeed, setPlaybackSpeed] = useState(1);
   const [isCompleted, setIsCompleted] = useState(false);
 
   const dialogueContainerRef = useRef(null);
 
-  // Sync if preselected props change
   useEffect(() => {
     if (preselectedA) setPersonAId(preselectedA.id);
   }, [preselectedA]);
@@ -50,12 +46,29 @@ export default function DatingArena({
   const personB = people.find(p => p.id === personBId) || people[1];
   const selectedVenue = VENUES.find(v => v.id === venueId) || VENUES[0];
 
-  // Initialize or start new date
-  const handleStartNewDate = (pA = personA, pB = personB, vId = venueId) => {
+  const handleStartNewDate = async (pA = personA, pB = personB, vId = venueId) => {
     if (pA.id === pB.id) {
       alert("Please select two different people for the dating simulation.");
       return;
     }
+    try {
+      const res = await axios.post('/api/date', {
+        personAId: pA.id,
+        personBId: pB.id,
+        venueId: vId
+      });
+      if (res.data && res.data.dialogue && res.data.dialogue.length > 0) {
+        setCurrentDateData(res.data);
+        setCurrentTurnIndex(0);
+        setIsCompleted(false);
+        setIsPlaying(true);
+        playPop();
+        return;
+      }
+    } catch (err) {
+      console.log('Using client engine fallback:', err);
+    }
+
     const newDate = simulateDateConversation(pA, pB, vId);
     setCurrentDateData(newDate);
     setCurrentTurnIndex(0);
@@ -64,20 +77,19 @@ export default function DatingArena({
     playPop();
   };
 
-  // Quick pick recommended pair
   const handlePickRecommendedPair = (pairType) => {
-    let id1 = 'brian-chesky';
-    let id2 = 'whitney-wolfe-herd';
+    let id1 = 'raj-striver';
+    let id2 = 'shradha-khapra';
 
     if (pairType === 'intellectual') {
-      id1 = 'lex-fridman';
-      id2 = 'dr-julie-smith';
+      id1 = 'raj-striver';
+      id2 = 'love-babbar';
     } else if (pairType === 'creators') {
-      id1 = 'dylan-field';
-      id2 = 'melanie-perkins';
+      id1 = 'abhishek-upmanyu';
+      id2 = 'the-rebel-kid';
     } else if (pairType === 'high-energy') {
-      id1 = 'gary-vaynerchuk';
-      id2 = 'sara-blakely';
+      id1 = 'aman-gupta';
+      id2 = 'vineeta-singh';
     }
 
     const p1 = people.find(p => p.id === id1) || people[0];
@@ -87,58 +99,34 @@ export default function DatingArena({
     handleStartNewDate(p1, p2, venueId);
   };
 
-  // Auto-advance turns when isPlaying is true
   useEffect(() => {
     if (!isPlaying || !currentDateData) return;
 
     if (currentTurnIndex >= currentDateData.dialogue.length) {
       setIsPlaying(false);
       setIsCompleted(true);
-      playSparkFanfare();
-      if (currentDateData.evaluation?.overallCompatibility >= 80) {
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 }
-        });
-      }
       return;
     }
 
-    const intervalTime = playbackSpeed === 2 ? 1400 : 2600;
+    const intervalTime = playbackSpeed === 2 ? 1400 : 2400;
     const timer = setTimeout(() => {
-      setCurrentTurnIndex(prev => {
-        const next = prev + 1;
-        playPop();
-        if (next % 3 === 0) playChime();
-        return next;
-      });
+      setCurrentTurnIndex(prev => prev + 1);
     }, intervalTime);
 
     return () => clearTimeout(timer);
   }, [isPlaying, currentTurnIndex, currentDateData, playbackSpeed]);
 
-  // Auto-scroll dialogue
   useEffect(() => {
     if (dialogueContainerRef.current) {
       dialogueContainerRef.current.scrollTop = dialogueContainerRef.current.scrollHeight;
     }
   }, [currentTurnIndex]);
 
-  // Jump to complete evaluation
   const handleJumpToVerdict = () => {
     if (!currentDateData) return;
     setCurrentTurnIndex(currentDateData.dialogue.length);
     setIsPlaying(false);
     setIsCompleted(true);
-    playSparkFanfare();
-    if (currentDateData.evaluation?.overallCompatibility >= 80) {
-      confetti({
-        particleCount: 120,
-        spread: 80,
-        origin: { y: 0.6 }
-      });
-    }
   };
 
   const activeTurns = currentDateData
@@ -151,30 +139,23 @@ export default function DatingArena({
 
   return (
     <div style={{ maxWidth: 1400, margin: '0 auto', padding: '32px 24px' }}>
-      {/* Header */}
-      <div style={{ marginBottom: 28 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-          <span className="glow-pill gold">Live Multi-Agent Simulation</span>
-          <span className="glow-pill cyan">Turn-by-Turn Internal Monologues</span>
-        </div>
-        <h1 style={{ fontSize: '2.4rem', fontWeight: 800, letterSpacing: '-0.02em' }}>
-          The Dating Arena: <span className="gradient-text">Watch Agents Date</span>
+            <div style={{ marginBottom: 24 }}>
+        <h1 style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: 6 }}>
+          Date Simulator
         </h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '1rem', maxWidth: 840 }}>
-          The agents date on their person's behalf. Observe their conversational pacing, body language interpretation, live internal calculations, and final compatibility verdicts.
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: 840 }}>
+          Simulate a conversation between two candidate agents across dating stages with real-time dialogue and compatibility scoring.
         </p>
       </div>
 
-      {/* Arena Setup Toolbar */}
-      <div className="glass-panel" style={{ padding: 24, borderRadius: 20, marginBottom: 28 }}>
+            <div className="glass-panel" style={{ padding: 24, borderRadius: 20, marginBottom: 28 }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: 20,
           alignItems: 'center'
         }}>
-          {/* Person A Selector */}
-          <div>
+                    <div>
             <label style={{ display: 'block', fontSize: '0.8rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>
               First Person (Agent A)
             </label>
@@ -201,8 +182,7 @@ export default function DatingArena({
             </select>
           </div>
 
-          {/* Person B Selector */}
-          <div>
+                    <div>
             <label style={{ display: 'block', fontSize: '0.8rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>
               Second Person (Agent B)
             </label>
@@ -229,8 +209,7 @@ export default function DatingArena({
             </select>
           </div>
 
-          {/* Venue Picker */}
-          <div>
+                    <div>
             <label style={{ display: 'block', fontSize: '0.8rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 700, marginBottom: 8 }}>
               Date Venue & Atmosphere
             </label>
@@ -257,8 +236,7 @@ export default function DatingArena({
             </select>
           </div>
 
-          {/* Launch Date Button */}
-          <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-end' }}>
             <button
               onClick={() => handleStartNewDate()}
               className="btn-primary"
@@ -270,8 +248,7 @@ export default function DatingArena({
           </div>
         </div>
 
-        {/* Quick Pair Recommendations */}
-        <div style={{
+                <div style={{
           display: 'flex',
           alignItems: 'center',
           gap: 10,
@@ -287,63 +264,62 @@ export default function DatingArena({
             onClick={() => handlePickRecommendedPair('founders')}
             style={{
               padding: '4px 10px',
-              borderRadius: 8,
+              borderRadius: 6,
               fontSize: '0.75rem',
-              background: 'rgba(244, 63, 94, 0.1)',
-              border: '1px solid rgba(244, 63, 94, 0.25)',
-              color: '#fda4af',
+              background: 'var(--bg-main)',
+              border: '1px solid var(--border-subtle)',
+              color: 'var(--text-muted)',
               cursor: 'pointer'
             }}
           >
-            Brian Chesky & Whitney Wolfe Herd
+            Raj Vikramaditya & Shradha Khapra
           </button>
           <button
             onClick={() => handlePickRecommendedPair('intellectual')}
             style={{
               padding: '4px 10px',
-              borderRadius: 8,
+              borderRadius: 6,
               fontSize: '0.75rem',
-              background: 'rgba(139, 92, 246, 0.1)',
-              border: '1px solid rgba(139, 92, 246, 0.25)',
-              color: '#c084fc',
+              background: 'var(--bg-main)',
+              border: '1px solid var(--border-subtle)',
+              color: 'var(--text-muted)',
               cursor: 'pointer'
             }}
           >
-            Lex Fridman & Dr. Julie Smith
+            Raj Vikramaditya & Love Babbar
           </button>
           <button
             onClick={() => handlePickRecommendedPair('creators')}
             style={{
               padding: '4px 10px',
-              borderRadius: 8,
+              borderRadius: 6,
               fontSize: '0.75rem',
-              background: 'rgba(6, 182, 212, 0.1)',
-              border: '1px solid rgba(6, 182, 212, 0.25)',
-              color: '#38bdf8',
+              background: 'var(--bg-main)',
+              border: '1px solid var(--border-subtle)',
+              color: 'var(--text-muted)',
               cursor: 'pointer'
             }}
           >
-            Dylan Field & Melanie Perkins
+            Abhishek Upmanyu & Apoorva (Rebel Kid)
           </button>
           <button
             onClick={() => handlePickRecommendedPair('high-energy')}
             style={{
               padding: '4px 10px',
-              borderRadius: 8,
+              borderRadius: 6,
               fontSize: '0.75rem',
-              background: 'rgba(245, 158, 11, 0.1)',
-              border: '1px solid rgba(245, 158, 11, 0.25)',
-              color: '#fbbf24',
+              background: 'var(--bg-main)',
+              border: '1px solid var(--border-subtle)',
+              color: 'var(--text-muted)',
               cursor: 'pointer'
             }}
           >
-            Gary Vaynerchuk & Sara Blakely
+            Aman Gupta & Vineeta Singh
           </button>
         </div>
       </div>
 
-      {/* The Live Date Stage */}
-      {currentDateData && (
+            {currentDateData && (
         <div style={{
           background: selectedVenue.backdrop,
           border: '1px solid rgba(255, 255, 255, 0.12)',
@@ -352,8 +328,7 @@ export default function DatingArena({
           boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
           marginBottom: 32
         }}>
-          {/* Stage Top Bar: Venue & Live Chemistry Meter */}
-          <div style={{
+                    <div style={{
             padding: '20px 28px',
             background: 'rgba(0, 0, 0, 0.4)',
             backdropFilter: 'blur(10px)',
@@ -375,8 +350,7 @@ export default function DatingArena({
               </p>
             </div>
 
-            {/* Live Chemistry Gauge */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
               <div style={{ textAlign: 'right' }}>
                 <span style={{ display: 'block', fontSize: '0.7rem', color: '#94a3b8', textTransform: 'uppercase', fontWeight: 700 }}>
                   Real-Time Chemistry Gauge
@@ -408,8 +382,7 @@ export default function DatingArena({
             </div>
           </div>
 
-          {/* Participant Face-off Row */}
-          <div style={{
+                    <div style={{
             padding: '24px 32px',
             display: 'flex',
             alignItems: 'center',
@@ -417,67 +390,41 @@ export default function DatingArena({
             background: 'rgba(0, 0, 0, 0.2)',
             borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
           }}>
-            {/* Person A */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-              <img
-                src={personA.avatar}
-                alt={personA.name}
-                style={{
-                  width: 64,
-                  height: 64,
-                  borderRadius: '50%',
-                  objectFit: 'cover',
-                  border: '2px solid rgba(244, 63, 94, 0.8)',
-                  boxShadow: '0 0 16px rgba(244, 63, 94, 0.3)'
-                }}
-              />
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+              <Avatar name={personA.name} size={50} />
               <div>
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 700 }}>{personA.name}</h4>
-                <span className="glow-pill purple" style={{ fontSize: '0.68rem', padding: '1px 6px' }}>
-                  {personA.analysis?.agentName || `Agent ${personA.name}`}
-                </span>
+                <h4 style={{ fontSize: '1rem', fontWeight: 600 }}>{personA.name}</h4>
+                <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>
+                  {personA.tagline?.slice(0, 30)}...
+                </div>
               </div>
             </div>
 
-            {/* Glowing Heart Pulse */}
-            <div style={{
-              width: 44,
-              height: 44,
+                        <div style={{
+              width: 36,
+              height: 36,
               borderRadius: '50%',
-              background: 'rgba(244, 63, 94, 0.2)',
-              border: '1px solid rgba(244, 63, 94, 0.4)',
+              background: 'var(--primary-subtle)',
+              border: '1px solid var(--primary-border)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              <Heart size={22} color="#f43f5e" fill="#f43f5e" className="pulse-glow" />
+              <Heart size={18} color="var(--primary)" fill="var(--primary)" />
             </div>
 
-            {/* Person B */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
               <div style={{ textAlign: 'right' }}>
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 700 }}>{personB.name}</h4>
-                <span className="glow-pill cyan" style={{ fontSize: '0.68rem', padding: '1px 6px' }}>
-                  {personB.analysis?.agentName || `Agent ${personB.name}`}
-                </span>
+                <h4 style={{ fontSize: '1rem', fontWeight: 600 }}>{personB.name}</h4>
+                <div style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>
+                  {personB.tagline?.slice(0, 30)}...
+                </div>
               </div>
-              <img
-                src={personB.avatar}
-                alt={personB.name}
-                style={{
-                  width: 64,
-                  height: 64,
-                  borderRadius: '50%',
-                  objectFit: 'cover',
-                  border: '2px solid rgba(6, 182, 212, 0.8)',
-                  boxShadow: '0 0 16px rgba(6, 182, 212, 0.3)'
-                }}
-              />
+              <Avatar name={personB.name} size={50} />
             </div>
           </div>
 
-          {/* Live Dialogue Stream Container */}
-          <div
+                    <div
             ref={dialogueContainerRef}
             style={{
               height: 440,
@@ -516,8 +463,7 @@ export default function DatingArena({
                     alignSelf: isSpeakerA ? 'flex-start' : 'flex-end'
                   }}
                 >
-                  {/* Speaker Label & Turn Phase */}
-                  <div style={{
+                                    <div style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: 8,
@@ -546,42 +492,35 @@ export default function DatingArena({
                     </span>
                   </div>
 
-                  {/* Speech Bubble */}
-                  <div style={{
-                    padding: '16px 20px',
-                    borderRadius: 18,
-                    background: isSpeakerA
-                      ? 'linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(139, 92, 246, 0.2))'
-                      : 'linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(59, 130, 246, 0.2))',
-                    border: isSpeakerA
-                      ? '1px solid rgba(244, 63, 94, 0.4)'
-                      : '1px solid rgba(6, 182, 212, 0.4)',
-                    color: '#fff',
-                    fontSize: '0.95rem',
+                                    <div style={{
+                    padding: '14px 18px',
+                    borderRadius: 12,
+                    background: isSpeakerA ? 'var(--bg-subtle)' : '#1a2333',
+                    border: '1px solid var(--border-subtle)',
+                    color: '#f8fafc',
+                    fontSize: '0.9rem',
                     lineHeight: 1.5,
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.25)',
-                    borderBottomLeftRadius: isSpeakerA ? 4 : 18,
-                    borderBottomRightRadius: isSpeakerA ? 18 : 4
+                    borderBottomLeftRadius: isSpeakerA ? 2 : 12,
+                    borderBottomRightRadius: isSpeakerA ? 12 : 2
                   }}>
                     {turn.text}
                   </div>
 
-                  {/* Agent Inner Monologue (The Autonomous Brain Reasoning) */}
-                  <div style={{
-                    marginTop: 8,
-                    padding: '8px 14px',
-                    borderRadius: 10,
-                    background: 'rgba(0, 0, 0, 0.4)',
-                    border: '1px dashed rgba(255, 255, 255, 0.15)',
+                                    <div style={{
+                    marginTop: 6,
+                    padding: '6px 12px',
+                    borderRadius: 6,
+                    background: 'var(--bg-main)',
+                    border: '1px solid var(--border-subtle)',
                     fontSize: '0.75rem',
-                    color: '#94a3b8',
+                    color: 'var(--text-dim)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: 6,
                     maxWidth: '95%'
                   }}>
-                    <Brain size={13} color="#a855f7" />
-                    <span style={{ fontStyle: 'italic' }}>
+                    <FileText size={12} color="var(--text-dim)" />
+                    <span>
                       {turn.internalThought}
                     </span>
                   </div>
@@ -590,8 +529,7 @@ export default function DatingArena({
             })}
           </div>
 
-          {/* Stage Controls Footer */}
-          <div style={{
+                    <div style={{
             padding: '16px 32px',
             background: 'rgba(0, 0, 0, 0.5)',
             borderTop: '1px solid rgba(255, 255, 255, 0.08)',
@@ -601,8 +539,7 @@ export default function DatingArena({
             flexWrap: 'wrap',
             gap: 12
           }}>
-            {/* Playback Controls */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
                 style={{
@@ -651,8 +588,7 @@ export default function DatingArena({
               </button>
             </div>
 
-            {/* Speed & Jump to Verdict */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <div style={{ display: 'flex', background: 'rgba(255, 255, 255, 0.05)', borderRadius: 8, padding: 2 }}>
                 <button
                   onClick={() => setPlaybackSpeed(1)}
@@ -710,8 +646,7 @@ export default function DatingArena({
         </div>
       )}
 
-      {/* Post-Date Compatibility & Final Report Card */}
-      {isCompleted && currentDateData?.evaluation && (
+            {isCompleted && currentDateData?.evaluation && (
         <div
           className="glass-panel animate-slide-up"
           style={{
@@ -744,8 +679,7 @@ export default function DatingArena({
             </p>
           </div>
 
-          {/* 4 Compatibility Sub-metrics */}
-          <div style={{
+                    <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
             gap: 16,
@@ -809,52 +743,41 @@ export default function DatingArena({
             ))}
           </div>
 
-          {/* Direct Agent Quotes */}
-          <div style={{
+                    <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
             gap: 20,
             marginBottom: 32
           }}>
-            {/* Agent A Quote */}
-            <div style={{
+                        <div style={{
               background: 'rgba(244, 63, 94, 0.06)',
               border: '1px solid rgba(244, 63, 94, 0.2)',
               borderRadius: 16,
               padding: 20
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                <img
-                  src={personA.avatar}
-                  alt={personA.name}
-                  style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover' }}
-                />
+                <Avatar name={personA.name} size={36} />
                 <div>
-                  <h4 style={{ fontSize: '0.9rem', fontWeight: 700 }}>{personA.analysis?.agentName || `Agent ${personA.name}`}</h4>
-                  <span style={{ fontSize: '0.72rem', color: '#fb7185' }}>Post-Date Intelligence Debrief</span>
+                  <h4 style={{ fontSize: '0.88rem', fontWeight: 600 }}>{personA.name}</h4>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>Agent Debrief</span>
                 </div>
               </div>
-              <p style={{ fontSize: '0.88rem', color: '#ffe4e6', fontStyle: 'italic', lineHeight: 1.4 }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-main)', fontStyle: 'italic', lineHeight: 1.4 }}>
                 {currentDateData.evaluation.agentAQuote}
               </p>
             </div>
 
-            {/* Agent B Quote */}
-            <div style={{
-              background: 'rgba(6, 182, 212, 0.06)',
-              border: '1px solid rgba(6, 182, 212, 0.2)',
-              borderRadius: 16,
-              padding: 20
+                        <div style={{
+              background: 'var(--bg-main)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: 8,
+              padding: 16
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                <img
-                  src={personB.avatar}
-                  alt={personB.name}
-                  style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover' }}
-                />
+                <Avatar name={personB.name} size={36} />
                 <div>
-                  <h4 style={{ fontSize: '0.9rem', fontWeight: 700 }}>{personB.analysis?.agentName || `Agent ${personB.name}`}</h4>
-                  <span style={{ fontSize: '0.72rem', color: '#38bdf8' }}>Post-Date Intelligence Debrief</span>
+                  <h4 style={{ fontSize: '0.88rem', fontWeight: 600 }}>{personB.name}</h4>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--text-dim)' }}>Agent Debrief</span>
                 </div>
               </div>
               <p style={{ fontSize: '0.88rem', color: '#e0f2fe', fontStyle: 'italic', lineHeight: 1.4 }}>
@@ -863,8 +786,7 @@ export default function DatingArena({
             </div>
           </div>
 
-          {/* Action Footer */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
             <button
               onClick={() => onViewRankingsForPerson(personA)}
               className="btn-secondary"
