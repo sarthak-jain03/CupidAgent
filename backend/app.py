@@ -23,9 +23,27 @@ app = FastAPI(
     description="Autonomous Agentic Dating Network Backend powered by FastAPI and Groq LLM (gpt-oss-120b)"
 )
 
+frontend_url = os.getenv("FRONTEND_URL", "").strip()
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+]
+if frontend_url:
+    allowed_origins.append(frontend_url.rstrip("/"))
+
+cors_env = os.getenv("CORS_ORIGINS", "*").split(",")
+if "*" in cors_env:
+    allowed_origins = ["*"]
+else:
+    for o in cors_env:
+        cleaned = o.strip().rstrip("/")
+        if cleaned and cleaned not in allowed_origins:
+            allowed_origins.append(cleaned)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
